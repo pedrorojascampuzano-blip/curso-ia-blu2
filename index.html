@@ -145,6 +145,18 @@ footer .ft{font-family:Fraunces;font-style:italic;font-size:21px;color:#f1e9d9;m
   .tool,.cmp,.cheat .c,.rung,.flow{break-inside:avoid}
   .hero{background:#163a5c!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+
+.ex{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:0 0 16px}
+.ex .exh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.ex .exh h3{font-size:20px}
+.ex .exh .exm{font-size:12px;color:var(--teal);font-weight:600}
+.ex .exo{font-size:15px;color:var(--ink2);margin:0 0 14px}
+.ex .lab{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin:16px 0 8px}
+.ex ol.algo{margin:0;padding-left:22px}
+.ex ol.algo li{margin:5px 0;font-size:15px}
+.ex .sit{font-style:italic;color:var(--ink2);font-size:14.5px;margin:0 0 8px}
+.ex .res{background:#eef4f1;border-left:3px solid var(--teal);border-radius:0 10px 10px 0;padding:13px 16px;font-size:14.5px;white-space:pre-wrap;color:#27332f;margin-top:4px}
+.exgrouphead{font-family:Fraunces;font-size:21px;color:var(--blue);margin:26px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
 </style>
 </head>
 <body>
@@ -230,11 +242,11 @@ footer .ft{font-family:Fraunces;font-style:italic;font-size:21px;color:#f1e9d9;m
         <div class="tool"><div class="mono">C</div><div class="body"><div class="nm">ChatGPT</div><div class="ds">La más conocida y todoterreno. Habla por voz y puede navegar páginas por ti.</div><div class="px">Gratis y pago</div></div></div>
         <div class="tool"><div class="mono">Cl</div><div class="body"><div class="nm">Claude</div><div class="ds">La mejor para redacción cuidada y documentos largos.</div><div class="px">Gratis y pago</div></div></div>
         <div class="tool"><div class="mono">G</div><div class="body"><div class="nm">Gemini</div><div class="ds">Vive en Gmail, Drive y Android. Ve por la cámara en vivo.</div><div class="px">Gratis y pago</div></div></div>
-        <div class="tool"><div class="mono">Gr</div><div class="body"><div class="nm">Grok</div><div class="ds">Rápida y directa, ligada a X. Buena para lo que pasa ahorita.</div><div class="px">Pago</div></div></div>
+        <div class="tool"><div class="mono">Gr</div><div class="body"><div class="nm">Grok</div><div class="ds">Rápida y directa, ligada a X. Buena para lo que pasa ahorita.</div><div class="px">Gratis y pago</div></div></div>
         <div class="tool"><div class="mono">M</div><div class="body"><div class="nm">Meta AI</div><div class="ds">Ya está dentro de tu WhatsApp e Instagram. Sin instalar nada.</div><div class="px">Gratis</div></div></div>
-        <div class="tool"><div class="mono">K</div><div class="body"><div class="nm">Kimi</div><div class="ds">Aguanta textos larguísimos sin perder el hilo.</div><div class="px">Gratis</div></div></div>
-        <div class="tool"><div class="mono">D</div><div class="body"><div class="nm">DeepSeek</div><div class="ds">Potente y muy barata. Abrió el mercado en 2025.</div><div class="px">Gratis</div></div></div>
-        <div class="tool"><div class="mono">A</div><div class="body"><div class="nm">Apple Intelligence</div><div class="ds">Dentro del iPhone y la Mac. Redacta y resume sin abrir otra app.</div><div class="px">Equipo reciente</div></div></div>
+        <div class="tool"><div class="mono">K</div><div class="body"><div class="nm">Kimi</div><div class="ds">Aguanta textos larguísimos sin perder el hilo.</div><div class="px">Gratis y pago</div></div></div>
+        <div class="tool"><div class="mono">D</div><div class="body"><div class="nm">DeepSeek</div><div class="ds">Potente y muy barata. Sacudió el mercado en 2025.</div><div class="px">Gratis</div></div></div>
+        <div class="tool"><div class="mono">A</div><div class="body"><div class="nm">Apple Intelligence</div><div class="ds">Dentro del iPhone y la Mac. Redacta y resume sin abrir otra app.</div><div class="px">Incluido · equipo reciente</div></div></div>
       </div>
     </div>
 
@@ -242,7 +254,7 @@ footer .ft{font-family:Fraunces;font-style:italic;font-size:21px;color:#f1e9d9;m
       <h3><span class="dot"></span>Investigar con fuentes</h3>
       <div class="tools">
         <div class="tool"><div class="mono">P</div><div class="body"><div class="nm">Perplexity</div><div class="ds">Respuestas con fuentes y citas que puedes verificar.</div><div class="px">Gratis y pago</div></div></div>
-        <div class="tool"><div class="mono">N</div><div class="body"><div class="nm">NotebookLM</div><div class="ds">Le subes tus documentos y responde solo con eso. Hasta te hace un resumen en audio.</div><div class="px">Gratis</div></div></div>
+        <div class="tool"><div class="mono">N</div><div class="body"><div class="nm">NotebookLM</div><div class="ds">Le subes tus documentos y responde solo con eso. Hasta te hace un resumen en audio.</div><div class="px">Gratis y pago</div></div></div>
       </div>
     </div>
 
@@ -259,7 +271,7 @@ footer .ft{font-family:Fraunces;font-style:italic;font-size:21px;color:#f1e9d9;m
       <div class="tools">
         <div class="tool"><div class="mono">Cc</div><div class="body"><div class="nm">CapCut</div><div class="ds">Editar y subtitular video fácil, con cortes automáticos por IA.</div><div class="px">Gratis y pago</div></div></div>
         <div class="tool"><div class="mono">De</div><div class="body"><div class="nm">Descript</div><div class="ds">Edita video y podcast como si borraras texto de un documento.</div><div class="px">Gratis y pago</div></div></div>
-        <div class="tool"><div class="mono">Se</div><div class="body"><div class="nm">Seedance</div><div class="ds">Genera video desde texto. Del frente nuevo de la IA.</div><div class="px">Pago</div></div></div>
+        <div class="tool"><div class="mono">Se</div><div class="body"><div class="nm">Seedance</div><div class="ds">Genera video desde texto. De lo más nuevo que hay.</div><div class="px">Gratis y pago</div></div></div>
       </div>
     </div>
 
@@ -298,7 +310,7 @@ footer .ft{font-family:Fraunces;font-style:italic;font-size:21px;color:#f1e9d9;m
     <ul class="clean two" style="grid-template-columns:1fr 1fr">
       <li><b>Dale un rol:</b> "actúa como mi editora exigente".</li>
       <li><b>Pídele que pregunte</b> lo que le falte antes de responder.</li>
-      <li><b>Para objetividad:</b> pide fuentes y que separe hecho de opinión.</li>
+      <li><b>Pide fuentes:</b> que separe el hecho de la opinión.</li>
       <li><b>Contra el invento:</b> duda de fechas, citas y nombres, pídele que verifique.</li>
     </ul>
     <p class="sub">Pruébalo</p>
@@ -314,7 +326,7 @@ footer .ft{font-family:Fraunces;font-style:italic;font-size:21px;color:#f1e9d9;m
 <section class="s" id="oficina">
   <div class="wrap">
     <div class="shead"><span class="snum">04</span><h2>Tu oficina en minutos</h2></div>
-    <p class="lead">Lo que pidió el grupo, en vivo: las tareas de cada día que comen tiempo, resueltas en lo que dura un café.</p>
+    <p class="lead">Lo que pidió el grupo, en vivo: las tareas de cada día que comen tiempo, resueltas en minutos.</p>
     <ul class="clean two" style="grid-template-columns:1fr 1fr">
       <li>Redactar <b>boletines y cartas</b> en tu tono</li>
       <li><b>Resumir una junta</b> desde tus notas o un audio</li>
@@ -332,7 +344,7 @@ footer .ft{font-family:Fraunces;font-style:italic;font-size:21px;color:#f1e9d9;m
 <section class="s" id="marketing-musica">
   <div class="wrap">
     <div class="shead"><span class="snum">05</span><h2>Marketing, prensa y música</h2></div>
-    <p class="lead">Para lo de Blu2: del plan de un lanzamiento al boletín de prensa, las letras y el video del concierto.</p>
+    <p class="lead">Para lo de Blu2: del plan de un lanzamiento al boletín de prensa, de las letras al video del concierto.</p>
     <ul class="clean two" style="grid-template-columns:1fr 1fr">
       <li><b>Planes de marketing</b> para un lanzamiento o evento</li>
       <li><b>Boletines de prensa</b> con diseño y links de video y fotos</li>
@@ -399,16 +411,379 @@ footer .ft{font-family:Fraunces;font-style:italic;font-size:21px;color:#f1e9d9;m
       <div class="rung"><b>Workflows</b><span>Recetas automáticas paso a paso que se repiten solas cuando las necesitas.</span></div>
       <div class="rung"><b>Skills</b><span>Habilidades que le instalas para que haga algo específico mucho mejor.</span></div>
       <div class="rung"><b>MCP</b><span>Enchufes que la conectan a tus apps: tu correo, tu calendario, tus archivos.</span></div>
-      <div class="rung"><b>CLI</b><span>Manejarla por texto desde la computadora. El modo pro, un superpoder.</span></div>
+      <div class="rung"><b>CLI</b><span>Manejarla por texto desde la computadora. El modo pro, para quien quiera ir más lejos.</span></div>
       <div class="rung"><b>Modelos nuevos</b><span>Generan más que texto. Kimi para documentos enormes, Seedance para video.</span></div>
     </div>
     <div class="vids" style="margin-top:22px"><figure class="vid"><div class="vbox"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/TVYOZ9GDbbE" title="Editar video con CapCut" allowfullscreen></iframe></div><figcaption><b>Editar un video con CapCut</b><br>Un primer paso hacia el contenido visual.</figcaption></figure></div>
   </div>
 </section>
 
+<section class="s" id="ejercicios">
+  <div class="wrap">
+    <div class="shead"><span class="snum">08</span><h2>Ejercicios en vivo</h2><span class="stag">Práctica</span></div>
+    <p class="lead">El paso a paso de cada tarea, con un ejemplo ya hecho y una plantilla para que lo hagas tú ahí mismo con tus datos.</p>
+    <div class="exgrouphead">Oficina y día a día</div>
+<div class="ex" id="ej1">
+  <div class="exh"><h3>De notas o audio caótico de junta a minuta clara en 3 minutos</h3><span class="exm">ChatGPT (o Claude) desde el celular o la computadora · 20 min</span></div>
+  <p class="exo">Convertir tus notas sueltas o la grabación de una junta en una minuta ordenada con acuerdos, responsables y fechas, lista para mandar al equipo.</p>
+  <p class="lab">Cómo se hace</p>
+  <ol class="algo"><li>Abre ChatGPT y empieza un chat nuevo para que no se mezcle con otras conversaciones.</li><li>Junta tu material crudo: copia las notas que escribiste, o si grabaste la junta en el celular, primero pídele a ChatGPT que te transcriba el audio (puedes subir el archivo directo en la versión de paga, o usar la función de dictado del teléfono para que escriba lo que tú le narras).</li><li>Pega tus notas y arriba escribe la instrucción: dile que es una junta de trabajo, qué quieres de salida (resumen, acuerdos, quién hace qué y para cuándo) y en qué tono.</li><li>Lee lo que te devolvió y corrige los nombres o fechas que la herramienta haya entendido mal. Tú conoces el contexto, ella no.</li><li>Pídele que te lo deje en formato para correo o WhatsApp si lo vas a reenviar, y cópialo.</li><li>Guarda la minuta donde la vayas a encontrar: tu correo, una nota del teléfono o tu carpeta del proyecto.</li></ol>
+  <p class="lab">Ejemplo prehecho</p>
+  <p class="sit">Lucía coordina la logística de un festival pequeño y salió de una junta de 40 minutos con tres páginas de notas a mano sobre el escenario, el sonido y los permisos. Tiene que mandar el resumen al equipo antes de comer.</p>
+  <div class="prompt"><div class="pt"><span class="pl">El prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Estas son mis notas de una junta de producción de un evento. Hazme una minuta clara y profesional con: 1) un resumen de 3 o 4 líneas, 2) los acuerdos a los que llegamos, 3) una tabla de tareas con responsable y fecha límite, y 4) los temas que quedaron pendientes de decidir. Tono profesional pero cálido, en español de México. Estas son las notas: &#x27;junta lunes, vino el del sonido (Roberto), dijo que necesita confirmar cuántos micros antes del jueves. Falta decidir si rentamos el escenario grande o el chico, depende del aforo que todavía no nos pasa el lugar (Foro La Higuera). Ana queda de hablar con permisos del municipio esta semana. El catering todavía no cotiza, urge. Yo veo lo del transporte de los equipos.&#x27;</pre></div>
+  <div class="res">Minuta de junta de producción
+Fecha: lunes
+
+Resumen
+Nos reunimos para revisar los pendientes de producción del evento. Avanzamos en sonido y permisos, pero quedó abierta la decisión del escenario porque seguimos esperando el aforo del Foro La Higuera. El catering es el tema más urgente porque todavía no tenemos cotización.
+
+Acuerdos
+- Roberto (sonido) confirmará el número de micrófonos necesarios.
+- Ana se encargará de gestionar los permisos con el municipio.
+- Lucía coordinará el transporte de los equipos.
+- La decisión del escenario (grande o chico) queda condicionada al aforo que debe enviar el foro.
+
+Tareas
+| Tarea | Responsable | Fecha límite |
+| Confirmar número de micrófonos | Roberto | Jueves |
+| Gestionar permisos del municipio | Ana | Esta semana |
+| Coordinar transporte de equipos | Lucía | Por definir |
+| Conseguir cotización de catering | Por asignar | Urgente |
+
+Pendientes de decidir
+- Escenario grande o chico, según el aforo que confirme el Foro La Higuera.
+- Asignar quién persigue la cotización del catering, que está atrasada y es prioridad.</div>
+  <p class="lab">Hazlo en vivo</p>
+  <p class="sit">Cada quien abre ChatGPT y usa notas reales de una junta reciente (o las que tomó hoy en el curso). Pega tu propio material en lugar de los corchetes y manda el prompt. Cuando te lo devuelva, revisa que los nombres y fechas estén bien y corrige lo que haga falta.</p>
+  <div class="prompt"><div class="pt"><span class="pl">Plantilla para llenar</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Estas son mis notas de una junta de [tema de la junta]. Hazme una minuta clara y profesional con: 1) un resumen de 3 o 4 líneas, 2) los acuerdos principales, 3) una tabla de tareas con responsable y fecha límite, y 4) los temas que quedaron pendientes. Tono profesional y cálido, en español de México. Estas son las notas: [pega aquí tus notas tal cual, aunque estén desordenadas]</pre></div>
+</div>
+<div class="ex" id="ej2">
+  <div class="exh"><h3>Redacta un boletín o carta en tu propio tono</h3><span class="exm">Claude (o ChatGPT) en el navegador · 20 min</span></div>
+  <p class="exo">Escribir un boletín o carta que suene a ti y no a robot, en menos de cinco minutos, dándole a la IA un ejemplo de cómo escribes tú.</p>
+  <p class="lab">Cómo se hace</p>
+  <ol class="algo"><li>Abre Claude en el navegador y empieza una conversación nueva.</li><li>Pega primero un texto tuyo de antes (un correo, un mensaje, un párrafo que ya hayas escrito) y dile: &quot;Este es mi estilo de escribir. Fíjate cómo hablo.&quot;</li><li>Pídele lo que necesitas en una sola instrucción: qué tipo de texto es, para quién, qué quieres decir y qué tono quieres mantener.</li><li>Lee el resultado en voz baja como si lo dijeras tú. Si hay alguna frase que tú jamás dirías, márcala.</li><li>Pídele que cambie lo que no te suene: &quot;Esta parte está muy acartonada, dímelo más sencillo&quot; o &quot;quita las palabras rebuscadas&quot;.</li><li>Dale una última leída completa, ajusta el saludo y la despedida a mano, y ya está listo para enviar.</li></ol>
+  <p class="lab">Ejemplo prehecho</p>
+  <p class="sit">Lucía organiza conciertos íntimos en un foro pequeño y quiere mandar un boletín mensual a su lista de seguidores para anunciar la función del cantautor invitado del mes.</p>
+  <div class="prompt"><div class="pt"><span class="pl">El prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Te voy a pasar un mensaje que escribí yo, para que veas mi estilo: &quot;Hola, qué gusto saludarte. Te cuento que este mes tenemos algo muy especial preparado, de esas noches que se quedan contigo un buen rato. Espero verte por aquí.&quot; Ese es mi tono: cálido, cercano, sin formalismos. Ahora, con ese mismo estilo, escríbeme un boletín corto (máximo 4 párrafos) para mi lista de seguidores del foro La Madriguera. Quiero anunciar que el sábado 21 de junio se presenta el cantautor Tomás Ferreira, con un repertorio de canciones nuevas. La entrada cuesta 250 pesos y el cupo es de solo 40 personas, así que conviene apartar lugar pronto. Cierra invitándolos a responder este correo para reservar.</pre></div>
+  <div class="res">Asunto: Una noche con Tomás Ferreira en La Madriguera
+
+Hola, qué gusto saludarte.
+
+Este mes te tengo una de esas noches que dan ganas de no perderse. El sábado 21 de junio se presenta Tomás Ferreira en La Madriguera, y viene con canciones nuevas que apenas está estrenando. Vas a escucharlas aquí, en corto, antes que en cualquier otro lado.
+
+Ya sabes cómo es esto: somos pocos a propósito. Solo caben 40 personas, porque la idea es que se sienta como estar en la sala de tu casa y no en un teatro. La entrada cuesta 250 pesos.
+
+Si quieres venir, contéstame este correo y te aparto tu lugar. Los lugares se van rápido y no quiero que te quedes con las ganas.
+
+Nos vemos el 21. Te va a encantar.
+
+Lucía</div>
+  <p class="lab">Hazlo en vivo</p>
+  <p class="sit">Cada quien va a redactar un boletín o carta real que de verdad necesite mandar pronto: una invitación a un evento, un aviso a clientes, una felicitación, lo que sea. Lo importante es que primero peguen un texto suyo de antes para que la IA agarre su tono, y luego pidan el boletín nuevo. Al final, lean el resultado en voz alta y cambien cualquier frase que no suene a ustedes.</p>
+  <div class="prompt"><div class="pt"><span class="pl">Plantilla para llenar</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Te paso un texto que escribí yo, para que veas mi estilo: &quot;[pega aquí un correo o mensaje tuyo de antes]&quot;. Ese es mi tono. Ahora, con ese mismo estilo, escríbeme [un boletín / una carta] de máximo [número] párrafos para [a quién va dirigido]. Quiero decirles que [lo principal que quieres comunicar: evento, fecha, lugar, precio o lo que sea]. Cierra con [qué quieres que hagan: responder, reservar, llamar]. Tono: [cálido / formal / cercano].</pre></div>
+</div>
+<div class="ex" id="ej3">
+  <div class="exh"><h3>Crear una invitacion para un evento</h3><span class="exm">ChatGPT (o Claude) · 15 min</span></div>
+  <p class="exo">Redactar una invitacion clara y elegante para un evento, lista para mandar por correo o WhatsApp, en menos de cinco minutos.</p>
+  <p class="lab">Cómo se hace</p>
+  <ol class="algo"><li>Abre ChatGPT en el navegador o en la app del celular y empieza un chat nuevo.</li><li>Escribe en una sola frase que evento es, para quien, y como quieres que se sienta la invitacion (formal, calida, breve).</li><li>Dale los datos concretos sin adornos: nombre del evento, fecha, hora, lugar, y como confirmar asistencia.</li><li>Pidele que te de la invitacion en dos versiones: una para correo y una mas corta para WhatsApp.</li><li>Lee el resultado en voz alta. Si algo no suena a ti, escribe &#x27;hazlo mas calido&#x27; o &#x27;mas corto&#x27; y mandalo de nuevo.</li><li>Copia la version que te gusto, pegala en tu correo o WhatsApp, revisa fecha y lugar una ultima vez, y envia.</li></ol>
+  <p class="lab">Ejemplo prehecho</p>
+  <p class="sit">Lucia organiza un coctel para presentar a una cantante nueva, Renata Solis, en un foro de la Roma, y quiere invitar a prensa y amigos del medio.</p>
+  <div class="prompt"><div class="pt"><span class="pl">El prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Ayudame a escribir una invitacion para un evento. Es un coctel de presentacion de una cantante nueva que se llama Renata Solis. Va dirigido a prensa y gente del medio musical. Quiero que se sienta elegante pero calido, nada acartonado. Datos: jueves 19 de junio, 8 de la noche, en el Foro Lumbre, calle Orizaba 120, colonia Roma. Confirmar asistencia con Lucia al 55 1234 5678. Dame dos versiones: una para correo y una mas corta para WhatsApp.</pre></div>
+  <div class="res">VERSION CORREO
+
+Asunto: Te esperamos: presentacion de Renata Solis
+
+Hola, que gusto saludarte.
+
+Nos encantaria que nos acompanaras al coctel de presentacion de Renata Solis, una voz nueva que tenemos muchas ganas de que conozcas. Sera una noche para escucharla de cerca, brindar y platicar sin prisas.
+
+Jueves 19 de junio, 8:00 de la noche
+Foro Lumbre, Orizaba 120, colonia Roma
+
+Los lugares son limitados, asi que te pedimos confirmar tu asistencia con Lucia al 55 1234 5678.
+
+Gracias, y ojala podamos verte ahi.
+
+VERSION WHATSAPP
+
+Hola, te invitamos al coctel de presentacion de Renata Solis. Jueves 19 de junio, 8 de la noche, en el Foro Lumbre (Orizaba 120, Roma). Va a estar muy especial y nos encantaria tenerte. Confirmas asistencia conmigo? Soy Lucia, 55 1234 5678.</div>
+  <p class="lab">Hazlo en vivo</p>
+  <p class="sit">Piensa en un evento real que tengas que organizar pronto, aunque sea chico: una junta, una comida, una presentacion. Llena los corchetes con tus datos verdaderos y manda el prompt. Cuando te de el resultado, pidele un ajuste: &#x27;mas corto&#x27;, &#x27;mas formal&#x27; o &#x27;mas calido&#x27;, el que necesites.</p>
+  <div class="prompt"><div class="pt"><span class="pl">Plantilla para llenar</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Ayudame a escribir una invitacion para un evento. Es [que tipo de evento es]. Va dirigido a [quienes son los invitados]. Quiero que se sienta [formal / calido / breve / festivo]. Datos: [fecha], [hora], en [lugar y direccion]. Confirmar asistencia con [tu nombre] al [tu telefono o correo]. Dame dos versiones: una para correo y una mas corta para WhatsApp.</pre></div>
+</div>
+<div class="ex" id="ej4">
+  <div class="exh"><h3>Armar un itinerario de viaje con toda la logística</h3><span class="exm">ChatGPT (o Claude) · 15 min</span></div>
+  <p class="exo">Convertir las fechas, vuelos y compromisos de un viaje de trabajo en un itinerario día por día, ordenado por hora, con traslados y tiempos muertos resueltos, listo para compartir con quien viaja.</p>
+  <p class="lab">Cómo se hace</p>
+  <ol class="algo"><li>Abre ChatGPT en el navegador y empieza un chat nuevo (botón con el signo de más, arriba a la izquierda).</li><li>Junta en un solo lugar todo lo que ya sabes del viaje: ciudad, fechas, hora de vuelos, hotel, y las juntas o eventos con su hora. No importa que esté desordenado, lo vas a pegar tal cual.</li><li>Pega esa información y pídele que arme el itinerario día por día, ordenado por hora, y que incluya los traslados con tiempo de margen.</li><li>Lee lo que te devolvió y dile qué ajustar con tus palabras: por ejemplo &#x27;deja una hora libre antes de la cena&#x27; o &#x27;el aeropuerto está a 40 minutos, no 20&#x27;.</li><li>Pídele que te lo entregue en un formato que puedas copiar y pegar en WhatsApp o en un correo para mandárselo a quien viaja.</li><li>Cópialo y mándalo. Si surge un cambio después, regresa al mismo chat y dile qué se movió para que reacomode todo.</li></ol>
+  <p class="lab">Ejemplo prehecho</p>
+  <p class="sit">Renata coordina a la cantante Lucía del Río para una gira corta. Lucía vuela a Guadalajara para una entrevista de radio y un show, y Renata necesita pasarle un itinerario claro para que la artista sepa a qué hora la recogen en cada momento.</p>
+  <div class="prompt"><div class="pt"><span class="pl">El prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Ayúdame a armar un itinerario de viaje día por día, ordenado por hora, para un viaje de trabajo. Incluye los traslados con tiempo de margen suficiente y márcame los ratos libres. Esta es la información:
+
+Viaje a Guadalajara. Sale el jueves 12 de junio, vuelo a las 9:40 am desde CDMX, llega 11:05 am. Regresa el viernes 13, vuelo de vuelta a las 8:00 pm.
+Hotel: Casa Bramante, en la colonia Americana.
+Jueves: entrevista en Radio Cumbre a las 4:00 pm. La estación está a 25 minutos del hotel.
+Viernes: prueba de sonido en el Foro Las Jacarandas a la 1:00 pm, y show a las 9:00 pm... espera, el show es el jueves a las 9:00 pm, no el viernes. El viernes solo es regreso.
+El aeropuerto de Guadalajara está a 45 minutos del hotel.
+
+Dámelo en un formato que pueda copiar y pegar en WhatsApp.</pre></div>
+  <div class="res">Aquí está el itinerario. Te dejé margen en los traslados y marqué los ratos libres para que Lucía pueda descansar o comer sin prisa.
+
+*ITINERARIO · Guadalajara · 12 y 13 de junio*
+
+*Jueves 12 de junio*
+9:40 am · Vuelo CDMX → Guadalajara
+11:05 am · Llegada al aeropuerto
+11:15 am · Traslado al hotel (45 min aprox.)
+12:00 pm · Check in en Casa Bramante, colonia Americana
+12:00 a 3:00 pm · Rato libre para comer y descansar
+3:30 pm · Salida del hotel rumbo a Radio Cumbre (25 min, con margen)
+4:00 pm · Entrevista en Radio Cumbre
+5:00 pm · Regreso al hotel o tiempo libre
+8:00 pm · Salida hacia el Foro Las Jacarandas
+9:00 pm · Show
+
+*Viernes 13 de junio*
+Mañana libre en el hotel
+6:15 pm · Salida del hotel al aeropuerto (45 min, llegando con tiempo para el vuelo)
+8:00 pm · Vuelo Guadalajara → CDMX
+
+Nota: dejé la prueba de sonido fuera porque, según me dijiste, el show es el jueves. Si la prueba de sonido va el jueves antes del show, dime a qué hora y la acomodo. Si prefieres que agregue el dato del traslado al aeropuerto el jueves desde el foro al hotel, también te lo pongo.</div>
+  <p class="lab">Hazlo en vivo</p>
+  <p class="sit">Piensa en un viaje real que tengas que organizar (tuyo, de un artista o de alguien de tu equipo). Anota en una hoja o en el celular las fechas, los vuelos, el hotel y los compromisos con su hora. Luego abre ChatGPT, llena la plantilla con tus datos y pégala. Cuando te dé el itinerario, pídele un ajuste con tus propias palabras para que veas cómo lo reacomoda.</p>
+  <div class="prompt"><div class="pt"><span class="pl">Plantilla para llenar</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Ayúdame a armar un itinerario de viaje día por día, ordenado por hora, para un viaje de trabajo. Incluye los traslados con tiempo de margen y márcame los ratos libres. Esta es la información:
+
+Viaje a [ciudad]. Sale el [día y fecha], vuelo a las [hora], llega [hora]. Regresa el [día y fecha], vuelo a las [hora].
+Hotel: [nombre del hotel y zona].
+[Día]: [compromiso] a las [hora], está a [tiempo] del hotel.
+[Otro compromiso o día con su hora y traslado].
+El aeropuerto está a [tiempo] del hotel.
+
+Dámelo en un formato que pueda copiar y pegar en WhatsApp.</pre></div>
+</div>
+<div class="ex" id="ej5">
+  <div class="exh"><h3>Arma tu semana en el calendario con un solo mensaje</h3><span class="exm">ChatGPT (o Claude) + Google Calendar · 20 min</span></div>
+  <p class="exo">Convertir tu lista mental de pendientes y eventos en una agenda semanal ordenada por dia y hora, lista para copiar a tu calendario.</p>
+  <p class="lab">Cómo se hace</p>
+  <ol class="algo"><li>Abre ChatGPT en tu navegador o telefono y empieza un chat nuevo.</li><li>Escribe tus pendientes de la semana como te salgan, sin orden, tal cual los piensas (juntas, llamadas, entregas, recordatorios).</li><li>Pega el prompt de abajo arriba de tu lista y dale enviar.</li><li>Lee la agenda que te devuelve y dile que ajuste lo que no te cuadre: &#x27;la junta del martes muevela a las 11&#x27;, &#x27;agrega 30 min de comida cada dia&#x27;.</li><li>Cuando quede bien, pidele: &#x27;dame esta agenda en formato para pegar en Google Calendar, un evento por linea con dia, hora de inicio y fin&#x27;.</li><li>Copia cada evento a tu calendario, o usa la opcion de crear evento y pega los datos uno por uno.</li></ol>
+  <p class="lab">Ejemplo prehecho</p>
+  <p class="sit">Sofia coordina a tres artistas en una agencia chica. El lunes en la manana tiene todo en la cabeza y nada en el calendario: ensayo de la cantante Lucia Mar, una llamada con el foro El Granero, y la entrega del rider tecnico.</p>
+  <div class="prompt"><div class="pt"><span class="pl">El prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Eres mi asistente de agenda. Te paso mis pendientes de la semana en desorden. Organizalos en una agenda de lunes a viernes, por dia y hora, en horario de oficina de 9 a 6. Agrupa lo que tenga sentido junto, deja 1 hora de comida diaria y no encimes eventos. Marca con un asterisco lo urgente. Devuelvemelo como lista por dia. Mis pendientes: ensayo con Lucia Mar (2 horas, miercoles), llamar al foro El Granero para confirmar fecha (urgente, antes del martes), enviar rider tecnico del show del 20, revisar contrato del DJ Tono Reyes, junta de equipo semanal, contestar correos pendientes, agendar sesion de fotos con Lucia.</pre></div>
+  <div class="res">Aqui esta tu semana organizada:
+
+LUNES
+9:00 a 10:00  Revisar y contestar correos pendientes
+10:00 a 11:00  *Llamar al foro El Granero para confirmar fecha (urgente)
+11:00 a 12:00  Revisar contrato del DJ Tono Reyes
+2:00 a 3:00  *Enviar rider tecnico del show del 20
+
+MARTES
+10:00 a 11:00  Junta de equipo semanal
+12:00 a 1:00  Agendar sesion de fotos con Lucia Mar (definir fecha y lugar)
+
+MIERCOLES
+11:00 a 1:00  Ensayo con Lucia Mar
+
+JUEVES y VIERNES quedaron libres como colchon para lo que se atraviese o para mover algo que no alcances.
+
+Comida: deje el bloque de 1:00 a 2:00 libre cada dia (el lunes lo recorri a la 1 por el rider).
+
+Lo urgente que no puede esperar: la llamada a El Granero el lunes y el rider tecnico el mismo dia. Si quieres meto recordatorios el dia anterior, dime.</div>
+  <p class="lab">Hazlo en vivo</p>
+  <p class="sit">Cada quien escribe sus pendientes reales de esta semana en una lista rapida, sin preocuparse por el orden. Luego pega la plantilla arriba de su lista, la manda, y le pide al asistente un ajuste (cambiar un horario o agregar un bloque de comida). Al final pide la version lista para el calendario.</p>
+  <div class="prompt"><div class="pt"><span class="pl">Plantilla para llenar</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Eres mi asistente de agenda. Te paso mis pendientes de la semana en desorden. Organizalos de lunes a viernes, por dia y hora, en mi horario de [hora inicio] a [hora fin]. Deja [tiempo] de comida diaria, no encimes nada y marca con asterisco lo urgente. Devuelvemelo como lista por dia. Mis pendientes: [escribe aqui todo lo que tengas que hacer esta semana, como te salga].</pre></div>
+</div>
+    <div class="exgrouphead">Música, prensa y marketing</div>
+<div class="ex" id="ej6">
+  <div class="exh"><h3>Plan de marketing de un lanzamiento en una sola pagina</h3><span class="exm">ChatGPT (o Claude) · 20 min</span></div>
+  <p class="exo">Convertir la idea de tu evento o lanzamiento en un plan de difusion claro, con calendario semana por semana y los textos listos para cada canal.</p>
+  <p class="lab">Cómo se hace</p>
+  <ol class="algo"><li>Abre ChatGPT en el navegador y empieza un chat nuevo para no mezclarlo con otras conversaciones.</li><li>Anota en una hoja los datos basicos de tu evento antes de escribir: que es, quien toca o se lanza, fecha, lugar, precio, y a quien quieres que llegue.</li><li>Pega el prompt de la plantilla y rellena cada [corchete] con esos datos. Entre mas especifica seas, mejor sale el plan.</li><li>Lee lo que te devuelve y pidele ajustes en el mismo chat: &#x27;hazlo mas corto&#x27;, &#x27;el tono mas relajado&#x27;, &#x27;agrega ideas para Instagram&#x27;, lo que necesites.</li><li>Pide que te separe los textos por canal: uno para WhatsApp, uno para el post de Instagram, uno para el correo. Asi solo copias y pegas.</li><li>Guarda el plan en una nota o documento y usa el calendario como checklist conforme avanzan las semanas.</li></ol>
+  <p class="lab">Ejemplo prehecho</p>
+  <p class="sit">Sofia organiza el concierto de una cantante nueva, Renata Solis, en un foro chico de la Roma, y quiere armar la difusion de las cuatro semanas previas.</p>
+  <div class="prompt"><div class="pt"><span class="pl">El prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Eres mi asistente de marketing para eventos de musica. Ayudame a armar un plan de difusion para este evento:
+
+- Evento: concierto intimo de Renata Solis, cantautora de pop acustico
+- Fecha: sabado 12 de julio, 9 de la noche
+- Lugar: Foro La Buhardilla, colonia Roma, CDMX, capacidad 80 personas
+- Boletos: 350 pesos en preventa, 450 en taquilla
+- A quien quiero llegar: gente de 25 a 45 anos que sigue musica independiente en CDMX, publico de cafe-concierto
+- Canales que tengo: Instagram, lista de WhatsApp, correo a base de contactos
+
+Dame un plan semana por semana (4 semanas) con que publicar y cuando, y al final separa los textos listos para copiar por cada canal. Tono calido y cercano, nada acartonado.</pre></div>
+  <div class="res">Plan de difusion: Renata Solis en La Buhardilla
+
+Semana 1 (del 16 al 22 de junio) - Avisar que viene algo
+Abres la conversacion sin vender todavia. Un video corto de Renata ensayando o afinando la guitarra, con el texto &quot;se viene algo en julio&quot;. La idea es despertar curiosidad y que la gente empiece a preguntar.
+
+Semana 2 (del 23 al 29 de junio) - Anuncio oficial y preventa
+Aqui sueltas la fecha, el lugar y abres la preventa de 350 pesos. Publicas el cartel en Instagram, mandas el primer correo a tu base y avisas por WhatsApp a tus contactos mas cercanos primero, porque ellos llenan las primeras filas.
+
+Semana 3 (del 30 de junio al 6 de julio) - Mostrar de que va
+Comparte un fragmento de una cancion de Renata, una foto del foro por dentro para que vean lo intimo del lugar, y recuerda que la preventa termina pronto. Este es buen momento para una historia de Renata contando que va a tocar esa noche.
+
+Semana 4 (del 7 al 12 de julio) - Ultima llamada
+Recuerda todos los dias que quedan pocos boletos. El dia del evento publica en la manana &quot;hoy es el dia&quot; y en la tarde manda un ultimo WhatsApp a quienes mostraron interes y no compraron.
+
+Textos listos para copiar
+
+Instagram (anuncio, semana 2):
+Renata Solis en concierto, una sola noche. Sabado 12 de julio, 9 de la noche, en La Buhardilla, en la Roma. Solo 80 lugares, porque queremos que sea de cerca. Preventa a 350 pesos, link en la bio.
+
+WhatsApp (a contactos cercanos):
+Hola, te aviso a ti primero. El 12 de julio Renata Solis toca en La Buhardilla, es un foro chiquito de la Roma y solo entran 80 personas. La preventa esta en 350. Si te animas te aparto, namas dime.
+
+Correo (anuncio):
+Asunto: Una noche con Renata Solis, 12 de julio
+
+Hola, te escribo para invitarte a algo que tenemos muchas ganas de hacer. El sabado 12 de julio Renata Solis da un concierto intimo en La Buhardilla, en la Roma, a las 9 de la noche. Es un espacio para 80 personas, asi que se siente cerca y tranquilo. Los boletos en preventa estan en 350 pesos y los puedes apartar respondiendo este correo. Ojala te animes, va a estar bonito.</div>
+  <p class="lab">Hazlo en vivo</p>
+  <p class="sit">Cada quien piensa en un evento o lanzamiento real que tenga en puerta (un concierto, una presentacion, el lanzamiento de una cancion, una fecha en un foro). Llena la plantilla con tus datos verdaderos y pidele a ChatGPT el plan. Al final, pide que te separe los textos por canal y ajusta el tono hasta que suene a ti.</p>
+  <div class="prompt"><div class="pt"><span class="pl">Plantilla para llenar</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Eres mi asistente de marketing para eventos de musica. Ayudame a armar un plan de difusion para este evento:
+
+- Evento: [que es y quien toca o se lanza]
+- Fecha: [dia y hora]
+- Lugar: [foro y colonia, o plataforma si es lanzamiento digital]
+- Boletos o precio: [cuanto cuesta, o gratis]
+- A quien quiero llegar: [edad, gustos, ciudad de tu publico]
+- Canales que tengo: [Instagram, WhatsApp, correo, lo que uses]
+
+Dame un plan semana por semana ([cuantas semanas] semanas) con que publicar y cuando, y al final separa los textos listos para copiar por cada canal. Tono [calido y cercano / formal / divertido], en espanol mexicano.</pre></div>
+</div>
+<div class="ex" id="ej7">
+  <div class="exh"><h3>Boletín de prensa con bloque de links de video y fotos</h3><span class="exm">ChatGPT (o Claude) · 20 min</span></div>
+  <p class="exo">Armar un boletín de prensa listo para enviar a medios, con su bloque de material descargable (video y fotos) bien ordenado, en menos de 20 minutos.</p>
+  <p class="lab">Cómo se hace</p>
+  <ol class="algo"><li>Abre ChatGPT y junta antes los datos básicos a la mano: nombre del artista, qué se anuncia (single, gira, concierto), fecha, lugar, y dos o tres frases de contexto.</li><li>Sube o pega los links que ya tengas del material: el video en YouTube o Vimeo, la carpeta de fotos en Google Drive o Dropbox, y el link para escuchar la canción en Spotify.</li><li>Pega el prompt de ejemplo cambiando los datos por los del artista real, e incluye al final todos los links que reuniste.</li><li>Pídele que separe el boletín en tres partes: el cuerpo de la noticia, una cita textual del artista, y un bloque al final titulado Material para prensa con los links etiquetados.</li><li>Revisa que los nombres, fechas y lugares estén correctos, y que cada link diga claramente qué es (video, fotos en alta, audio).</li><li>Pide un ajuste si algo suena acartonado: dile que lo haga más cálido o más directo, y copia el resultado a tu correo o documento.</li></ol>
+  <p class="lab">Ejemplo prehecho</p>
+  <p class="sit">Carolina maneja la prensa de una cantante llamada Sofía Mendieta, que estrena el single Camino de Sal y necesita mandar el boletín a medios culturales esta misma tarde.</p>
+  <div class="prompt"><div class="pt"><span class="pl">El prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Eres encargada de prensa de una artista de música. Escribe un boletín de prensa en español de México, tono cálido y profesional, para anunciar este lanzamiento. Sepáralo en tres partes claras: 1) el cuerpo de la noticia, 2) una cita textual de la artista, 3) un bloque final titulado &#x27;Material para prensa&#x27; con los links etiquetados según qué es cada uno. Datos: Artista: Sofía Mendieta. Anuncio: estreno del single &#x27;Camino de Sal&#x27;. Fecha de estreno: viernes 13 de junio de 2026. Contexto: es su primer sencillo después de dos años, grabado en CDMX, mezcla bolero con sonidos electrónicos. Links: video oficial en YouTube https://youtu.be/ejemplo123, fotos en alta resolución en Drive https://drive.google.com/ejemplo-fotos, canción en Spotify https://open.spotify.com/ejemplo-track.</pre></div>
+  <div class="res">BOLETÍN DE PRENSA
+
+Sofía Mendieta regresa con &#x27;Camino de Sal&#x27;, su primer sencillo en dos años
+
+Ciudad de México, junio de 2026. Después de un silencio de dos años, la cantante Sofía Mendieta vuelve a los escenarios sonoros con &#x27;Camino de Sal&#x27;, un sencillo que estrena este viernes 13 de junio. La canción, grabada en la Ciudad de México, cruza la nostalgia del bolero con texturas electrónicas, una combinación que la artista venía buscando desde su último disco.
+
+&#x27;Camino de Sal&#x27; nace de un periodo de pausa y reencuentro. La pieza conserva la voz íntima que caracteriza a Mendieta, ahora envuelta en arreglos que abren su sonido hacia algo más contemporáneo, sin perder la calidez de raíz.
+
+Cita de la artista:
+
+&quot;Estos dos años los necesitaba para volver a escuchar qué quería decir. &#x27;Camino de Sal&#x27; es esa respuesta: una canción que mira atrás con cariño pero camina hacia adelante.&quot;
+
+Material para prensa
+
+Video oficial (YouTube): https://youtu.be/ejemplo123
+Fotos en alta resolución (Google Drive): https://drive.google.com/ejemplo-fotos
+Escucha el sencillo (Spotify): https://open.spotify.com/ejemplo-track
+
+Contacto de prensa: [tu nombre y correo]</div>
+  <p class="lab">Hazlo en vivo</p>
+  <p class="sit">Cada quien piensa en un artista real o inventado que maneje y un anuncio concreto (un concierto, un single, una gira). Reúne tus tres links: video, fotos y audio. Si no tienes links reales, escribe links de ejemplo para practicar el formato. Pega la plantilla en ChatGPT, llena los corchetes con tus datos y genera tu boletín. Luego pídele un ajuste de tono para que suene a ti.</p>
+  <div class="prompt"><div class="pt"><span class="pl">Plantilla para llenar</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Eres encargada de prensa de una artista de música. Escribe un boletín de prensa en español de México, tono cálido y profesional, para anunciar este lanzamiento. Sepáralo en tres partes: 1) cuerpo de la noticia, 2) una cita textual de la artista, 3) un bloque final titulado &#x27;Material para prensa&#x27; con los links etiquetados según qué es cada uno. Datos: Artista: [nombre del artista]. Anuncio: [qué se anuncia: single, concierto, gira]. Fecha: [fecha del evento o estreno]. Lugar: [ciudad o recinto, si aplica]. Contexto: [dos o tres frases sobre el artista y el lanzamiento]. Links: video [pega tu link de YouTube o Vimeo], fotos en alta [pega tu link de Drive o Dropbox], audio [pega tu link de Spotify u otra plataforma].</pre></div>
+</div>
+<div class="ex" id="ej8">
+  <div class="exh"><h3>Escribe y pule la letra de una canción con la IA como tu co-autora</h3><span class="exm">ChatGPT (o Claude) · 25 min</span></div>
+  <p class="exo">Convertir una idea o sentimiento suelto en una letra con estructura completa (verso, coro, puente) y luego pulirla para que suene natural y se sienta tuya.</p>
+  <p class="lab">Cómo se hace</p>
+  <ol class="algo"><li>Abre ChatGPT y dale primero el CONTEXTO antes de pedir nada: género de la canción, el tema o sentimiento, a quién le canta y el tono que quieres (nostálgico, fiestero, romántico).</li><li>Pídele la estructura completa en una sola instrucción: dos versos, un coro que se repita y un puente. Indícale que el coro debe ser fácil de recordar y cantar.</li><li>Lee lo que te dio en voz alta. Marca las líneas que sí te laten y las que suenan forzadas, rebuscadas o que nadie diría hablando.</li><li>Pídele que cambie SOLO las líneas que no te gustaron, diciéndole por qué: &#x27;esta suena muy formal&#x27;, &#x27;esta palabra no la usamos aquí&#x27;, &#x27;quiero que rime con la anterior&#x27;.</li><li>Pídele dos o tres versiones alternas del coro para escoger, porque el coro es lo que la gente se va a aprender.</li><li>Edita tú la versión final a mano: cambia una palabra por la que tú dirías, ajusta para que quepa en la melodía. La IA da el borrón, la voz es tuya.</li></ol>
+  <p class="lab">Ejemplo prehecho</p>
+  <p class="sit">Sofía maneja a una cantautora joven llamada Renata Solís, que quiere sacar un sencillo de pop suave sobre regresar a la casa de la infancia y encontrarla vacía. Sofía tiene la idea pero no es letrista, así que arranca el borrador con la IA.</p>
+  <div class="prompt"><div class="pt"><span class="pl">El prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Eres co-autora de letras de canciones en español de México. Quiero la letra de una canción de pop suave y nostálgico para una cantautora joven. El tema: regresar a la casa donde creciste y encontrarla vacía, con los muebles cubiertos por sábanas. Es íntimo, sin drama exagerado, como hablándole a alguien de confianza. Dame esta estructura: dos versos, un coro que se repita y un puente al final. El coro tiene que ser sencillo y fácil de cantar. Usa lenguaje cotidiano, nada rebuscado.</pre></div>
+  <div class="res">VERSO 1
+Abrí la puerta y olía a guardado,
+la luz entraba por donde siempre entró.
+Mi cuarto sigue ahí, del mismo lado,
+pero la cama ya no es cama, es un rincón.
+
+VERSO 2
+Las sábanas cubriendo cada silla,
+fantasmas de algodón en el salón.
+Toqué el piano y sonó la misma orilla
+de aquella tarde que olvidé en un cajón.
+
+CORO
+Y me quedé parada en la cocina,
+donde tu voz me llamaba a comer.
+La casa está vacía y todavía
+me sé de memoria cómo amanecer.
+
+PUENTE
+No vine por las cosas, vine a ver
+si todavía cabía aquí mi nombre.
+Y sí cupo, aunque ya no haya con quién
+sentarme a esperar que se haga de noche.</div>
+  <p class="lab">Hazlo en vivo</p>
+  <p class="sit">Cada quien piensa en una canción que le gustaría que existiera: puede ser para un artista que maneja, para un evento, o algo personal. Llena los corchetes con tu propio tema y se lo pasas a ChatGPT. Cuando te dé la letra, escoge UNA línea que no te late y pídele que solo esa la cambie, explicándole por qué.</p>
+  <div class="prompt"><div class="pt"><span class="pl">Plantilla para llenar</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Eres co-autora de letras de canciones en español de México. Quiero la letra de una canción de [género: pop / balada / cumbia / regional]. El tema es [de qué trata, en una frase]. Le canta a [a quién o sobre quién]. El tono que busco es [nostálgico / romántico / fiestero / esperanzador]. Dame dos versos, un coro que se repita y un puente. El coro tiene que ser fácil de recordar y cantar. Usa lenguaje cotidiano, nada rebuscado, como lo diríamos hablando.</pre></div>
+</div>
+<div class="ex" id="ej9">
+  <div class="exh"><h3>Crea una cancion o jingle a la medida con Suno</h3><span class="exm">Suno (suno.com o app Suno) · 25 min</span></div>
+  <p class="exo">Generar una cancion original lista para usar en un evento, una campana o un regalo, solo describiendo el estilo y dandole la letra.</p>
+  <p class="lab">Cómo se hace</p>
+  <ol class="algo"><li>Abre suno.com, crea tu cuenta gratis con tu correo y entra al boton Create. Asegurate de activar el modo Custom (Personalizado) para poder escribir tu propia letra y tu propio estilo.</li><li>En el campo Style of Music (estilo) escribe el genero, el animo y la voz que quieres, en palabras sencillas. Ejemplo: bolero romantico, voz femenina calida, guitarra y piano, tempo lento.</li><li>En el campo Lyrics (letra) pega tu letra. Si no tienes letra, pidesela primero a ChatGPT o a Claude describiendo de que trata, y luego la copias y pegas aqui. Usa las etiquetas [Verso], [Coro] y [Puente] para marcar las partes.</li><li>Ponle un titulo a la cancion y presiona Create. Suno te va a entregar dos versiones distintas en uno o dos minutos para que escojas la que mas te guste.</li><li>Escucha las dos, elige tu favorita y usa los tres puntitos para descargarla en MP3 o copiar el enlace para compartirla por WhatsApp o redes.</li><li>Si algo no te late, no empieces de cero: usa Extend para alargarla o vuelve a generar ajustando una sola cosa del estilo, por ejemplo cambiar voz femenina calida por voz masculina grave.</li></ol>
+  <p class="lab">Ejemplo prehecho</p>
+  <p class="sit">Carolina maneja la red de una cantante llamada Lucia Sandoval y quiere un jingle corto y pegajoso para anunciar en redes su concierto en el foro Casa Aurora.</p>
+  <div class="prompt"><div class="pt"><span class="pl">El prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Estilo: pop alegre y luminoso, voz femenina joven, sintetizadores brillantes, palmas, tempo medio, ambiente de fiesta.
+
+Letra:
+[Verso]
+Apaga el telefono, ya es la hora,
+Lucia Sandoval te llama y enamora.
+[Coro]
+Nos vemos en Casa Aurora,
+la noche se enciende ahora,
+baila conmigo sin reloj,
+que hoy la ciudad tiene voz.
+[Puente]
+Un boleto, una cancion,
+guardame un lugar en tu corazon.</pre></div>
+  <div class="res">Suno entrego dos versiones de un jingle de cuarenta segundos. La que escogio Carolina arranca con palmas y un sintetizador brillante, la voz entra fresca y se siente como una invitacion de una amiga, no como un comercial. El coro Nos vemos en Casa Aurora se queda en la cabeza desde la primera escuchada, que es justo lo que necesita un anuncio de evento. Carolina lo descargo en MP3, le puso encima la fecha y la liga de boletos en un video vertical, y lo subio a las historias de Instagram de Lucia. En dos dias el clip tenia mas guardados que cualquier flyer estatico que habian publicado antes.</div>
+  <p class="lab">Hazlo en vivo</p>
+  <p class="sit">Cada quien piensa en algo real que quiera musicalizar: un evento proximo, el lanzamiento de un artista, una felicitacion de cumpleanos para un cliente, o el saludo de bienvenida de su marca. Llena la plantilla con tus datos, pegala en Suno en modo Custom y genera. Cuando tengan sus dos versiones, escuchamos tres en bocina y comparamos cual quedo mas natural y por que.</p>
+  <div class="prompt"><div class="pt"><span class="pl">Plantilla para llenar</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Estilo: [genero, por ejemplo bolero, pop, cumbia, balada], [animo: alegre, romantico, nostalgico], voz [femenina o masculina] [calida, joven, grave], [instrumentos principales], tempo [lento, medio, rapido].
+
+Letra:
+[Verso]
+[dos lineas que digan de que trata, mencionando el nombre del artista, evento o persona]
+[Coro]
+[dos o tres lineas pegajosas que se repitan, incluyendo el lugar o la fecha si aplica]
+[Puente]
+[una linea final que invite a actuar: ven, escucha, reserva, celebra]</pre></div>
+</div>
+<div class="ex" id="ej10">
+  <div class="exh"><h3>Edita y subtitula un clip de concierto en CapCut</h3><span class="exm">CapCut (app de celular) · 20 min</span></div>
+  <p class="exo">Convertir un video crudo de un concierto en un clip vertical de 30 segundos, recortado, con música pareja y subtítulos automáticos, listo para subir a Instagram o TikTok.</p>
+  <p class="lab">Cómo se hace</p>
+  <ol class="algo"><li>Abre CapCut, toca el botón grande de Nuevo proyecto y elige el video del concierto que grabaste desde tu galería.</li><li>Arrastra los bordes azules del clip en la línea de tiempo para dejar solo el mejor momento, entre 20 y 30 segundos, y borra lo demás manteniendo presionado y tocando Eliminar.</li><li>Toca Audio y luego Extraer audio o sube el nivel de la pista del video; si suena disparejo, activa Reducir ruido y baja un poco el volumen donde grita el público.</li><li>Toca Texto, luego Subtítulos automáticos, elige Español y deja que CapCut transcriba lo que se canta o se dice; espera unos segundos a que aparezcan los textos.</li><li>Revisa cada subtítulo tocándolo, corrige las palabras que salieron mal y elige una tipografía grande y legible con fondo o sombra para que se lea sobre el escenario.</li><li>Toca Exportar arriba a la derecha, elige 1080p y guarda el clip en tu galería listo para publicar.</li></ol>
+  <p class="lab">Ejemplo prehecho</p>
+  <p class="sit">Laura maneja la difusión de la cantante Renata Solís y grabó tres minutos del show en el Foro Lunaria. Quiere sacar un clip corto para el Instagram de la artista antes de que se enfríe la noche.</p>
+  <div class="prompt"><div class="pt"><span class="pl">El prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Acabo de grabar un video de 3 minutos del concierto de mi artista en un foro. Quiero hacer un clip vertical de 30 segundos para Instagram. Dime exactamente qué tocar en CapCut, paso por paso, para recortar el mejor momento, emparejar el audio y ponerle subtítulos automáticos en español. Explícamelo simple porque apenas estoy aprendiendo la app.</pre></div>
+  <div class="res">Va paso por paso, sin prisa.
+
+1. Abre CapCut y toca Nuevo proyecto. Selecciona tu video de 3 minutos y dale Agregar.
+
+2. Para recortar: el video aparece como una barra en la parte de abajo. Toca esa barra una vez para seleccionarla, te saldrán dos bordes blancos en las puntas. Arrastra el borde izquierdo hasta donde empieza el momento bueno y el derecho hasta donde termina. Busca que queden unos 30 segundos. Lo que cortes desaparece solo.
+
+3. Para el audio: si el sonido del público tapa la voz, toca la barra del video, luego el ícono de Volumen y bájalo un poco, alrededor de 80. Si quedó muy ruidoso, busca Reducir ruido y actívalo. Si prefieres ponerle la canción de estudio encima, toca Audio, luego Sonidos, y súbela desde tus archivos.
+
+4. Para los subtítulos: toca Texto, después Subtítulos automáticos. Elige el idioma Español y dale Crear. CapCut va a escuchar el video y escribir solo lo que se canta. Tarda como medio minuto.
+
+5. Revisa: toca cada subtítulo y corrige las palabras que salieron raras, los nombres propios casi siempre hay que arreglarlos. Ponles una letra grande con sombra para que se lean sobre las luces del escenario.
+
+6. Cuando estés conforme, toca Exportar arriba a la derecha, elige 1080p y se guarda en tu galería. De ahí lo subes directo a Instagram.
+
+Un consejo: para que se vea profesional, deja que el primer segundo sea el momento más fuerte, así nadie pasa de largo el video.</div>
+  <p class="lab">Hazlo en vivo</p>
+  <p class="sit">Cada quien abre CapCut con un video de concierto o evento que tenga en su celular (si nadie trae uno, usen cualquier video propio para practicar el flujo). Sigue los pasos del algoritmo y, si te atoras en alguno, pega esta plantilla en el chat de IA llenando tus propios datos para que te guíe en ese paso específico.</p>
+  <div class="prompt"><div class="pt"><span class="pl">Plantilla para llenar</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Estoy editando en CapCut un video de [tipo de evento: concierto, ensayo, backstage] de mi artista [nombre del artista]. Quiero un clip vertical de [duración: 20, 30, 60] segundos para [red: Instagram, TikTok, Facebook]. Me atoré en el paso de [lo que no te sale: recortar, bajar el ruido, poner subtítulos, exportar]. Explícame qué tocar exactamente en la app, paso por paso y en palabras simples.</pre></div>
+</div>
+  </div>
+</section>
+
 <section class="s" id="kit" style="border-bottom:none">
   <div class="wrap">
-    <div class="shead"><span class="snum">08</span><h2>Tu kit para seguir</h2></div>
+    <div class="shead"><span class="snum">09</span><h2>Tu kit para seguir</h2></div>
     <p class="lead">Imprime esto o guárdalo. Es lo que te llevas para usarla sola desde mañana.</p>
     <div class="cheat">
       <div class="c"><h3>La fórmula</h3><ul>
