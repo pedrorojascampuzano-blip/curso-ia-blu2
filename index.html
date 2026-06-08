@@ -5,412 +5,432 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IA a tu manera · Blu2</title>
 <meta name="theme-color" content="#0047ab">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230047ab'/><text x='16' y='23' font-family='Arial' font-weight='bold' font-size='17' fill='%23fff' text-anchor='middle'>b2</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230047ab'/><text x='16' y='23' font-family='Arial' font-weight='bold' font-size='16' fill='%23fff' text-anchor='middle'>b2</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#eef0f3; --panel:#fff; --ink:#13151a; --ink2:#565d68; --line:#e0e3e9;
-  --blu:#0047ab; --blu2:#0073cf; --bluink:#0a2a52; --soft:#e7eefb;
-}
+:root{--blu:#0047ab;--blu2:#0073cf;--ink:#0a2a52;--bg:#eef0f3;--paper:#fff;--ink2:#565d68;--line:#dfe3ea;--soft:#e7eefb;--gold:#e0b24c}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'Source Sans 3',system-ui,sans-serif;font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3{font-family:'Fjalla One',Impact,sans-serif;font-weight:400;line-height:1.02;letter-spacing:.005em;margin:0}
-.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
-a{color:var(--blu)}
-::selection{background:var(--blu);color:#fff}
-.eyebrow{font-family:'Source Sans 3';font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--blu2)}
-.prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--blu);z-index:99;transition:width .1s}
-.rv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.6,.3,1),transform .7s cubic-bezier(.2,.6,.3,1)}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+html,body{margin:0;height:100%;overflow:hidden;font-family:'Source Sans 3',system-ui,sans-serif;background:#06203f;color:var(--ink);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Fjalla One',Impact,sans-serif;font-weight:400;margin:0;line-height:1.03;letter-spacing:.01em}
+.deck{position:fixed;inset:0}
+.section{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .4s ease}
+.section.active{opacity:1;visibility:visible;z-index:2}
+.track{display:flex;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.view{flex:0 0 100%;height:100%;overflow-y:auto;padding:8vh 7vw 11vh}
+.vi{max-width:1000px;margin:auto;width:100%;min-height:100%;display:flex;flex-direction:column;justify-content:center}
+.t-blue{background:linear-gradient(160deg,#0047ab,#0a2a52 78%);color:#eaf1fb}
+.t-ink{background:#0a2a52;color:#eaf1fb}
+.t-light{background:var(--bg)}
+.t-white{background:var(--paper)}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--blu2);margin-bottom:16px}
+.t-blue .eyebrow,.t-ink .eyebrow{color:#9fc4f5}
+.kick{font-size:clamp(38px,6.6vw,88px);color:#fff;line-height:.98;letter-spacing:.01em}
+.t-light .kick,.t-white .kick{color:var(--blu)}
+.big{font-size:clamp(30px,4.4vw,56px);max-width:18ch;color:inherit}
+.t-light .big,.t-white .big{color:var(--ink)}
+.say{font-size:clamp(26px,3.4vw,44px);max-width:20ch}
+.note{font-size:clamp(16.5px,1.9vw,20px);max-width:60ch;margin-top:18px;color:var(--ink2);font-weight:300}
+.t-blue .note,.t-ink .note{color:#c5d7f0}
+.lede{font-family:'Source Sans 3';font-size:19px;color:var(--ink2);max-width:56ch;margin:0 0 6px}
+.t-blue .lede,.t-ink .lede{color:#c5d7f0}
 
-/* HERO */
-.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:70px 0 56px;background:linear-gradient(160deg,#0047ab 0%,#0a2a52 70%,#06203f 100%);color:#eaf1fb;position:relative}
-.hero .logo{height:30px;margin-bottom:42px;filter:brightness(0) invert(1);opacity:.92}
-.hero h1{font-size:clamp(52px,11vw,150px);color:#fff;line-height:.92;letter-spacing:.01em}
-.hero .tag{font-size:clamp(17px,2vw,22px);color:#bcd0ee;max-width:40ch;margin:26px 0 0;font-weight:300}
-.hero .foot{display:flex;flex-wrap:wrap;gap:30px;margin-top:46px;font-size:14px;color:#9fb6da}
-.hero .foot b{color:#fff;font-family:'Fjalla One';font-weight:400;display:block;font-size:18px;letter-spacing:.02em}
-.hero .scroll{margin-top:50px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#bcd0ee}
+/* formula chips */
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.chip{flex:1;min-width:130px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:11px;padding:13px 15px}
+.t-light .chip,.t-white .chip{background:#fff;border-color:var(--line)}
+.chip .n{font-family:'Fjalla One';color:var(--gold);font-size:14px}
+.t-light .chip .n,.t-white .chip .n{color:var(--blu2)}
+.chip b{display:block;font-size:15.5px;margin:4px 0 2px;color:#fff}
+.t-light .chip b,.t-white .chip b{color:var(--ink)}
+.chip span{font-size:13px;color:#bcd0ee}
+.t-light .chip span,.t-white .chip span{color:var(--ink2)}
 
-/* ACT bands */
-.act{padding:clamp(64px,10vw,130px) 0;position:relative}
-.act.light{background:var(--bg)}
-.act.white{background:var(--panel)}
-.act.blue{background:var(--blu);color:#eaf1fb}
-.act.ink{background:#0a2a52;color:#eaf1fb}
-.act.blue .eyebrow,.act.ink .eyebrow{color:#9fc4f5}
-.actlabel{display:flex;align-items:center;gap:14px;margin-bottom:28px;text-transform:uppercase;font-size:12px;letter-spacing:.2em;font-weight:700;color:var(--ink2)}
-.act.blue .actlabel,.act.ink .actlabel{color:#9fc4f5}
-.actlabel .n{font-family:'Fjalla One';font-size:15px;color:var(--blu2);letter-spacing:.04em}
-.act.blue .actlabel .n,.act.ink .actlabel .n{color:#9fc4f5}
-.actlabel .ln{height:1px;flex:1;background:currentColor;opacity:.25}
+/* tools 2x2 */
+.tools4{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+@media(max-width:680px){.tools4{grid-template-columns:1fr}}
+.tool{background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px 18px}
+.t-blue .tool,.t-ink .tool{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18)}
+.tool b{font-family:'Fjalla One';font-weight:400;font-size:21px;color:var(--blu)}
+.t-blue .tool b,.t-ink .tool b{color:#fff}
+.tool .y{font-size:14px;margin-top:4px}.tool .y b2{font-weight:700}
+.tool .si{color:#1f7a4d;font-weight:600}.tool .no{color:#9a3b22}
+.t-blue .tool .si,.t-ink .tool .si{color:#7fe0a8}.t-blue .tool .no,.t-ink .tool .no{color:#f0a48c}
+.tool .ds{font-size:14px;color:var(--ink2)}.t-blue .tool .ds,.t-ink .tool .ds{color:#c5d7f0}
 
-.big{font-size:clamp(34px,5.6vw,72px);line-height:1.0;max-width:16ch;letter-spacing:.01em}
-.kick{font-size:clamp(42px,8vw,104px);line-height:.96;color:var(--blu);letter-spacing:.01em}
-.act.blue .kick,.act.ink .kick{color:#fff}
-.act.white .kick{color:var(--blu)}
-.say{font-size:clamp(26px,3.6vw,46px);line-height:1.02;letter-spacing:.01em}
-.note{font-family:'Source Sans 3';font-size:17.5px;color:var(--ink2);max-width:56ch;margin-top:18px;font-weight:400}
-.act.blue .note,.act.ink .note{color:#bcd0ee}
+/* flow */
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin-top:18px}
+.fstep{flex:1;min-width:130px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.t-blue .fstep,.t-ink .fstep{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18)}
+.fstep b{display:block;font-size:14px;color:var(--blu)}.t-blue .fstep b,.t-ink .fstep b{color:#fff}
+.fstep span{font-size:12.5px;color:var(--ink2)}.t-blue .fstep span,.t-ink .fstep span{color:#c5d7f0}
+.arr{align-self:center;color:var(--blu2);font-weight:700;font-size:18px}
 
-.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,66px);align-items:center}
-@media(max-width:820px){.split{grid-template-columns:1fr;gap:28px}}
-.shot{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:#0a2a52}
-.shot img{width:100%;height:100%;object-fit:cover;display:block}
-.shot.tall{aspect-ratio:3/4}
+/* steps */
+.steps3{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.s3{flex:1;min-width:160px;font-size:15px;color:var(--ink2)}
+.t-blue .s3,.t-ink .s3{color:#c5d7f0}
+.s3 .n{font-family:'Fjalla One';color:var(--blu2);font-size:20px;display:block}
 
-/* compare */
-.cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px}
-@media(max-width:680px){.cmp{grid-template-columns:1fr}}
-.cmpc{border-radius:13px;padding:20px 22px}
-.cmpc.bad{background:#fff;border:1px solid var(--line);color:var(--ink2)}
-.cmpc.good{background:var(--blu);color:#eaf1fb}
-.cmpc .l{font-family:'Source Sans 3';font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px;opacity:.85}
-.cmpc p{margin:0;font-size:17px;line-height:1.45}
-
-/* tool map */
-.map{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
-.pill{border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:15px;background:#fff;color:var(--ink2)}
-.pill b{color:var(--ink);font-weight:700}
-.act.blue .pill,.act.ink .pill{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#cfe0f7}
-.act.blue .pill b,.act.ink .pill b{color:#fff}
-
-/* wow */
-.wow{display:grid;grid-template-columns:1fr 1fr;gap:18px 44px;margin-top:16px}
-@media(max-width:760px){.wow{grid-template-columns:1fr}}
-.wow .w{border-top:1px solid rgba(255,255,255,.22);padding-top:15px}
-.wow .w b{font-family:'Fjalla One';font-weight:400;font-size:21px;color:#fff;display:block;letter-spacing:.02em}
-.wow .w span{font-size:15px;color:#bcd0ee}
-
-/* formula */
-.formula{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
-.fstep{flex:1;min-width:130px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--blu);border-radius:11px;padding:14px 16px}
-.fstep .num{font-family:'Fjalla One';color:var(--blu2);font-size:15px}
-.fstep b{display:block;font-size:16px;margin:5px 0 2px}
-.fstep span{font-size:13px;color:var(--ink2)}
-
-/* tema */
-.tema .eyebrow{display:block;margin-bottom:10px}
-.steps3{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.s3{flex:1;min-width:150px;font-size:14px;color:var(--ink2)}
-.s3 .n{font-family:'Fjalla One';color:var(--blu2);font-size:19px;display:block}
-.ex{background:#fff;border:1px solid var(--line);border-left:3px solid var(--blu);border-radius:0 12px 12px 0;padding:15px 18px;margin-top:18px;font-size:16px}
-.act.white .ex{background:var(--bg)}
-.ex .l{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blu2);margin-bottom:6px}
-.ex i{font-style:normal;font-weight:700;color:var(--blu)}
-.prompt{margin-top:14px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
-.prompt .pt{display:flex;justify-content:space-between;align-items:center;padding:9px 13px;background:var(--soft);border-bottom:1px solid var(--line)}
-.prompt .pl{font-family:'Source Sans 3';font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blu)}
+/* prompt */
+.prompt{margin-top:20px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;max-width:760px}
+.t-blue .prompt,.t-ink .prompt{border-color:rgba(255,255,255,.2)}
+.pt{display:flex;justify-content:space-between;align-items:center;padding:9px 13px;background:var(--soft);border-bottom:1px solid var(--line)}
+.t-blue .pt,.t-ink .pt{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)}
+.pl{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blu)}.t-blue .pl,.t-ink .pl{color:#9fc4f5}
 .copy{border:1px solid var(--blu);background:transparent;color:var(--blu);font-family:'Source Sans 3';font-size:12px;font-weight:700;padding:5px 13px;border-radius:7px;cursor:pointer}
-.copy:hover{background:var(--blu);color:#fff}.copy.done{background:#1f9e6e;border-color:#1f9e6e;color:#fff}
-.prompt pre{margin:0;padding:13px 16px;white-space:pre-wrap;word-wrap:break-word;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.58;color:#2a2f37}
-.golink{display:inline-flex;align-items:center;gap:7px;margin-top:15px;background:var(--blu);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:10px 18px;border-radius:9px;transition:.15s}
-.golink:hover{background:var(--bluink)}
-.golink span{font-size:16px}
+.t-blue .copy,.t-ink .copy{border-color:#9fc4f5;color:#9fc4f5}.copy:hover{background:var(--blu);color:#fff}.copy.done{background:#1f9e6e;border-color:#1f9e6e;color:#fff}
+.prompt pre{margin:0;padding:13px 16px;white-space:pre-wrap;word-wrap:break-word;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.58;color:#2a2f37;background:#fff}
 
-/* claude/gemini band */
-.access{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
-@media(max-width:680px){.access{grid-template-columns:1fr}}
-.acard{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:13px;padding:20px 22px}
-.acard b{font-family:'Fjalla One';font-weight:400;font-size:23px;color:#fff;display:block;letter-spacing:.02em}
-.acard .plan{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9fc4f5;margin:3px 0 9px}
-.acard p{margin:0;font-size:15px;color:#cfe0f7}
-.acard a{color:#fff;font-weight:700;text-decoration:underline;font-size:14px;display:inline-block;margin-top:10px}
+/* example / tip / talk callouts */
+.ex,.tip,.talk{border-radius:0 12px 12px 0;padding:15px 18px;margin-top:18px;max-width:760px;font-size:16px}
+.ex{background:#fff;border-left:3px solid var(--blu)}.t-blue .ex,.t-ink .ex{background:rgba(255,255,255,.08)}
+.ex i{font-style:normal;font-weight:700;color:var(--blu)}.t-blue .ex i,.t-ink .ex i{color:#fff}
+.tip{background:var(--soft);border-left:3px solid var(--gold)}.t-blue .tip,.t-ink .tip{background:rgba(224,178,76,.14)}
+.talk{background:#fff7e6;border-left:3px solid var(--gold)}.t-blue .talk,.t-ink .talk{background:rgba(255,255,255,.06)}
+.ex .l,.tip .l,.talk .l{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.ex .l{color:var(--blu2)}.tip .l,.talk .l{color:#9a6a12}.t-blue .tip .l,.t-ink .tip .l,.t-blue .talk .l,.t-ink .talk .l{color:var(--gold)}
+.tip,.talk{color:var(--ink2)}.t-blue .tip,.t-ink .tip,.t-blue .talk,.t-ink .talk{color:#e9eefa}
 
-/* reels */
-.reels{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:8px}
-.reels .instagram-media{margin:0!important;min-width:auto!important}
-.reelcard{background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden}
-.follow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-.fchip2{border:1px solid var(--line);border-radius:10px;padding:11px 15px;background:#fff}
-.fchip2 b{color:var(--ink);font-size:14px}.fchip2 span{display:block;font-size:12px;color:var(--ink2)}
+/* verify list */
+.vlist{margin-top:16px;display:grid;gap:11px;max-width:780px}
+.vlist .vi2{font-size:16px;color:var(--ink2);border-top:1px solid var(--line);padding-top:11px}
+.t-blue .vlist .vi2,.t-ink .vlist .vi2{color:#c5d7f0;border-color:rgba(255,255,255,.18)}
+.vlist b{color:var(--blu)}.t-blue .vlist b,.t-ink .vlist b{color:#fff}
 
-/* fail */
-.fail{display:grid;grid-template-columns:1fr 1fr;gap:14px 34px;margin-top:12px}
-@media(max-width:720px){.fail{grid-template-columns:1fr}}
-.fail .f{font-size:15.5px;color:#cfe0f7;border-top:1px solid rgba(255,255,255,.2);padding-top:13px}
-.fail .f b{color:#fff;font-weight:700}
+.golink{display:inline-flex;align-items:center;gap:7px;margin-top:18px;background:var(--blu);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:10px 18px;border-radius:9px}
+.golink:hover{background:var(--ink)}
 
-.close{text-align:center}
-.close .step1{margin-top:26px;font-size:18px;color:var(--ink2);max-width:50ch;margin-left:auto;margin-right:auto}
+/* reel short */
+.short{margin-top:6px;width:300px;max-width:80vw;aspect-ratio:9/16;max-height:62vh;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000}
+.short iframe{width:100%;height:100%;border:0}
+.reelby{font-size:12.5px;color:var(--ink2);margin-top:8px}.t-blue .reelby,.t-ink .reelby{color:#9fb6da}
 
-footer{padding:46px 0;text-align:center;color:#9fb6da;font-size:13px;background:#06203f}
-footer .logo{height:22px;filter:brightness(0) invert(1);opacity:.8;margin-bottom:14px}
-
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(18px);background:var(--ink);color:#fff;padding:11px 22px;border-radius:10px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:100}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-@media print{.copy,.toast,.prog,.scroll,.reels{display:none}body{background:#fff}.act.blue,.act.ink{background:#0047ab!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.act{padding:22px 0;break-inside:avoid}}
+/* nav chrome */
+.counter{position:fixed;top:20px;right:24px;font-family:'Fjalla One';font-size:14px;color:#9fb6da;z-index:40}
+.t-light.active~.counter{}
+.mins{position:fixed;top:20px;left:24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9fb6da;z-index:40;font-weight:700}
+.dots{position:fixed;left:22px;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:8px}
+.dots .d{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;border:0;padding:0}
+.dots .d.on{background:var(--gold);transform:scale(1.35)}
+.navv{position:fixed;right:22px;bottom:22px;z-index:40;display:flex;flex-direction:column;gap:8px}
+.navv button{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(10,42,82,.55);color:#fff;font-size:17px;cursor:pointer;backdrop-filter:blur(6px)}
+.navv button:hover{background:var(--blu)}
+.hnav{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:5}
+.hnav button{position:absolute;top:50%;transform:translateY(-50%);pointer-events:auto;width:42px;height:42px;border-radius:50%;border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.82);color:var(--blu);font-size:20px;cursor:pointer}
+.t-blue .hnav button,.t-ink .hnav button{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3);color:#fff}
+.hnav .l{left:14px}.hnav .r{right:14px}
+.viewdots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:6}
+.viewdots .vd{width:7px;height:7px;border-radius:50%;background:var(--blu2);opacity:.3}.viewdots .vd.on{opacity:1}
+.t-blue .viewdots .vd,.t-ink .viewdots .vd{background:#fff}
+.hint{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);font-size:11.5px;color:#9fb6da;z-index:40;letter-spacing:.08em}
+.toast{position:fixed;bottom:70px;left:50%;transform:translateX(-50%) translateY(14px);background:#000;color:#fff;padding:10px 20px;border-radius:9px;font-size:14px;opacity:0;transition:.25s;z-index:50}
+.toast.show{opacity:1;transform:translateX(-50%)}
+.logo{height:26px;filter:brightness(0) invert(1);opacity:.92;margin-bottom:34px}
+.foot{display:flex;flex-wrap:wrap;gap:26px;margin-top:38px;font-size:14px;color:#9fb6da}.foot b{color:#fff;font-family:'Fjalla One';font-weight:400;display:block;font-size:17px}
 </style>
 </head>
 <body>
-<div class="prog" id="prog"></div>
+<div class="deck" id="deck">
 
-<header class="hero"><div class="wrap">
+<!-- S1 HERO -->
+<section class="section t-blue" data-min=""><div class="track"><div class="view"><div class="vi">
   <img class="logo" src="https://irp.cdn-website.com/2015d95f/dms3rep/multi/Logo+Blu+WEB.svg" alt="Blu2" onerror="this.style.display='none'">
-  <span class="eyebrow">Curso para el equipo Blu2 · Lunes 8 de junio · 5 pm</span>
-  <h1>IA a tu<br>manera</h1>
-  <p class="tag">Es una herramienta de trabajo. Estas dos horas son para usarla bien, con lo que ya hacen en la agencia.</p>
-  <div class="foot">
-    <div><b>2 horas</b>todo en vivo</div>
-    <div><b>Oaxaca 96</b>aquí mismo</div>
-    <div><b>Trae</b>tu celular o laptop</div>
-  </div>
-  <div class="scroll rv">Baja para empezar ↓</div>
-</div></header>
+  <div class="eyebrow">Curso para el equipo Blu2 · Lunes 8 de junio · 5 pm</div>
+  <h1 class="kick">IA a tu manera</h1>
+  <p class="note" style="color:#cfe0f7;font-size:21px">Es una herramienta de trabajo. Estas dos horas son para usarla bien, con lo que ya hacen en la agencia.</p>
+  <div class="foot"><div><b>2 horas</b>todo en vivo</div><div><b>Oaxaca 96</b>aquí mismo</div><div><b>Trae</b>tu celular o laptop</div></div>
+</div></div></div></section>
 
-<!-- ===== ACTO 1 ===== -->
-<section class="act white">
-  <div class="wrap">
-    <div class="actlabel rv"><span class="n">Acto 1</span><span>El gran cuadro</span><span class="ln"></span></div>
-    <h2 class="kick rv">Es una<br>herramienta.</h2>
-    <p class="note rv">No piensa por ti ni tiene gusto propio. Hace lo que le pides, con el criterio que le pongas. Como un pincel: el mismo, en manos distintas, da cuadros distintos. El valor no está en el pincel, está en quien lo usa.</p>
-  </div>
-</section>
-
-<section class="act light">
-  <div class="wrap split">
-    <div class="rv">
-      <span class="eyebrow">El miedo, al revés</span>
-      <h2 class="big" style="margin-top:14px">No te va a reemplazar una máquina. Acaso alguien que la use mejor.</h2>
-      <p class="note">Por eso vale la pena conocerla. No para volverte técnica, para saber pedirle bien lo que ya haces todos los días.</p>
+<!-- S2 APERTURA -->
+<section class="section t-white" data-min="15 min · marco"><div class="track">
+  <div class="view"><div class="vi"><div class="eyebrow">Punto 1 · Lo único que hay que entender</div>
+    <h2 class="kick">Es una herramienta.</h2>
+    <p class="note">No piensa por ustedes ni tiene gusto propio. Hace lo que le piden, con el criterio que le pongan. Es como cualquier herramienta buena: sirve para lo que ustedes sepan pedirle. El valor lo ponen ustedes.</p>
+    <div class="talk"><div class="l">Para platicar</div>Antes de tocar nada: ¿qué han oído de la IA? ¿qué les da curiosidad y qué les da desconfianza?</div>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Punto 1 · El secreto</div>
+    <h2 class="big">Todo está en cómo le hablan.</h2>
+    <p class="lede" style="margin-top:14px">Un buen encargo tiene cinco piezas. Lo vamos a usar el resto del curso.</p>
+    <div class="row">
+      <div class="chip"><span class="n">01</span><b>Contexto</b><span>quién y para quién</span></div>
+      <div class="chip"><span class="n">02</span><b>Intención</b><span>qué quieren lograr</span></div>
+      <div class="chip"><span class="n">03</span><b>Restricciones</b><span>tono, largo, qué evitar</span></div>
+      <div class="chip"><span class="n">04</span><b>Formato</b><span>cómo lo quieren</span></div>
+      <div class="chip"><span class="n">05</span><b>Ejemplo</b><span>algo que ya les guste</span></div>
     </div>
-    <div class="shot tall rv"><img loading="lazy" src="https://images.unsplash.com/photo-1507831273071-5db7707d651b?w=900&q=80&auto=format&fit=crop" alt="trabajo de oficina"></div>
-  </div>
-</section>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Punto 1 · Dos trucos que cambian todo</div>
+    <h2 class="say">El tono se pide con adjetivos precisos.</h2>
+    <div class="tip"><div class="l">Tip · el tono</div>No le digas "hazlo bonito". Dile el tono con palabras exactas: sobrio, cálido, understated, sin presumir, directo. Entre más preciso el adjetivo, más se acerca a tu voz real.</div>
+    <div class="tip"><div class="l">Tip · tu voz</div>Junta varios textos que ya escribiste y que te gusten, pégaselos y dile "escribe con esta misma voz". Copia tu manera, no la de internet.</div>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Punto 1 · Para verlo</div>
+    <h2 class="say">Así se ve pedir bien.</h2>
+    <div class="short"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/g9n4GqlqLJs" title="RICCE prompt method" allowfullscreen></iframe></div>
+    <div class="reelby">Teddy Slack · el método RICCE para pedir bien</div>
+  </div></div>
+</div></section>
 
-<section class="act white">
-  <div class="wrap">
-    <div class="actlabel rv"><span class="n">·</span><span>Lo genérico se nota</span><span class="ln"></span></div>
-    <h2 class="big rv" style="margin-bottom:8px">Esto suena a máquina. Esto suena a Blu2.</h2>
-    <div class="cmp rv">
-      <div class="cmpc bad"><div class="l">Genérico</div><p>"Nos complace anunciar un evento increíble que será una experiencia inolvidable llena de momentos únicos."</p></div>
-      <div class="cmpc good"><div class="l">Con voz propia</div><p>"<i>Flans</i> regresa al Auditorio Nacional el 12 de julio con #Flans40. Ilse y Mimí, las canciones que te sabes de memoria, una sola noche. Boletos desde hoy."</p></div>
+<!-- S2.5 EN PERSPECTIVA -->
+<section class="section t-blue" data-min="en perspectiva"><div class="track">
+  <div class="view"><div class="vi"><div class="eyebrow">En perspectiva · de dónde viene</div>
+    <h2 class="big" style="color:#fff">La IA no es nueva. Lo nuevo es que por fin entiende lo que le dices.</h2>
+    <div class="flow">
+      <div class="fstep"><b>Antes</b><span>reglas fijas: el corrector, el filtro de spam, lo que te sugería Netflix</span></div><span class="arr">→</span>
+      <div class="fstep"><b>2022</b><span>llega ChatGPT: le hablas normal y te responde</span></div><span class="arr">→</span>
+      <div class="fstep"><b>Hoy</b><span>ve imágenes, oye, habla, y empieza a hacer tareas sola</span></div><span class="arr">→</span>
+      <div class="fstep"><b>Pronto</b><span>asistentes que conocen tu contexto y hacen el trabajo completo</span></div>
     </div>
-    <p class="note rv">La diferencia no es la herramienta. Es la fecha real, el lugar real y el detalle que solo ustedes saben. Eso lo ponen ustedes.</p>
-  </div>
-</section>
-
-<section class="act light">
-  <div class="wrap">
-    <div class="actlabel rv"><span class="n">·</span><span>No es solo ChatGPT</span><span class="ln"></span></div>
-    <h2 class="big rv">Hay una herramienta para cada cosa.</h2>
-    <p class="note rv">No necesitas todas. Este es el mapa para saber a cuál ir.</p>
-    <div class="map rv">
-      <span class="pill"><b>ChatGPT</b> · escribir, voz, tareas</span>
-      <span class="pill"><b>Claude</b> · textos largos y cuidados</span>
-      <span class="pill"><b>Gemini</b> · ve por tu cámara</span>
-      <span class="pill"><b>NotebookLM</b> · tus contratos y riders</span>
-      <span class="pill"><b>Perplexity</b> · investigar con fuentes</span>
-      <span class="pill"><b>Canva</b> · diseño</span>
-      <span class="pill"><b>CapCut</b> · video</span>
-      <span class="pill"><b>Suno</b> · música</span>
-      <span class="pill"><b>ElevenLabs</b> · voz</span>
-      <span class="pill"><b>Meta AI</b> · en WhatsApp</span>
+    <p class="note">Llevaba décadas existiendo, pero hacía una sola cosa muy específica. El salto fue enseñarle a entender el lenguaje. Ahí dejó de ser cosa de ingenieros y pasó a ser de cualquiera.</p>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">En perspectiva · cómo cambió la forma de usarla</div>
+    <h2 class="say">De buscar, a que te ayude a hacer.</h2>
+    <div class="vlist">
+      <div class="vi2"><b>Antes:</b> buscabas en Google y armabas todo a mano, desde cero.</div>
+      <div class="vi2"><b>Ahora:</b> le pides el primer borrador y tú lo afinas. Te quita el arranque en frío.</div>
+      <div class="vi2"><b>Lo que viene:</b> le delegas la tarea completa y tú revisas y decides. Menos teclear, más dirigir.</div>
     </div>
-  </div>
-</section>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">En perspectiva · qué no cambia</div>
+    <h2 class="say">Lo que cambia es la velocidad, no el criterio.</h2>
+    <p class="note">Por más que avance, sigue necesitando que alguien sepa qué pedir, qué sirve y qué es basura. Eso no se descarga. No hay que correr ni asustarse: hay que entenderla y usarla a su ritmo.</p>
+    <div class="talk"><div class="l">Para platicar</div>¿Dónde ya la han visto sin darse cuenta? ¿Qué les imaginan haciendo en un año?</div>
+  </div></div>
+</div></section>
 
-<section class="act blue">
-  <div class="wrap">
-    <div class="actlabel rv"><span class="n">·</span><span>Lo que ya tienen</span><span class="ln"></span></div>
-    <h2 class="big rv" style="color:#fff">Empiecen por lo bueno. Ya está pagado.</h2>
-    <div class="access rv">
-      <div class="acard"><b>Claude</b><div class="plan">Plan Max</div><p>El mejor para redacción cuidada, documentos largos, contratos y propuestas. Con Max tienen lo más capaz, sin límites cortos. Es donde escribir se siente serio.</p><a href="https://claude.ai" target="_blank" rel="noopener">Abrir claude.ai →</a></div>
-      <div class="acard"><b>Gemini</b><div class="plan">Plan Plus</div><p>Vive en Gmail, Drive y tu celular. Ve por la cámara en vivo, genera imagen y video, y resume tus correos. Con Plus tienen los modelos pro.</p><a href="https://gemini.google.com" target="_blank" rel="noopener">Abrir gemini.google.com →</a></div>
+<!-- S3 MAPA 4 HERRAMIENTAS (Maggy) -->
+<section class="section t-light" data-min="15 min · el mapa"><div class="track">
+  <div class="view"><div class="vi"><div class="eyebrow">Punto 2 · Lo que preguntó Maggy</div>
+    <h2 class="big">Cuál sirve para qué. Solo cuatro.</h2>
+    <div class="tools4">
+      <div class="tool"><b>Claude</b><div class="ds">Redacción cuidada, textos largos, cosas confidenciales. Es el que mejor cuida un texto. <span class="si">Ya lo tienen, plan Max.</span></div></div>
+      <div class="tool"><b>Gemini</b><div class="ds">Todo lo que vive en Google: Gmail, Drive, Calendar, Sheets. Ve por la cámara. <span class="si">Ya lo tienen, plan Plus.</span></div></div>
+      <div class="tool"><b>ChatGPT</b><div class="ds">El todoterreno. Voz, ideas rápidas, y puede hacer tareas solo.</div></div>
+      <div class="tool"><b>NotebookLM</b><div class="ds">Le subes tus contratos y riders y te responde solo con eso. Tu archivo que habla.</div></div>
     </div>
-    <p class="note rv" style="color:#cfe0f7">No tienen que pagar nada nuevo para empezar fuerte. Estas dos ya hacen casi todo lo que vamos a ver.</p>
-  </div>
-</section>
-
-<section class="act ink">
-  <div class="wrap">
-    <div class="actlabel rv"><span class="n">·</span><span>Y esto ya se puede</span><span class="ln"></span></div>
-    <h2 class="big rv" style="color:#fff">Lo que en 2024 todavía no se podía.</h2>
-    <div class="wow rv">
-      <div class="w"><b>Le hablas y te contesta</b><span>Conversación por voz, en tiempo real, como una llamada.</span></div>
-      <div class="w"><b>Ve lo que tú ves</b><span>Le apuntas la cámara a un contrato o un rider y te dice qué revisar.</span></div>
-      <div class="w"><b>Hace la tarea sola</b><span>"Búscame 3 proveedores de sonido en CDMX y arma una tabla." Lo hace.</span></div>
-      <div class="w"><b>Genera video con sonido</b><span>Escribes una escena y sale un clip con diálogo y música.</span></div>
-      <div class="w"><b>Clona una voz</b><span>10 segundos de audio y graba el spot que quieras.</span></div>
-      <div class="w"><b>Tus PDFs como podcast</b><span>Sube riders y contratos y te los explica en audio.</span></div>
+    <p class="note">Empiecen con lo que ya tienen. Claude y Gemini ya están pagadas y hacen casi todo lo que vamos a ver.</p>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Punto 2 · Cómo se complementan</div>
+    <h2 class="say">No es una. Es encadenarlas.</h2>
+    <div class="flow">
+      <div class="fstep"><b>NotebookLM</b><span>guarda el rider y el historial</span></div><span class="arr">→</span>
+      <div class="fstep"><b>Gemini</b><span>saca las notas de la junta por voz</span></div><span class="arr">→</span>
+      <div class="fstep"><b>Claude</b><span>redacta el boletín con eso</span></div><span class="arr">→</span>
+      <div class="fstep"><b>Canva</b><span>le pone el diseño</span></div>
     </div>
-  </div>
-</section>
+    <p class="note">Del prompt a la edición: contexto y tarea, lees lo que da, le dices qué ajustar, verificas datos, le pones tu voz y mandas.</p>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Punto 2 · Para verlo</div>
+    <h2 class="say">Cuál usar para qué.</h2>
+    <div class="short"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/sfwax2dVPvI" title="when to use chatgpt gemini claude" allowfullscreen></iframe></div>
+    <div class="reelby">Jeff Su · cuándo usar ChatGPT, Gemini o Claude</div>
+  </div></div>
+</div></section>
 
-<section class="act white">
-  <div class="wrap">
-    <div class="actlabel rv"><span class="n">·</span><span>El secreto de todo</span><span class="ln"></span></div>
-    <h2 class="kick rv">Todo está en cómo le hablas.</h2>
-    <p class="note rv">Un buen encargo tiene cinco piezas. Con esto cambia lo que te entrega.</p>
-    <div class="formula rv">
-      <div class="fstep"><span class="num">01</span><b>Contexto</b><span>quién y para quién</span></div>
-      <div class="fstep"><span class="num">02</span><b>Intención</b><span>qué quieres lograr</span></div>
-      <div class="fstep"><span class="num">03</span><b>Restricciones</b><span>tono, largo, qué evitar</span></div>
-      <div class="fstep"><span class="num">04</span><b>Formato</b><span>cómo lo quieres</span></div>
-      <div class="fstep"><span class="num">05</span><b>Ejemplo</b><span>algo que ya te guste</span></div>
+<!-- S4 CASO 1 ESCRIBIR -->
+<section class="section t-white" data-min="caso en vivo"><div class="track">
+  <div class="view"><div class="vi"><div class="eyebrow">Caso 1 · Escribir sin que suene a robot</div>
+    <h2 class="big">Boletines, cartas, comunicados, invitaciones.</h2>
+    <div class="steps3">
+      <div class="s3"><span class="n">1</span>Dale contexto y un ejemplo de tu voz</div>
+      <div class="s3"><span class="n">2</span>Pide el borrador con estructura</div>
+      <div class="s3"><span class="n">3</span>Edita, mete tus datos, manda</div>
     </div>
-  </div>
-</section>
+    <div class="ex"><div class="l">El ejemplo que hacemos</div>Comunicado del nuevo show de <i>Ilse y Mimí</i>, en el tono de Blu2, listo en dos minutos.</div>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Caso 1 · El prompt</div>
+    <h2 class="say">Cópialo y arranca.</h2>
+    <div class="prompt"><div class="pt"><span class="pl">Para Claude</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Eres asistente de Blu2, una agencia de entretenimiento en CDMX. Escribe un comunicado para [artista] sobre [evento] el [fecha] en [lugar]. Tono: cálido, cuidado, nada acartonado. Aquí va un texto nuestro para que copies la voz: [pega algo]. Donde falte un dato, déjalo como [DATO].</pre></div>
+    <a class="golink" href="https://claude.ai" target="_blank" rel="noopener">Abrir Claude →</a>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Caso 1 · Antes de seguir</div>
+    <h2 class="say">Que cada quien saque el suyo.</h2>
+    <div class="talk"><div class="l">Hagámoslo</div>Piensen en un comunicado real que tengan pendiente. Ábranlo, péguenle el prompt con sus datos, y vemos dos o tres en pantalla. ¿Cuál quedó más con su voz? ¿Qué le cambiarían?</div>
+  </div></div>
+</div></section>
 
-<!-- ===== ACTO 2 ===== -->
-<section class="act blue">
-  <div class="wrap" style="text-align:center">
-    <div class="actlabel rv" style="justify-content:center"><span class="ln" style="max-width:60px"></span><span class="n">Acto 2</span><span>Tema por tema</span><span class="ln" style="max-width:60px"></span></div>
-    <h2 class="kick rv" style="color:#fff">Cada uno lo hacemos en vivo.</h2>
-  </div>
-</section>
-
-<!-- escribir -->
-<section class="act white tema">
-  <div class="wrap split">
-    <div class="rv">
-      <span class="eyebrow">Tema 01 · Escribir sin que suene a robot</span>
-      <h2 class="say">Boletines, comunicados, invitaciones.</h2>
-      <div class="steps3">
-        <div class="s3"><span class="n">1</span>Dale tu contexto y un ejemplo de tu voz</div>
-        <div class="s3"><span class="n">2</span>Pide el borrador con estructura</div>
-        <div class="s3"><span class="n">3</span>Edita, mete tus datos, manda</div>
-      </div>
-      <div class="ex"><div class="l">El ejemplo que vemos</div>Comunicado del nuevo show de <i>Ilse y Mimí</i>, en el tono de Blu2, listo en dos minutos.</div>
-      <div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Escribe un comunicado para [artista] sobre [evento] el [fecha] en [lugar]. Tono Blu2: cálido, cuidado, nada acartonado. Aquí va un texto nuestro para que copies la voz: [pega algo]. Donde falte un dato, déjalo como [DATO].</pre></div>
-      <a class="golink" href="https://claude.ai" target="_blank" rel="noopener">Hazlo en Claude <span>→</span></a>
+<!-- S5 CASO 2 PRENSA/MARKETING/DISEÑO -->
+<section class="section t-light" data-min="caso en vivo"><div class="track">
+  <div class="view"><div class="vi"><div class="eyebrow">Caso 2 · Prensa, marketing y diseño</div>
+    <h2 class="big">Del plan de campaña a la pieza con diseño.</h2>
+    <div class="steps3">
+      <div class="s3"><span class="n">1</span>Gemini arma el plan de campaña</div>
+      <div class="s3"><span class="n">2</span>Claude redacta el boletín de prensa</div>
+      <div class="s3"><span class="n">3</span>Canva lo diseña con links de video y fotos</div>
     </div>
-    <div class="rv shot"><img loading="lazy" src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=900&q=80&auto=format&fit=crop" alt="escribir"></div>
-  </div>
-</section>
+    <div class="ex"><div class="l">El ejemplo que hacemos</div>Plan de 4 semanas para el próximo tour de <i>Miguel Bosé</i>, y el boletín de prensa diseñado con su material.</div>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Caso 2 · El prompt</div>
+    <h2 class="say">Plan de campaña.</h2>
+    <div class="prompt"><div class="pt"><span class="pl">Para Gemini o ChatGPT</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Actúa como estratega de marketing musical. Lanzamos [evento] de [artista] el [fecha]. Público: [descríbelo]. Dame un plan de 4 semanas en tabla: qué hacer cada semana en redes, prensa y comunidad, y 5 ideas de contenido para la semana del estreno.</pre></div>
+    <a class="golink" href="https://www.canva.com" target="_blank" rel="noopener">Diseñar en Canva →</a>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Caso 2 · Para verlo</div>
+    <h2 class="say">Diseño en minutos.</h2>
+    <div class="short"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/sOYSVdEhDa4" title="Canva AI 2.0" allowfullscreen></iframe></div>
+    <div class="reelby">Jake Pfohl · cómo desbloquear Canva AI 2.0</div>
+  </div></div>
+</div></section>
 
-<!-- prensa y marketing -->
-<section class="act light tema">
-  <div class="wrap split">
-    <div class="rv shot"><img loading="lazy" src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900&q=80&auto=format&fit=crop" alt="concierto"></div>
-    <div class="rv">
-      <span class="eyebrow">Tema 02 · Prensa y marketing</span>
-      <h2 class="say">Del plan de lanzamiento al boletín de prensa.</h2>
-      <div class="steps3">
-        <div class="s3"><span class="n">1</span>ChatGPT arma el plan y el texto</div>
-        <div class="s3"><span class="n">2</span>Canva le pone el diseño</div>
-        <div class="s3"><span class="n">3</span>PDF con links de video y fotos</div>
-      </div>
-      <div class="ex"><div class="l">El ejemplo que vemos</div>Plan de 4 semanas para el próximo tour de <i>Miguel Bosé</i>, con qué publicar cada semana.</div>
-      <div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Actúa como estratega de marketing musical. Lanzamos [evento] de [artista] el [fecha]. Público: [descríbelo]. Dame un plan de 4 semanas en tabla: qué hacer cada semana en redes, prensa y comunidad, y 5 ideas de contenido para la semana del estreno.</pre></div>
-      <a class="golink" href="https://chatgpt.com" target="_blank" rel="noopener">Hazlo en ChatGPT <span>→</span></a>
+<!-- S6 CASO 3 AGENDA/ITINERARIOS/LOGISTICA -->
+<section class="section t-white" data-min="caso en vivo · el más pedido"><div class="track">
+  <div class="view"><div class="vi"><div class="eyebrow">Caso 3 · Agenda, itinerarios y logística</div>
+    <h2 class="big">Lo que más pidieron. Ordenado en una tabla.</h2>
+    <div class="steps3">
+      <div class="s3"><span class="n">1</span>Le das ciudades, fechas, personas, presupuesto</div>
+      <div class="s3"><span class="n">2</span>Pide el itinerario día por día en tabla</div>
+      <div class="s3"><span class="n">3</span>Tú verificas vuelos y precios reales</div>
     </div>
-  </div>
-</section>
+    <div class="ex"><div class="l">El ejemplo que hacemos</div>Itinerario de una gira corta de <i>Grupo Pandora</i> en tres ciudades, con traslados, soundcheck, hotel y tiempos muertos.</div>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Caso 3 · El prompt</div>
+    <h2 class="say">Itinerario y agenda.</h2>
+    <div class="prompt"><div class="pt"><span class="pl">Para Gemini</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Arma el itinerario de gira de [artista] en [ciudades] del [fechas], somos [personas]. Día por día en tabla: traslados, soundcheck, show, comida, hotel (zona, no nombre), y un espacio libre. Marca lo que yo debo confirmar a mano (vuelos, precios).</pre></div>
+    <a class="golink" href="https://gemini.google.com" target="_blank" rel="noopener">Abrir Gemini →</a>
+  </div></div>
+</div></section>
 
-<!-- video -->
-<section class="act white tema">
-  <div class="wrap split">
-    <div class="rv">
-      <span class="eyebrow">Tema 03 · Video de los shows</span>
-      <h2 class="say">El clip del concierto, editado y subtitulado solo.</h2>
-      <div class="steps3">
-        <div class="s3"><span class="n">1</span>Subes el video a CapCut</div>
-        <div class="s3"><span class="n">2</span>Subtítulos automáticos en un clic</div>
-        <div class="s3"><span class="n">3</span>Cortas, le pones música, exportas</div>
-      </div>
-      <div class="ex"><div class="l">El ejemplo que vemos</div>Un reel de 30 segundos del último show de <i>Grupo Pandora</i>, listo para subir.</div>
-      <a class="golink" href="https://www.capcut.com" target="_blank" rel="noopener">Ábrelo en CapCut <span>→</span></a>
+<!-- S7 CASO 4 JUNTAS / NOTEBOOKLM -->
+<section class="section t-light" data-min="caso en vivo"><div class="track">
+  <div class="view"><div class="vi"><div class="eyebrow">Caso 4 · Juntas, resúmenes y seguimientos</div>
+    <h2 class="big">De una junta a tareas con responsable.</h2>
+    <div class="steps3">
+      <div class="s3"><span class="n">1</span>Pega tus notas o la transcripción</div>
+      <div class="s3"><span class="n">2</span>Pide resumen, acuerdos y tareas con fecha</div>
+      <div class="s3"><span class="n">3</span>Lo mandas al equipo antes de 2 horas</div>
     </div>
-    <div class="rv shot"><img loading="lazy" src="https://images.unsplash.com/photo-1563841930606-67e2bce48b78?w=900&q=80&auto=format&fit=crop" alt="video de evento"></div>
-  </div>
-</section>
+    <div class="prompt"><div class="pt"><span class="pl">Para Claude</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Te paso las notas de una junta. Hazme: resumen de 5 líneas, acuerdos, tareas con responsable y fecha, y dudas que quedaron. Si algo está confuso, márcalo en vez de inventar. Notas: [pega aquí].</pre></div>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Caso 4 · Tu archivo que habla</div>
+    <h2 class="say">Sube el rider y pregúntale.</h2>
+    <p class="note">En NotebookLM subes contratos, riders, el historial de un artista. Le preguntas lo que sea y te responde solo con eso, sin inventar. Hasta te hace un resumen en audio.</p>
+    <a class="golink" href="https://notebooklm.google.com" target="_blank" rel="noopener">Abrir NotebookLM →</a>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Caso 4 · Para verlo</div>
+    <h2 class="say">NotebookLM en corto.</h2>
+    <div class="short"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/kCxlQcKsoZg" title="NotebookLM feature" allowfullscreen></iframe></div>
+    <div class="reelby">Jeff Su · el truco de NotebookLM que le ahorra medio día</div>
+  </div></div>
+</div></section>
 
-<!-- musica -->
-<section class="act light tema">
-  <div class="wrap split">
-    <div class="rv shot"><img loading="lazy" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=900&q=80&auto=format&fit=crop" alt="estudio de música"></div>
-    <div class="rv">
-      <span class="eyebrow">Tema 04 · Música y letras</span>
-      <h2 class="say">Ideas de canción, letras y hasta un demo.</h2>
-      <div class="steps3">
-        <div class="s3"><span class="n">1</span>Define género, emoción y dos imágenes concretas</div>
-        <div class="s3"><span class="n">2</span>Pide 3 ganchos para el coro y elige</div>
-        <div class="s3"><span class="n">3</span>Arma versos, pule y genera el demo</div>
-      </div>
-      <div class="ex"><div class="l">El ejemplo que vemos</div>Un coro nuevo partiendo de una sola emoción y un lugar, y un demo rápido en Suno.</div>
-      <div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Ayúdame con una canción. Género: [género]. Emoción que quiero que sienta quien la oye: [una emoción]. Dos imágenes concretas: [un objeto, un lugar]. Dame 3 opciones de gancho para el coro, sin rimas fáciles, concretas y visuales.</pre></div>
-      <a class="golink" href="https://suno.com" target="_blank" rel="noopener">Pruébalo en Suno <span>→</span></a>
+<!-- S8 PARA QUE NO TE MIENTA -->
+<section class="section t-ink" data-min="20 min · lo más importante"><div class="track">
+  <div class="view"><div class="vi"><div class="eyebrow">Punto 3 · Lo que pidió Miriam</div>
+    <h2 class="big" style="color:#fff">Para que no te mienta.</h2>
+    <div class="vlist">
+      <div class="vi2"><b>Pide fuentes con link.</b> "Dame la fuente de cada dato y el link." Lo que no tenga link, lo verificas tú.</div>
+      <div class="vi2"><b>Dale permiso de no saber.</b> "Si no estás segura, dilo, no inventes." Baja muchísimo el invento.</div>
+      <div class="vi2"><b>Que separe hecho de opinión.</b> "Marca qué es dato y qué es interpretación tuya."</div>
+      <div class="vi2"><b>Para datos duros, Perplexity o Gemini.</b> Buscan en internet y citan de dónde salió.</div>
     </div>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Punto 3 · El truco que casi nadie usa</div>
+    <h2 class="say">Iterar sin que regrese al error.</h2>
+    <div class="tip"><div class="l">Tip · corregir bien</div>Cuando algo sale mal, no empieces de cero. Dile qué cambió y qué conservar: "esto quedó bien, no lo toques. Solo cambia [esto]". Si se mete en loop o vuelve al mismo error, abre un chat nuevo y pégale solo la versión buena como punto de partida.</div>
+    <div class="talk"><div class="l">Para platicar</div>¿En qué de su trabajo confiarían en la IA y en qué no? ¿Dónde sí hay que revisar a mano siempre?</div>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Punto 3 · Para verlo</div>
+    <h2 class="say">Un prompt para que deje de inventar.</h2>
+    <div class="short"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/a-qO-ZoDuuM" title="stop chatgpt from lying" allowfullscreen></iframe></div>
+    <div class="reelby">Rob The AI Guy · el estilo de prompt que frena las mentiras</div>
+  </div></div>
+</div></section>
+
+<!-- S9 CUANDO SE PONE NECIA -->
+<section class="section t-white" data-min="rápido"><div class="track"><div class="view"><div class="vi">
+  <div class="eyebrow">Punto 4 · Cuando no sale</div>
+  <h2 class="big">No falla. Le faltó algo tuyo.</h2>
+  <div class="vlist">
+    <div class="vi2"><b>Te da algo plano.</b> Dale un ejemplo de tu voz y un dato concreto.</div>
+    <div class="vi2"><b>Se repite en loop.</b> Para, chat nuevo, dile qué cambió.</div>
+    <div class="vi2"><b>Inventa un dato o link.</b> Número, nombre y fecha los verificas tú antes de mandar.</div>
+    <div class="vi2"><b>Se va por las ramas.</b> Una cosa a la vez, en el formato exacto.</div>
   </div>
-</section>
+</div></div></div></section>
 
-<!-- organizacion -->
-<section class="act white tema">
-  <div class="wrap split">
-    <div class="rv">
-      <span class="eyebrow">Tema 05 · El día a día ordenado</span>
-      <h2 class="say">Juntas, agenda, itinerarios, seguimientos.</h2>
-      <div class="steps3">
-        <div class="s3"><span class="n">1</span>Pega tus notas o sube los documentos</div>
-        <div class="s3"><span class="n">2</span>Pide resumen con tareas y responsables</div>
-        <div class="s3"><span class="n">3</span>Lo mandas al equipo antes de 2 horas</div>
-      </div>
-      <div class="ex"><div class="l">El ejemplo que vemos</div>Resumen de una junta de producción de festival, con quién hace qué y para cuándo. Y un rider subido a NotebookLM para preguntarle lo que sea.</div>
-      <div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Te paso las notas de una junta. Hazme: resumen de 5 líneas, acuerdos, tareas con responsable y fecha, y dudas que quedaron. Si algo está confuso, márcalo en vez de inventar. Notas: [pega aquí].</pre></div>
-      <a class="golink" href="https://notebooklm.google.com" target="_blank" rel="noopener">Sube tus docs a NotebookLM <span>→</span></a>
-    </div>
-    <div class="rv shot"><img loading="lazy" src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=900&q=80&auto=format&fit=crop" alt="agenda"></div>
-  </div>
-</section>
+<!-- S10 PARA IR MAS LEJOS · COWORK -->
+<section class="section t-ink" data-min="para los curiosos"><div class="track">
+  <div class="view"><div class="vi"><div class="eyebrow">Para ir más lejos</div>
+    <h2 class="big" style="color:#fff">Cuando ya le perdiste el miedo: los agentes.</h2>
+    <p class="note">Hay una IA que ya no solo responde: hace la tarea sola. Le encargas "busca tres proveedores de sonido en CDMX y arma una tabla con precios y contacto" y ella abre las páginas y te la entrega.</p>
+    <div class="tip"><div class="l">Cómo se llama</div>En Claude se llama Cowork, en ChatGPT es el Agente. Le das una tarea con pasos y trabaja sola mientras tú ves. Para tareas repetitivas de research y armado, es lo más potente que hay hoy.</div>
+  </div></div>
+  <div class="view"><div class="vi"><div class="eyebrow">Para ir más lejos · Para verlo</div>
+    <h2 class="say">Qué es un agente.</h2>
+    <div class="short"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/NjigziQ9TeA" title="AI agents explained" allowfullscreen></iframe></div>
+    <div class="reelby">Smart Nonsense · qué son los agentes, explicado</div>
+  </div></div>
+</div></section>
 
-<!-- ===== ACTO 3 ===== -->
-<section class="act ink">
-  <div class="wrap">
-    <div class="actlabel rv"><span class="n">Acto 3</span><span>Cuando se pone necia</span><span class="ln"></span></div>
-    <h2 class="big rv" style="color:#fff">No falla. Es que le faltó algo tuyo.</h2>
-    <div class="fail rv">
-      <div class="f"><b>Te da algo plano y genérico.</b> Dale un ejemplo de tu voz y un dato concreto.</div>
-      <div class="f"><b>Se repite en loop.</b> Para, empieza chat nuevo y dile qué cambió.</div>
-      <div class="f"><b>Inventa un dato o un link.</b> Todo número, nombre y fecha lo verificas tú antes de mandar.</div>
-      <div class="f"><b>Se va por las ramas.</b> Pídele una cosa a la vez y en el formato exacto.</div>
-    </div>
-  </div>
-</section>
+<!-- S11 CIERRE -->
+<section class="section t-blue" data-min="15 min · cierre"><div class="track"><div class="view"><div class="vi">
+  <div class="eyebrow">Cierre</div>
+  <h2 class="kick">Una herramienta, una tarea suya, diez minutos al día.</h2>
+  <p class="note" style="color:#cfe0f7;font-size:20px">Con eso basta para agarrarle confianza. Hoy nos vamos con un caso suyo ya resuelto y con qué van a usar esta semana.</p>
+  <div class="talk" style="background:rgba(255,255,255,.08);border-left-color:var(--gold)"><div class="l" style="color:var(--gold)">La vuelta final</div>Una por una: ¿qué se llevan? ¿qué van a probar esta semana? Concreto, no "voy a explorar la IA".</div>
+</div></div></div></section>
 
-<section class="act light">
-  <div class="wrap">
-    <div class="actlabel rv"><span class="n">·</span><span>Para seguir, en reels</span><span class="ln"></span></div>
-    <h2 class="say rv">Sigue a quien sí sabe.</h2>
-    <p class="note rv">Aprender IA hoy es de ver reels cortos. Estas cuentas postean trucos buenos casi a diario, en español.</p>
-    <div class="follow rv">
-      <div class="fchip2"><b>@dotcsv</b><span>IA en español, a fondo</span></div>
-      <div class="fchip2"><b>@xaviermitjana</b><span>IA para creativos</span></div>
-      <div class="fchip2"><b>@mreflow</b><span>la herramienta nueva de la semana</span></div>
-      <div class="fchip2"><b>Meta AI</b><span>pruébala dentro de tu WhatsApp</span></div>
-    </div>
-    <p class="note rv" style="margin-top:26px">Y sí, sus propios reels ya son material: el de Flans, el de Bosé, el del próximo show. Eso es justo lo que van a poder armar y promover más rápido.</p>
-    <div class="reels rv">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/flansoficial_/reel/DZNVfD-xBLW/" data-instgrm-version="14"></blockquote>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/miguelbose/reel/DQ8NoRJDvNi/" data-instgrm-version="14"></blockquote>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/blu2entretenimiento/reel/DVHuY0oCYGe/" data-instgrm-version="14"></blockquote>
-    </div>
-  </div>
-</section>
+</div>
 
-<section class="act white close">
-  <div class="wrap">
-    <h2 class="kick rv">Una herramienta. Una tarea tuya. 10 minutos al día.</h2>
-    <p class="step1 rv">Ese es todo el secreto. El lunes salimos con tu primer caso resuelto y con qué vas a hacer esta semana.</p>
-  </div>
-</section>
-
-<footer>
-  <img class="logo" src="https://irp.cdn-website.com/2015d95f/dms3rep/multi/Logo+Blu+WEB.svg" alt="Blu2" onerror="this.style.display='none'"><br>
-  IA a tu manera · Curso para Blu2 · Lunes 8 de junio, 5 pm · Oaxaca 96, Roma Norte
-</footer>
-
+<div class="counter" id="counter"></div>
+<div class="mins" id="mins"></div>
+<div class="dots" id="dots"></div>
+<div class="navv"><button id="up" title="anterior (flecha arriba)">↑</button><button id="down" title="siguiente (flecha abajo o espacio)">↓</button></div>
+<div class="hint">Espacio o ↑ ↓ entre puntos · ← → dentro del punto</div>
 <div class="toast" id="toast">Copiado</div>
-<script async src="https://www.instagram.com/embed.js"></script>
+
 <script>
 function cp(b){const p=b.closest('.prompt').querySelector('pre');navigator.clipboard.writeText(p.innerText).then(()=>{b.textContent='Copiado';b.classList.add('done');const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>{b.textContent='Copiar';b.classList.remove('done');t.classList.remove('show')},1400)})}
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px'});
-document.querySelectorAll('.rv').forEach(x=>io.observe(x));
-const prog=document.getElementById('prog');
-addEventListener('scroll',()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+const deck=document.getElementById('deck');
+const sections=[...deck.querySelectorAll('.section')];
+let s=0; const v=sections.map(()=>0);
+function nViews(i){return sections[i].querySelectorAll('.view').length;}
+// build sub-view chrome once
+sections.forEach((sec,i)=>{
+  const n=nViews(i);
+  if(n>1){
+    const h=document.createElement('div');h.className='hnav';
+    h.innerHTML='<button class="l" aria-label="vista anterior">‹</button><button class="r" aria-label="vista siguiente">›</button>';
+    sec.appendChild(h);
+    h.querySelector('.l').onclick=()=>{prevView()};
+    h.querySelector('.r').onclick=()=>{nextView()};
+    const vd=document.createElement('div');vd.className='viewdots';
+    for(let k=0;k<n;k++){const e=document.createElement('div');e.className='vd';vd.appendChild(e);}
+    sec.appendChild(vd);
+  }
+});
+function render(){
+  sections.forEach((sec,i)=>{
+    sec.classList.toggle('active',i===s);
+    sec.querySelector('.track').style.transform='translateX('+(-v[i]*100)+'%)';
+    const vd=sec.querySelector('.viewdots');
+    if(vd)[...vd.children].forEach((e,k)=>e.classList.toggle('on',k===v[i]));
+  });
+  document.getElementById('counter').textContent=(s+1)+' / '+sections.length;
+  document.getElementById('mins').textContent=sections[s].dataset.min||'';
+  const dc=document.getElementById('dots');
+  [...dc.children].forEach((d,i)=>d.classList.toggle('on',i===s));
+}
+function nextSection(){if(s<sections.length-1){s++;render();}}
+function prevSection(){if(s>0){s--;render();}}
+function nextView(){if(v[s]<nViews(s)-1){v[s]++;render();}else nextSection();}
+function prevView(){if(v[s]>0){v[s]--;render();}}
+// left dots
+const dc=document.getElementById('dots');
+sections.forEach((_,i)=>{const b=document.createElement('button');b.className='d';b.onclick=()=>{s=i;render()};dc.appendChild(b);});
+document.getElementById('up').onclick=prevSection;
+document.getElementById('down').onclick=nextSection;
+addEventListener('keydown',e=>{
+  if(e.target.tagName==='IFRAME')return;
+  if(e.key===' '||e.key==='PageDown'){e.preventDefault();nextSection();}
+  else if(e.key==='ArrowDown'){e.preventDefault();nextSection();}
+  else if(e.key==='PageUp'||e.key==='ArrowUp'){e.preventDefault();prevSection();}
+  else if(e.key==='ArrowRight'){e.preventDefault();nextView();}
+  else if(e.key==='ArrowLeft'){e.preventDefault();prevView();}
+  else if(e.key==='Home'){s=0;v.fill(0);render();}
+});
+render();
 </script>
 </body>
 </html>
