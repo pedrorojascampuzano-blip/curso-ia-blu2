@@ -1,219 +1,398 @@
-<!DOCTYPE html><html lang="es"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IA a tu manera · Curso Blu2</title><meta name="theme-color" content="#163a5c">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23163a5c'/><text x='16' y='23' font-family='Georgia' font-style='italic' font-size='20' fill='%23f0c14b' text-anchor='middle'>ia</text></svg>">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA a tu manera · Blu2</title>
+<meta name="theme-color" content="#10100f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23111'/><text x='16' y='23' font-family='Georgia' font-style='italic' font-size='19' fill='%23e8b84b' text-anchor='middle'>ia</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>:root{--paper:#f4efe3;--paper2:#ece3d2;--card:#fbf8f1;--ink:#1b1813;--ink2:#544d42;--line:#ddd2bf;--blue:#163a5c;--blue2:#1f4e79;--coral:#c8553a;--gold:#bd8b34;--teal:#2c6b60;--r:14px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;line-height:1.1;letter-spacing:-.015em;margin:0}
-em{font-style:italic}a{color:var(--blue2)}::selection{background:var(--blue);color:#fff}
-.wrap{max-width:1140px;margin:0 auto;padding:0 30px}
-.layout{display:grid;grid-template-columns:240px 1fr;gap:44px;align-items:start}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral)}
-.hero{background:var(--blue);color:#f3ecdd;padding:72px 0 60px}
-.hero .grid{display:grid;grid-template-columns:1.5fr .9fr;gap:48px;align-items:end;max-width:1140px;margin:0 auto;padding:0 30px}
-.hero .eyebrow{color:var(--gold)}
-.hero h1{font-size:clamp(36px,6vw,72px);color:#fff;margin:18px 0 0}
-.hero .sub{font-size:clamp(16px,1.8vw,20px);color:#d8ccb6;max-width:46ch;margin:20px 0 0}
-.hero .meta{border-left:2px solid rgba(255,255,255,.22);padding-left:22px;display:flex;flex-direction:column;gap:15px}
-.hero .meta span{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
-.hero .meta strong{font-family:Fraunces;font-size:18px;color:#fff}.hero .meta p{margin:0;font-size:13.5px;color:#c9bda7}
-.logi{background:var(--ink);color:#e9ddc8;padding:16px 0}
-.logi .row{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;font-size:14px}.logi b{color:#fff;font-family:Fraunces}
-nav.side{position:sticky;top:20px;padding:18px 0}
-nav.side .navtitle{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted,#6b6560);font-weight:700;margin:0 0 10px;padding-left:6px}
-nav.side a{display:flex;align-items:center;gap:10px;padding:8px 11px;border-radius:9px;color:var(--ink);text-decoration:none;font-size:13px;font-weight:500}
-nav.side a span{flex:0 0 26px;font-family:Fraunces;font-size:12px;color:var(--coral)}
-nav.side a:hover{background:var(--card)}nav.side a.active{background:var(--card)}nav.side a.active span{color:var(--blue)}
-main{padding:34px 0 80px;min-width:0}
-section.s{padding:30px 0 50px;border-bottom:1px solid var(--line)}
-.shead{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;flex-wrap:wrap}
-.shead2{margin-bottom:18px}
-.snum{font-family:Fraunces;font-size:clamp(30px,4vw,44px);color:var(--coral);line-height:.9}
-.shead h2,.shead2 h2{font-size:clamp(24px,3.2vw,34px)}
-.stag{margin-left:auto;align-self:center;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:4px 10px;border-radius:6px}
-.lead{font-size:18px;color:var(--ink2);max-width:64ch;margin:0 0 22px}
-.minilead{font-family:Fraunces;font-style:italic;font-size:20px;color:var(--blue2);max-width:60ch;margin:0 0 20px}
-.sub{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin:28px 0 13px}
-ul.clean{list-style:none;margin:0;padding:0;display:grid;gap:9px}
-ul.clean li{padding-left:24px;position:relative;font-size:15.5px}
-ul.clean li::before{content:"";position:absolute;left:3px;top:10px;width:8px;height:8px;border-radius:50%;background:var(--coral)}
-ul.clean.wins{grid-template-columns:1fr 1fr;gap:9px 22px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.ag-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.ag-row{display:flex;gap:15px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-.ag-min{font-family:Fraunces;font-size:22px;color:var(--coral);line-height:1;display:flex;flex-direction:column;align-items:center;min-width:40px}
-.ag-min small{font-family:'Hanken Grotesk';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin-top:2px}
-.ag-row strong{display:block;font-size:14.5px;margin-bottom:2px}.ag-row p{margin:0;font-size:13px;color:var(--ink2);line-height:1.45}
-.cmp{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card)}
-.cmp-h{padding:10px 16px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.cmp.bad .cmp-h{background:#f5e3dc;color:#9a3b22}.cmp.good .cmp-h{background:#e0efe9;color:#1f5b50}
-.cmp-b{padding:15px 16px;font-size:15px;color:var(--ink2);font-style:italic}
-.cmp-why{padding:0 16px 15px;font-size:13px;color:var(--ink2)}.cmp-why b{color:var(--ink)}
-.note-band{background:var(--paper2);border-radius:12px;padding:15px 18px;font-size:14.5px;color:var(--ink2);margin-top:14px}
-.sota-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
-.sota{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:17px 18px}
-.sota-h{display:flex;flex-direction:column;gap:4px;margin-bottom:9px}
-.sota-h b{font-size:16px;font-family:Fraunces;font-weight:600;color:var(--blue)}
-.sota-tool{font-size:11.5px;color:var(--teal);font-weight:600}
-.sota-what{margin:0 0 12px;font-size:14px;color:var(--ink2)}
-.sota-demo{font-size:13px;color:var(--ink2);background:var(--paper);border-radius:9px;padding:11px 13px;border-left:3px solid var(--gold)}
-.sota-demo span{display:block;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
-.cat{margin:0 0 22px}
-.cat h3{font-size:14px;font-weight:700;letter-spacing:.03em;color:var(--blue);margin-bottom:12px;padding-bottom:7px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:9px}
-.cat h3 .dot{width:8px;height:8px;border-radius:50%;background:var(--coral)}
-.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:11px}
-.tool{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:13px}
-.tool .mono{flex:0 0 auto;width:36px;height:36px;border-radius:9px;background:var(--blue);color:#fff;font-family:Fraunces;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center}
-.tool .nm{font-weight:700;font-size:14.5px;line-height:1.2}.tool .ds{font-size:13px;color:var(--ink2);line-height:1.38;margin:3px 0 5px}
-.tool .px{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;color:var(--teal)}
-.formula{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 8px}
-.fchip{flex:1;min-width:140px;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:10px;padding:12px 14px}
-.fchip b{display:block;font-size:14px;margin-bottom:2px}.fchip span{font-size:12.5px;color:var(--ink2)}
-.qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.qa{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
-.qa .q{font-weight:700;font-size:14px;color:var(--coral);margin-bottom:6px}
-.qa .a{font-size:13.5px;color:var(--ink2);line-height:1.5}
-.recipe{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px}
-.rec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:14px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px}
-.rec-h h3{font-size:19px;flex:1;min-width:200px}
-.rec-tool{font-size:12px;font-weight:600;color:#fff;background:var(--teal);padding:4px 10px;border-radius:6px}
-.rec-lbl{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
-.rec-steps ol{margin:0 0 4px;padding-left:20px}.rec-steps li{margin:5px 0;font-size:14.5px}
-.rec-two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
-.rec-ex{border-radius:10px;padding:13px 15px;font-size:13.5px}
-.rec-ex span{display:block;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px}
-.rec-ex p{margin:0;color:var(--ink2);line-height:1.45}
-.rec-ex.pre{background:#eef3ef;border-left:3px solid var(--teal)}.rec-ex.pre span{color:var(--teal)}
-.rec-ex.live{background:#fbeede;border-left:3px solid var(--gold)}.rec-ex.live span{color:var(--warn,#9a5b00)}
-.prompt{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--paper)}
-.prompt .pt{display:flex;justify-content:space-between;align-items:center;padding:9px 13px;background:var(--paper2);border-bottom:1px solid var(--line)}
-.prompt .pl{font-size:12.5px;font-weight:700;color:var(--blue)}
-.copy{border:1px solid var(--blue);background:transparent;color:var(--blue);font-family:'Hanken Grotesk';font-size:12px;font-weight:700;padding:5px 12px;border-radius:7px;cursor:pointer}
-.copy:hover{background:var(--blue);color:#fff}.copy.done{background:var(--teal);border-color:var(--teal);color:#fff}
-.prompt pre{margin:0;padding:13px 15px;white-space:pre-wrap;word-wrap:break-word;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.55;color:#2c2823}
-.qs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
-.qs{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 17px}
-.qs-t{font-family:Fraunces;font-weight:600;font-size:17px;color:var(--blue);margin-bottom:9px}
-.qs-row{font-size:13px;color:var(--ink2);margin:5px 0}.qs-row b{color:var(--ink);font-weight:700;display:inline-block;min-width:78px}
-.wf{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin-bottom:14px}
-.wf-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-.wf-h h3{font-size:18px;flex:1;min-width:200px}.wf-tool{font-size:12px;color:var(--teal);font-weight:600}
-.wf-goal{margin:0 0 10px;font-size:14px;color:var(--ink2);font-style:italic}
-.wf ol{margin:0;padding-left:20px}.wf li{margin:6px 0;font-size:14px;color:var(--ink2)}
-.vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
-.vid figure{margin:0}.vbox{position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000}
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#11100e; --bg2:#171511; --cream:#f3ece0; --ink:#16140f; --ink2:#5a5247;
+  --line:#2a2722; --gold:#e0b24c; --coral:#e0623f; --teal:#4fb0a0; --paper:#f3ece0; --paperline:#ded3c0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:400;line-height:1.04;letter-spacing:-.02em;margin:0}
+em{font-style:italic;color:var(--gold)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--coral);z-index:99;transition:width .1s}
+
+/* scroll reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.6,.3,1),transform .7s cubic-bezier(.2,.6,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* HERO */
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:80px 0 60px;position:relative;background:radial-gradient(120% 90% at 80% 10%,#241d17 0%,#11100e 60%)}
+.hero h1{font-size:clamp(46px,9vw,118px);color:#fff;font-weight:300;letter-spacing:-.03em}
+.hero h1 b{font-weight:500}
+.hero .tag{font-size:clamp(18px,2.4vw,26px);color:#cdbfa6;max-width:30ch;margin:26px 0 0;font-family:Fraunces;font-style:italic;font-weight:300}
+.hero .foot{display:flex;flex-wrap:wrap;gap:28px;margin-top:48px;font-size:14px;color:#a99c84}
+.hero .foot b{color:#f3ece0;font-family:Fraunces;font-weight:500;display:block;font-size:17px}
+.hero .scroll{margin-top:54px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.8}
+
+/* ACT bands */
+.act{padding:clamp(70px,11vw,150px) 0;position:relative}
+.act.dark{background:var(--bg)}
+.act.darker{background:#0d0c0b}
+.act.cream{background:var(--paper);color:var(--ink)}
+.act.cream .eyebrow{color:var(--coral)}
+.act.cream em{color:var(--coral)}
+.actlabel{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+.actlabel .n{font-family:Fraunces;font-size:15px;color:var(--gold)}
+.act.cream .actlabel .n{color:var(--coral)}
+.actlabel .ln{height:1px;flex:1;background:currentColor;opacity:.2}
+
+.big{font-size:clamp(32px,5.4vw,68px);font-weight:300;max-width:18ch;letter-spacing:-.025em}
+.big b{font-weight:500}
+.say{font-size:clamp(20px,2.4vw,28px);font-weight:300;max-width:24ch;font-family:Fraunces}
+.note{font-size:17px;color:var(--ink2);max-width:54ch;margin-top:18px}
+.act.dark .note,.act.darker .note{color:#b3a78f}
+
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,70px);align-items:center}
+.split.rev{grid-template-columns:1fr 1fr}
+@media(max-width:820px){.split{grid-template-columns:1fr;gap:30px}}
+
+.shot{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:4/3;background:#000}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot.tall{aspect-ratio:3/4}
+
+/* big statement helpers */
+.kick{font-size:clamp(40px,8vw,96px);font-weight:300;line-height:.98;letter-spacing:-.03em;color:#fff}
+.kick b{font-weight:600;color:var(--gold)}
+.act.cream .kick{color:var(--ink)} .act.cream .kick b{color:var(--coral)}
+
+/* compare */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+@media(max-width:680px){.cmp{grid-template-columns:1fr}}
+.cmpc{border-radius:14px;padding:20px 22px}
+.cmpc.bad{background:#efdcd4;color:#7a3320}
+.cmpc.good{background:#11100e;color:#f0e7d8;border:1px solid #2a2722}
+.cmpc .l{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-bottom:8px}
+.cmpc p{margin:0;font-size:17px;font-family:Fraunces;font-style:italic;line-height:1.4}
+.cmpc.good em{color:var(--gold)}
+
+/* mini map of tools */
+.map{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:9px 17px;font-size:15px;color:#e7ddc9;background:#15140f}
+.pill b{color:#fff;font-weight:600}
+.act.cream .pill{background:#fff;border-color:var(--paperline);color:var(--ink2)}
+.act.cream .pill b{color:var(--ink)}
+
+/* wow list */
+.wow{display:grid;grid-template-columns:1fr 1fr;gap:18px 44px;margin-top:14px}
+@media(max-width:760px){.wow{grid-template-columns:1fr}}
+.wow .w{border-top:1px solid var(--line);padding-top:16px}
+.act.cream .wow .w{border-color:var(--paperline)}
+.wow .w b{font-family:Fraunces;font-weight:500;font-size:21px;color:#fff;display:block}
+.act.cream .wow .w b{color:var(--ink)}
+.wow .w span{font-size:15px;color:#b3a78f}
+.act.cream .wow .w span{color:var(--ink2)}
+
+/* formula */
+.formula{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.fstep{flex:1;min-width:120px;background:#15140f;border:1px solid var(--line);border-radius:12px;padding:15px 16px}
+.fstep .num{font-family:Fraunces;color:var(--gold);font-size:14px}
+.fstep b{display:block;font-size:16px;margin:4px 0 2px;color:#fff}
+.fstep span{font-size:13px;color:#a99c84}
+
+/* tema block */
+.tema .ex{background:#15140f;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:16px 18px;margin-top:18px;font-size:16px}
+.act.cream .tema .ex{background:#fff;border-color:var(--paperline);border-left-color:var(--coral)}
+.tema .ex .l{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.act.cream .tema .ex .l{color:var(--coral)}
+.tema .ex i{font-style:italic;font-family:Fraunces}
+.steps3{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.s3{flex:1;min-width:150px;font-size:14px;color:#cdbfa6}
+.act.cream .s3{color:var(--ink2)}
+.s3 .n{font-family:Fraunces;color:var(--coral);font-size:18px;display:block}
+
+.prompt{margin-top:16px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#100f0d}
+.act.cream .prompt{background:#fff;border-color:var(--paperline)}
+.prompt .pt{display:flex;justify-content:space-between;align-items:center;padding:9px 13px;background:#1b1914;border-bottom:1px solid var(--line)}
+.act.cream .prompt .pt{background:#efe7d8;border-color:var(--paperline)}
+.prompt .pl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.act.cream .prompt .pl{color:var(--coral)}
+.copy{border:1px solid currentColor;background:transparent;color:var(--gold);font-family:'Hanken Grotesk';font-size:12px;font-weight:700;padding:5px 13px;border-radius:7px;cursor:pointer}
+.act.cream .copy{color:var(--coral)}
+.copy.done{color:var(--teal)}
+.prompt pre{margin:0;padding:14px 16px;white-space:pre-wrap;word-wrap:break-word;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.6;color:#d8cdb8}
+.act.cream .prompt pre{color:#3a342b}
+
+.vbox{position:relative;padding-bottom:56.25%;height:0;border-radius:14px;overflow:hidden;background:#000;border:1px solid var(--line)}
 .vbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.vid figcaption{font-size:12.5px;color:var(--ink2);margin-top:7px}.vid figcaption b{color:var(--ink)}.vch{color:var(--coral);font-weight:600}
-.acc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
-.acc{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
-.acc-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-.acc-h b{font-size:14.5px}.acc-p{font-size:11px;color:var(--teal);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
-.acc-handle{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--blue2);margin:2px 0 7px}
-.acc p{margin:0;font-size:13px;color:var(--ink2);line-height:1.45}
-.deep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
-.deep{display:block;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px;text-decoration:none;color:var(--ink)}
-.deep:hover{border-color:var(--blue)}.deep b{display:block;font-size:14.5px;color:var(--blue);margin-bottom:4px}.deep span{font-size:13px;color:var(--ink2);line-height:1.45}
-.cheat{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
-.cheat .c{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:18px 20px}
-.cheat .c h3{font-size:17px;color:var(--coral);margin-bottom:11px}.cheat .c ul{margin:0;padding-left:17px}.cheat .c li{margin:6px 0;font-size:13.5px;color:var(--ink2)}.cheat .c li b{color:var(--ink)}
-footer{background:var(--ink);color:#a99c84;text-align:center;padding:38px 20px;font-size:13.5px}
-footer .ft{font-family:Fraunces;font-style:italic;font-size:20px;color:#f1e9d9;margin-bottom:7px}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(18px);background:var(--ink);color:#fff;padding:11px 22px;border-radius:10px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:60}
+.vcap{font-size:13px;color:#a99c84;margin-top:9px}
+.act.cream .vcap{color:var(--ink2)}
+
+/* follow / close */
+.follow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.fchip2{border:1px solid var(--line);border-radius:10px;padding:11px 15px;background:#15140f}
+.fchip2 b{color:#fff;font-size:14px}.fchip2 span{display:block;font-size:12px;color:#9c8f78}
+.fail{display:grid;grid-template-columns:1fr 1fr;gap:14px 34px;margin-top:10px}
+@media(max-width:720px){.fail{grid-template-columns:1fr}}
+.fail .f b{color:var(--gold);font-weight:600}.fail .f{font-size:15.5px;color:#cdbfa6;border-top:1px solid var(--line);padding-top:13px}
+
+.close{text-align:center}
+.close .kick{margin:0 auto}
+.close .step1{margin-top:30px;font-size:19px;color:#cdbfa6;font-family:Fraunces;font-style:italic}
+
+footer{padding:50px 0;text-align:center;color:#7d7261;font-size:13.5px;border-top:1px solid var(--line)}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(18px);background:#000;color:#fff;border:1px solid var(--line);padding:11px 22px;border-radius:10px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:100}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-@media(max-width:880px){.layout{grid-template-columns:1fr;gap:0}nav.side{display:none}.hero .grid{grid-template-columns:1fr;gap:28px}.hero .meta{border-left:none;border-top:2px solid rgba(255,255,255,.22);padding-left:0;padding-top:18px;flex-direction:row;flex-wrap:wrap;gap:20px}
-.two,.ag-grid,.qa-grid,.rec-two,.cmp+.cmp,ul.clean.wins{grid-template-columns:1fr}}
-@media print{nav.side,.toast,.copy,.vids{display:none}body{background:#fff;font-size:11.5px}section.s{padding:16px 0;break-inside:avoid}.recipe,.sota,.tool,.qa,.qs,.wf,.cheat .c,.acc,.deep{break-inside:avoid}.hero{background:#163a5c!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.layout{grid-template-columns:1fr}}
-</style></head><body>
-<header class="hero"><div class="wrap grid">
-<div><span class="eyebrow">Curso presencial · Blu2</span>
-<h1>IA a tu manera.<br><em>No es magia, es un pincel.</em></h1>
-<p class="sub">Dos horas para usarla con criterio en tu trabajo, tu prensa y tu día a día. Cada cosa la practicas aquí mismo, con tus propios casos.</p></div>
-<div class="meta"><div><span>Cuándo</span><strong>Lunes 8 de junio</strong><p>5:00 pm · 2 horas</p></div>
-<div><span>Dónde</span><strong>Blu2</strong><p>Oaxaca 96, Roma Norte</p></div>
-<div><span>Trae</span><strong>Tu celular o laptop</strong><p>Lo hacemos en vivo</p></div></div></div></header>
 
-<div class="logi"><div class="wrap row"><span><b>2</b> horas, todo práctico</span><span><b>10</b> recetas paso a paso</span><span><b>2026</b>, lo que sí se puede hoy</span><span><b>0</b> conocimiento previo</span></div></div>
+@media print{.copy,.vbox,.toast,.prog,.scroll{display:none}body{background:#fff;color:#000}.act{padding:24px 0;break-inside:avoid}.act.dark,.act.darker{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
 
-<div class="wrap"><div class="layout">
-<nav class="side"><p class="navtitle">Contenido</p><a href="#pincel"><span>01</span>La IA es un pincel</a><a href="#nuevo"><span>02</span>Lo nuevo en 2026</a><a href="#herramientas"><span>03</span>El mapa de herramientas</a><a href="#pedir"><span>04</span>Hablarle bien y cuando falla</a><a href="#recetas"><span>05</span>Recetas paso a paso</a><a href="#quickstart"><span>06</span>Cómo entrar a cada una</a><a href="#workflows"><span>07</span>Workflows avanzados</a><a href="#seguir"><span>08</span>Para seguir aprendiendo</a><a href="#kit"><span>09</span>Tu kit</a></nav>
-<main>
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">Curso Blu2 · Lunes 8 de junio · 5 pm</span>
+  <h1>IA a tu<br>manera.</h1>
+  <p class="tag">No es magia. Es un pincel. Lo que pinte depende de ti.</p>
+  <div class="foot">
+    <div><b>2 horas</b>todo en vivo</div>
+    <div><b>Oaxaca 96</b>Roma Norte</div>
+    <div><b>Trae</b>tu celular o laptop</div>
+  </div>
+  <div class="scroll rv">Baja para empezar ↓</div>
+</div></header>
 
-<section class="s" id="agenda"><div class="shead2"><h2>Cómo van a ser las 2 horas</h2></div>
-<p class="lead">Formato probado para aprender haciendo: yo lo muestro, lo hacemos juntas, tú lo haces sola. Salen usando, no escuchando.</p>
-<div class="ag-grid"><div class="ag-row"><span class="ag-min">10<small>min</small></span><div><strong>Bienvenida y contrato de sala</strong><p>Establecer seguridad psicológica. Presentar el objetivo de la sesión en términos de resultado (&#x27;al terminar van a poder X&#x27;), no de contenido. Preguntar qué han escuchado de IA y qué les genera duda o miedo. Esto activa la experiencia previa y da contexto emocional al facilitador.</p></div></div><div class="ag-row"><span class="ag-min">15<small>min</small></span><div><strong>Demo magistral: el facilitador muestra un caso completo</strong><p>Fase &#x27;Yo lo hago&#x27;. Un ejemplo terminado, relevante para música/eventos (ej. redactar un rider técnico, responder un correo difícil de un cliente). El facilitador habla en voz alta mientras escribe el prompt y lee la respuesta. No hay participación aún, solo observar.</p></div></div><div class="ag-row"><span class="ag-min">20<small>min</small></span><div><strong>Ejercicio guiado 1: todas lo hacen al mismo tiempo</strong><p>Fase &#x27;Lo hacemos juntas&#x27;. Misma tarea que la demo pero con datos propios de cada participante. El facilitador camina, la regla es que ninguna se queda trabada más de 2 minutos sola. Una participante comparte su resultado en voz alta al final del bloque.</p></div></div><div class="ag-row"><span class="ag-min">5<small>min</small></span><div><strong>Micropausa activa</strong><p>Levantarse, caminar, agua. No usar el celular para revisar redes. La pausa corta recupera atención sin romper el estado de flujo.</p></div></div><div class="ag-row"><span class="ag-min">10<small>min</small></span><div><strong>Demo magistral: segunda tarea más compleja</strong><p>Fase &#x27;Yo lo hago&#x27; para el segundo ejercicio. El facilitador muestra cómo iterar un prompt cuando la primera respuesta no es buena (esto normaliza que la IA no siempre da lo que quieres a la primera y enseña el ciclo de refinamiento).</p></div></div><div class="ag-row"><span class="ag-min">20<small>min</small></span><div><strong>Ejercicio guiado 2: con variación propia</strong><p>Fase &#x27;Lo hacemos / Tú lo haces&#x27;. Las participantes adaptan la tarea a su contexto real. El facilitador da menos guía que en el bloque anterior. Al final, dos o tres comparten en voz alta. Momento clave: pedir que una le explique a la de al lado cómo lo hizo.</p></div></div><div class="ag-row"><span class="ag-min">15<small>min</small></span><div><strong>Ejercicio libre: &#x27;ahora inventas tú la tarea&#x27;</strong><p>Fase &#x27;Tú lo haces&#x27; completa. Cada participante elige una tarea real de su trabajo que quiera resolver con IA. El facilitador solo contesta preguntas individuales. Este bloque revela si el modelo mental quedó instalado.</p></div></div><div class="ag-row"><span class="ag-min">5<small>min</small></span><div><strong>Cierre y compromisos concretos</strong><p>Cada participante dice en voz alta UNA tarea que va a intentar con IA esta semana. No &#x27;voy a explorar la IA&#x27;: &#x27;voy a pedirle que me redacte la propuesta de patrocinio para el festival de agosto&#x27;. Los compromisos específicos disparan el uso post-taller.</p></div></div></div></section>
+<!-- ============ ACTO 1 · EL GRAN CUADRO ============ -->
 
-<section class="s" id="pincel"><div class="shead"><span class="snum">01</span><h2>La IA es un pincel</h2></div>
-<p class="minilead">El mismo pincel en diez manos da diez cuadros distintos. La herramienta no hace la obra. Tú sí.</p>
-<div class="two"><ul class="clean">
-<li><b>No es magia ni amenaza.</b> Es una herramienta, como lo fue la cámara.</li>
-<li><b>No piensa por ti.</b> Ejecuta lo que le pides, con el criterio que le pongas.</li>
-<li><b>No te reemplaza la IA.</b> Te reemplaza quien la usa mejor que tú.</li></ul>
-<ul class="clean">
-<li><b>Tu valor es discernir.</b> Saber qué sirve y qué es basura.</li>
-<li><b>Eres curadora y editora,</b> no operadora que copia lo que salga.</li>
-<li><b>Regla de oro:</b> ella hace el borrador, tú la versión final.</li></ul></div>
-<p class="sub">Qué es el AI slop y cómo se nota</p>
-<div class="two">
-<div class="cmp bad"><div class="cmp-h">Suena a máquina</div><div class="cmp-b">"En el maravilloso mundo de la música nos complace anunciar un evento increíble que sin duda será una experiencia inolvidable."</div><div class="cmp-why"><b>Por qué falla:</b> frases vacías, cero datos, entusiasmo de cajón. De cualquiera, de nadie.</div></div>
-<div class="cmp good"><div class="cmp-h">Suena a ti</div><div class="cmp-b">"El viernes 12 a las 9 toca Los Telares en El Imperial. Vienen a presentar disco nuevo y en vivo no suenan dos veces igual. Llega temprano porque la fila se hace larga."</div><div class="cmp-why"><b>Por qué jala:</b> fecha y lugar reales, un detalle propio, tono de persona a persona.</div></div></div>
-<div class="note-band">Cómo evitarlo: dale un texto tuyo de ejemplo y pídele tu tono · mete tú los datos concretos · léelo en voz alta y corta lo que tú nunca dirías.</div></section>
+<section class="act darker">
+  <div class="wrap">
+    <div class="actlabel rv"><span class="n">Acto 1</span><span>El gran cuadro</span><span class="ln"></span></div>
+    <div class="kick rv">El mismo pincel<br>en diez manos da<br><b>diez cuadros distintos.</b></div>
+    <p class="note rv">La inteligencia artificial no piensa por ti ni tiene gusto propio. Hace lo que le pides, con el criterio que le pongas. Tú sigues siendo quien decide.</p>
+  </div>
+</section>
 
-<section class="s" id="nuevo"><div class="shead"><span class="snum">02</span><h2>Lo nuevo en 2026</h2><span class="stag">Esto no existía bien en 2024</span></div>
-<p class="lead">No es solo escribir texto en un chat. Esto es lo que de verdad se puede hacer hoy, y se ve en vivo.</p>
-<div class="sota-grid"><div class="sota"><div class="sota-h"><b>Voz en tiempo real con razonamiento</b><span class="sota-tool">ChatGPT Advanced Voice (app móvil, gratis con Plus) + GPT-Realtime-2 lanzado mayo 2026</span></div><p class="sota-what">Hablas con la IA como si fuera una llamada, te interrumpe, entiende tu tono y responde al instante con lógica de GPT-5</p><div class="sota-demo"><span>Demo en vivo</span>Paso 1: Abrir ChatGPT en el teléfono, tocar el icono de audífonos. Paso 2: Preguntar en voz alta &#x27;Tengo un evento de música en vivo el próximo sábado, ayúdame a escribir el post de Instagram mientras te cuento los detalles&#x27; y hablar naturalmente, interrumpir a mitad.</div></div><div class="sota"><div class="sota-h"><b>Camara en vivo: la IA ve lo que ves</b><span class="sota-tool">Gemini Live con cámara (app Gemini en Android/iOS, gratis)</span></div><p class="sota-what">Apuntas tu cámara a cualquier cosa y la IA describe, analiza y responde en voz en tiempo real sobre lo que está viendo</p><div class="sota-demo"><span>Demo en vivo</span>Paso 1: Abrir app Gemini, tocar &#x27;Live&#x27;, activar cámara. Paso 2: Apuntar a un flyer de un evento o a un contrato impreso y preguntar &#x27;¿Qué dice esto? ¿Hay algo que deba revisar?&#x27;</div></div><div class="sota"><div class="sota-h"><b>Generacion de video con audio nativo</b><span class="sota-tool">Google Flow + Veo 3.1 (veo3ai.io o Google AI Ultra, disponible en México vía VPN o plan AI Ultra)</span></div><p class="sota-what">Escribes una descripción y la IA genera un clip de video con diálogos, efectos de sonido y música de ambiente ya incluidos, en un solo paso</p><div class="sota-demo"><span>Demo en vivo</span>Paso 1: Ir a Google Flow o AI Studio, escribir &#x27;Una mujer llega al backstage de un concierto, se escucha la multitud, ella dice hola al público&#x27;. Paso 2: Generar y mostrar el clip con audio sincronizado.</div></div><div class="sota"><div class="sota-h"><b>Agente que navega internet y hace tareas solo</b><span class="sota-tool">ChatGPT Agent (antes Operator, integrado en ChatGPT Plus desde 2026)</span></div><p class="sota-what">Le das una tarea compleja al chat y el agente abre sitios web, llena formularios, busca información y te entrega el resultado sin que tú hagas nada</p><div class="sota-demo"><span>Demo en vivo</span>Paso 1: En ChatGPT, escribir &#x27;Busca los 3 mejores proveedores de sonido para eventos en CDMX, revisa sus sitios web y ármame una tabla comparativa con precios y contacto&#x27;. Paso 2: Observar cómo el agente abre URLs, extrae datos y entrega la tabla.</div></div><div class="sota"><div class="sota-h"><b>Memoria persistente: la IA te recuerda</b><span class="sota-tool">ChatGPT Memoria + Proyectos (ChatGPT Plus, disponible en México)</span></div><p class="sota-what">ChatGPT guarda información sobre ti entre conversaciones: tu nombre, tu trabajo, tus preferencias, y la usa en cada nueva sesión sin que la repitas</p><div class="sota-demo"><span>Demo en vivo</span>Paso 1: Decirle a ChatGPT &#x27;Recuerda que trabajo en producción de eventos de música en CDMX y mis clientes son artistas independientes&#x27;. Paso 2: Cerrar el chat, abrir uno nuevo y pedir &#x27;Ayúdame con un email a un cliente&#x27; para ver que ya sabe tu contexto.</div></div><div class="sota"><div class="sota-h"><b>NotebookLM: podcast interactivo de tus documentos</b><span class="sota-tool">NotebookLM (notebooklm.google.com, gratis, en español)</span></div><p class="sota-what">Subes tus propios documentos (contratos, riders, presupuestos) y NotebookLM genera un podcast de dos voces que los explica; puedes interrumpirlos para preguntar</p><div class="sota-demo"><span>Demo en vivo</span>Paso 1: Subir un rider técnico de un concierto o un contrato de venue. Paso 2: Generar Audio Overview en español, escuchar 30 segundos y luego tocar &#x27;Únete&#x27; para preguntar en voz: &#x27;¿Por qué es importante el punto del backline?&#x27;</div></div><div class="sota"><div class="sota-h"><b>Generacion de imagen fotorrealista instantanea</b><span class="sota-tool">GPT Image 2 dentro de ChatGPT (Plus) o Flux 2 Pro en fal.ai</span></div><p class="sota-what">Describes una foto y la IA la genera en segundos con calidad de cámara profesional, incluyendo texto legible dentro de la imagen</p><div class="sota-demo"><span>Demo en vivo</span>Paso 1: En ChatGPT escribir &#x27;Genera una foto de una artista mexicana en el escenario de un festival nocturno, luces de colores, que diga FESTIVAL BLU2 en el fondo en letras de neón&#x27;. Paso 2: Mostrar el resultado y el texto legible.</div></div><div class="sota"><div class="sota-h"><b>Clonacion de voz con 10 segundos de audio</b><span class="sota-tool">ElevenLabs Instant Voice Cloning (elevenlabs.io, plan gratuito incluye 1 clon)</span></div><p class="sota-what">Grabas 10 segundos de tu voz y la IA genera audios ilimitados con tu misma voz diciendo lo que quieras, en cualquier idioma</p><div class="sota-demo"><span>Demo en vivo</span>Paso 1: En ElevenLabs, ir a &#x27;Add Voice &gt; Instant Voice Cloning&#x27;, grabar 10-15 segundos leyendo cualquier frase. Paso 2: Escribir el texto de un spot de radio o anuncio de evento y escuchar el resultado con tu propia voz.</div></div><div class="sota"><div class="sota-h"><b>Investigacion profunda automatizada</b><span class="sota-tool">Perplexity Deep Research (perplexity.ai, tiene plan gratuito con un límite diario de consultas)</span></div><p class="sota-what">Le das una pregunta compleja y la IA visita más de 100 sitios web, cruza datos y te entrega un reporte estructurado con fuentes en 2-5 minutos</p><div class="sota-demo"><span>Demo en vivo</span>Paso 1: Ir a perplexity.ai, activar &#x27;Deep Research&#x27;. Paso 2: Escribir &#x27;¿Cuáles son las tendencias de patrocinio para festivales de música en México en 2026, con datos y fuentes?&#x27; y mostrar el reporte generado.</div></div><div class="sota"><div class="sota-h"><b>Meta AI dentro de WhatsApp</b><span class="sota-tool">Meta AI en WhatsApp (ya disponible en México, gratis, sin app extra)</span></div><p class="sota-what">Sin salir de WhatsApp puedes pedirle a Meta AI que responda preguntas, edite fotos, redacte mensajes y atienda clientes de tu negocio las 24 horas</p><div class="sota-demo"><span>Demo en vivo</span>Paso 1: Abrir WhatsApp, buscar el contacto &#x27;Meta AI&#x27; o usar el icono azul en chats. Paso 2: Enviar una foto de un flyer y escribir &#x27;Mejora el fondo de esta imagen y hazla más llamativa&#x27; o &#x27;Redacta un mensaje para mis clientes anunciando el evento del sábado&#x27;.</div></div><div class="sota"><div class="sota-h"><b>Video IA con personaje consistente en multiples escenas</b><span class="sota-tool">Kling 3.0 en kling.ai (plan de pago, desde 8 dólares al mes)</span></div><p class="sota-what">Generas un personaje una sola vez y puedes usarlo en múltiples clips con el mismo rostro, voz y manierismos, como si tuvieras un actor digital propio</p><div class="sota-demo"><span>Demo en vivo</span>Paso 1: En kling.ai crear un personaje con descripción o foto de referencia. Paso 2: Generar dos escenas distintas con ese personaje y mostrar que el rostro y estilo son idénticos entre clips.</div></div><div class="sota"><div class="sota-h"><b>Asistente de IA que controla tu computadora</b><span class="sota-tool">Claude Cowork de Anthropic (claude.ai con plan Pro) o ChatGPT Agent con acceso a computadora</span></div><p class="sota-what">Le das una tarea y el agente abre programas, navega archivos, copia datos entre apps y completa el trabajo en tu escritorio mientras tú ves</p><div class="sota-demo"><span>Demo en vivo</span>Paso 1: En Claude con Computer Use activado, escribir &#x27;Abre el archivo de presupuesto en mi escritorio, busca todos los rubros de sonido y crea un resumen en un nuevo documento de texto&#x27;. Paso 2: Observar cómo Claude toma control del escritorio y ejecuta cada paso.</div></div><div class="sota"><div class="sota-h"><b>Creacion de video IA con audio nativo gratis (Seedance)</b><span class="sota-tool">Seedance 2.0 de ByteDance (seed.bytedance.com o NinjaChat gratuito)</span></div><p class="sota-what">Texto a video con audio sincronizado de hasta 15 segundos, gratis y sin registro, del mismo equipo de TikTok</p><div class="sota-demo"><span>Demo en vivo</span>Paso 1: Ir a ninjachat.ai o la herramienta de Seedance, escribir &#x27;Una cantante en el estudio de grabación, se escucha la música, ella dice: este es mi momento&#x27;. Paso 2: Generar y reproducir el clip de 10 segundos con audio.</div></div></div></section>
+<section class="act dark">
+  <div class="wrap split">
+    <div class="rv">
+      <span class="eyebrow">El miedo, al revés</span>
+      <h2 class="big" style="margin-top:14px">No te reemplaza<br>la IA. Te reemplaza<br><em>quien la usa<br>mejor que tú.</em></h2>
+      <p class="note">Por eso estamos aquí. No para volverte técnica, para volverte la que sabe pedirle bien.</p>
+    </div>
+    <div class="shot tall rv"><img loading="lazy" src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&q=80&auto=format&fit=crop" alt="pincel y pintura"></div>
+  </div>
+</section>
 
-<section class="s" id="herramientas"><div class="shead"><span class="snum">03</span><h2>El mapa de herramientas</h2></div>
-<p class="lead">Una para cada cosa. No necesitas todas: escoge una para escribir, una para diseño y una para organizarte.</p>
-<div class="cat"><h3><span class="dot"></span>Conversar y escribir</h3><div class="tools"><div class="tool"><div class="mono">Ch</div><div class="body"><div class="nm">ChatGPT</div><div class="ds">La más conocida y todoterreno. Voz, agente y memoria.</div><div class="px">Gratis y pago</div></div></div><div class="tool"><div class="mono">Cl</div><div class="body"><div class="nm">Claude</div><div class="ds">Redacción cuidada, documentos largos y artifacts.</div><div class="px">Gratis y pago</div></div></div><div class="tool"><div class="mono">Ge</div><div class="body"><div class="nm">Gemini</div><div class="ds">En Gmail, Drive y Android. Ve por la cámara en vivo.</div><div class="px">Gratis y pago</div></div></div><div class="tool"><div class="mono">Gr</div><div class="body"><div class="nm">Grok</div><div class="ds">Rápida y directa, ligada a X.</div><div class="px">Pago</div></div></div><div class="tool"><div class="mono">Me</div><div class="body"><div class="nm">Meta AI</div><div class="ds">Dentro de tu WhatsApp e Instagram. Sin instalar nada.</div><div class="px">Gratis</div></div></div><div class="tool"><div class="mono">Ki</div><div class="body"><div class="nm">Kimi</div><div class="ds">Aguanta textos larguísimos sin perder el hilo.</div><div class="px">Gratis</div></div></div><div class="tool"><div class="mono">De</div><div class="body"><div class="nm">DeepSeek</div><div class="ds">Potente y muy barata.</div><div class="px">Gratis</div></div></div><div class="tool"><div class="mono">Ap</div><div class="body"><div class="nm">Apple Intelligence</div><div class="ds">En el iPhone y la Mac, sin abrir otra app.</div><div class="px">Equipo reciente</div></div></div></div></div><div class="cat"><h3><span class="dot"></span>Investigar con fuentes</h3><div class="tools"><div class="tool"><div class="mono">Pe</div><div class="body"><div class="nm">Perplexity</div><div class="ds">Respuestas con fuentes y Deep Research.</div><div class="px">Gratis y pago</div></div></div><div class="tool"><div class="mono">No</div><div class="body"><div class="nm">NotebookLM</div><div class="ds">Responde solo con tus documentos. Hace podcast de ellos.</div><div class="px">Gratis</div></div></div></div></div><div class="cat"><h3><span class="dot"></span>Imagen y diseño</h3><div class="tools"><div class="tool"><div class="mono">Ca</div><div class="body"><div class="nm">Canva Magic</div><div class="ds">Diseño con IA para posts, invitaciones y boletines.</div><div class="px">Gratis y pago</div></div></div><div class="tool"><div class="mono">Id</div><div class="body"><div class="nm">Ideogram</div><div class="ds">Imágenes con texto legible dentro (flyers, posters).</div><div class="px">Gratis y pago</div></div></div><div class="tool"><div class="mono">GP</div><div class="body"><div class="nm">GPT Image 2</div><div class="ds">Foto realista desde texto, dentro de ChatGPT.</div><div class="px">Pago</div></div></div></div></div><div class="cat"><h3><span class="dot"></span>Video y edición</h3><div class="tools"><div class="tool"><div class="mono">Ca</div><div class="body"><div class="nm">CapCut</div><div class="ds">Editar y subtitular video fácil, con IA.</div><div class="px">Gratis y pago</div></div></div><div class="tool"><div class="mono">Ve</div><div class="body"><div class="nm">Veo 3.1 / Seedance</div><div class="ds">Generar video con audio desde texto.</div><div class="px">Gratis y pago</div></div></div><div class="tool"><div class="mono">Kl</div><div class="body"><div class="nm">Kling</div><div class="ds">Video con personaje consistente entre escenas.</div><div class="px">Pago</div></div></div></div></div><div class="cat"><h3><span class="dot"></span>Música y voz</h3><div class="tools"><div class="tool"><div class="mono">Su</div><div class="body"><div class="nm">Suno</div><div class="ds">Canciones completas desde una idea.</div><div class="px">Gratis y pago</div></div></div><div class="tool"><div class="mono">El</div><div class="body"><div class="nm">ElevenLabs</div><div class="ds">Voces realistas y clonar tu propia voz.</div><div class="px">Gratis y pago</div></div></div></div></div><div class="cat"><h3><span class="dot"></span>Organización</h3><div class="tools"><div class="tool"><div class="mono">No</div><div class="body"><div class="nm">Notion</div><div class="ds">Notas, tareas y bases con asistente.</div><div class="px">Gratis y pago</div></div></div><div class="tool"><div class="mono">Ca</div><div class="body"><div class="nm">Calendar + Reclaim</div><div class="ds">Agenda y seguimientos automáticos.</div><div class="px">Gratis</div></div></div></div></div></section>
+<section class="act cream">
+  <div class="wrap">
+    <div class="actlabel rv"><span class="n">·</span><span>Cómo se nota lo bueno de lo genérico</span><span class="ln"></span></div>
+    <h2 class="big rv" style="margin-bottom:6px">Esto es <em>AI slop.</em><br>Y esto no.</h2>
+    <div class="cmp rv">
+      <div class="cmpc bad"><div class="l">Suena a máquina</div><p>"Nos complace anunciar un evento increíble que será una experiencia inolvidable llena de momentos únicos."</p></div>
+      <div class="cmpc good"><div class="l">Suena a alguien</div><p>"El 18 de julio toca <em>Caloncho</em> en El Plaza Condesa. Disco nuevo, y en vivo nunca suena igual. Llega temprano, la fila se hace larga."</p></div>
+    </div>
+    <p class="note rv">La diferencia no es la herramienta. Es que el segundo tiene una fecha real, un lugar real y un detalle que solo tú sabes. Eso lo pones tú.</p>
+  </div>
+</section>
 
-<section class="s" id="pedir"><div class="shead"><span class="snum">04</span><h2>Hablarle bien, y qué hacer cuando falla</h2></div>
-<p class="lead">La diferencia entre respuesta plana y respuesta lista no es la herramienta, es cómo pides y cómo corriges.</p>
-<div class="formula">
-<div class="fchip"><b>Contexto</b><span>quién y para quién</span></div>
-<div class="fchip"><b>Intención</b><span>qué quieres lograr</span></div>
-<div class="fchip"><b>Restricciones</b><span>tono, largo, qué evitar</span></div>
-<div class="fchip"><b>Formato</b><span>cómo lo quieres</span></div>
-<div class="fchip"><b>Ejemplo</b><span>algo que ya te guste</span></div></div>
-<p class="sub">Cuando algo sale mal</p>
-<div class="qa-grid"><div class="qa"><div class="q">Me da una respuesta genérica y plana, como si hubiera copiado de Wikipedia</div><div class="a">Dale contexto específico antes de pedir. Agrega: &#x27;Soy productora de eventos en CDMX, mi cliente es una disquera indie con presupuesto medio, el público es 25-35 años&#x27;. Mientras más contexto, menos genérico el resultado.</div></div><div class="qa"><div class="q">Se mete en loop y me repite lo mismo con otras palabras</div><div class="a">Escribe: &#x27;Para. Eso ya lo dijiste. Dame algo nuevo: [punto concreto que quieres]&#x27;. O empieza una conversación nueva y pega solo la parte útil que ya tenía.</div></div><div class="qa"><div class="q">Me inventó un link, una estadística o el nombre de un artista que no existe</div><div class="a">Nunca copies links directamente. Antes de usarlos escribe: &#x27;Verifica cada dato que me diste. Si no estás segura de una fuente, dilo&#x27;. Para datos críticos usa Perplexity en vez de ChatGPT o Claude, porque Perplexity cita fuentes reales.</div></div><div class="qa"><div class="q">La respuesta se corta a la mitad y no termina</div><div class="a">Escribe simplemente: &#x27;Continúa desde donde te quedaste&#x27;. Si pasa seguido, antes de pedir algo largo dile: &#x27;Divide tu respuesta en partes. Dame la primera y espera mi señal para seguir&#x27;.</div></div><div class="qa"><div class="q">No respeta el formato que le pedí, me da texto corrido cuando pedí tabla o bullets</div><div class="a">Sé más explícita al final del prompt. Agrega: &#x27;Responde ÚNICAMENTE con una tabla de 3 columnas: nombre del proveedor, precio estimado, contacto. Sin texto antes ni después de la tabla&#x27;.</div></div><div class="qa"><div class="q">Pierde el contexto: a la mitad de la conversación olvida lo que le dije al principio</div><div class="a">Cada herramienta tiene un límite de memoria dentro de la sesión. Cuando notes que &#x27;olvidó&#x27;, pega de nuevo el contexto clave: &#x27;Recordatorio: estamos haciendo X para cliente Y con presupuesto Z. Con eso en mente, ahora...&#x27;.</div></div><div class="qa"><div class="q">Se pone moralista o evasiva, no quiere ayudarme con algo totalmente normal</div><div class="a">Reformula sin cambiar el objetivo. En vez de &#x27;escribe un mensaje persuasivo para que paguen&#x27;, di &#x27;redacta un recordatorio profesional de pago para un cliente que lleva 15 días de retraso&#x27;. El contexto profesional reduce el bloqueo.</div></div><div class="qa"><div class="q">Me da algo demasiado largo cuando necesito algo corto</div><div class="a">Al final del prompt escribe el límite: &#x27;Responde en máximo 3 oraciones&#x27; o &#x27;Dame exactamente 5 bullets, ni uno más&#x27;. Si ya te dio algo largo, dile: &#x27;Resume eso en 2 líneas&#x27;.</div></div><div class="qa"><div class="q">Le pido que corrija algo y lo reescribe todo en vez de solo arreglar lo que le dije</div><div class="a">Sé quirúrgica: &#x27;Cambia ÚNICAMENTE el tono de este párrafo para que suene más urgente. No toques nada más&#x27;. La palabra ÚNICAMENTE ayuda mucho.</div></div><div class="qa"><div class="q">Le hablo en español y me contesta en inglés</div><div class="a">Al inicio de la conversación escribe: &#x27;Todas tus respuestas en español mexicano, informal&#x27;. Si ya cambió de idioma, di: &#x27;Sigue en español&#x27;.</div></div></div>
-<p class="sub">Aciertos que hacen la diferencia</p>
-<ul class="clean wins"><li>Dale contexto desde el primer mensaje: quién eres, para qué es, quién lo va a leer. Sin eso te da respuestas de manual escolar. Con eso te da algo que puedes usar directamente.</li><li>Pídele que te haga preguntas antes de empezar. Escribe: &#x27;Antes de responder, hazme las preguntas que necesitas para darte el mejor resultado&#x27;. Esto evita que asuma cosas mal.</li><li>Itera en vez de empezar de cero. Si la respuesta estuvo 70% bien, di: &#x27;Buen intento. Ahora cambia el tono, hazlo más directo y agrega un cierre con llamada a acción&#x27;. Es más rápido que reescribir el prompt.</li><li>Guarda tus mejores prompts. Cuando un prompt funcione bien, cópialo a un doc o note. La próxima vez que necesites algo parecido, adaptas ese en lugar de inventar desde cero.</li><li>Usa voz para pensar en voz alta y foto para mostrar contexto visual. En ChatGPT o Gemini, en lugar de describir con palabras una pieza gráfica que quieres replicar, fotografíala y di: &#x27;Quiero algo con esta estructura pero para un festival de jazz&#x27;.</li><li>Pídele fuentes cuando el dato importa. Escribe al final: &#x27;Cita la fuente de cada estadística que uses&#x27;. Si no puede, te lo dirá, y eso ya te dice que no debes confiar en ese dato.</li><li>Usa el modo &#x27;crítico&#x27;. Después de que te dé una propuesta, di: &#x27;Ahora asume el rol de un cliente difícil y dame todas las objeciones que tendría a esto&#x27;. Te ayuda a anticipar problemas antes de mandar algo.</li><li>Ponle nombre al rol. &#x27;Actúa como directora de marketing con 10 años en la industria musical mexicana&#x27; da mejores resultados que preguntar sin contexto. El rol le da un marco para responder.</li></ul></section>
+<section class="act dark">
+  <div class="wrap">
+    <div class="actlabel rv"><span class="n">·</span><span>No es solo ChatGPT</span><span class="ln"></span></div>
+    <h2 class="big rv">Hay una herramienta<br>para <em>cada cosa.</em></h2>
+    <p class="note rv">No necesitas todas. Esto es el mapa para saber a cuál ir.</p>
+    <div class="map rv">
+      <span class="pill"><b>ChatGPT</b> · escribir, voz, hacer tareas</span>
+      <span class="pill"><b>Claude</b> · textos largos y cuidados</span>
+      <span class="pill"><b>Gemini</b> · ve por tu cámara</span>
+      <span class="pill"><b>NotebookLM</b> · tus documentos</span>
+      <span class="pill"><b>Perplexity</b> · investigar con fuentes</span>
+      <span class="pill"><b>Canva</b> · diseño</span>
+      <span class="pill"><b>CapCut</b> · video</span>
+      <span class="pill"><b>Suno</b> · música</span>
+      <span class="pill"><b>ElevenLabs</b> · voz</span>
+      <span class="pill"><b>Meta AI</b> · dentro de WhatsApp</span>
+    </div>
+  </div>
+</section>
 
-<section class="s" id="recetas"><div class="shead"><span class="snum">05</span><h2>Recetas paso a paso</h2></div>
-<p class="lead">Cada tarea como receta: el algoritmo, un ejemplo ya hecho para ver, y el ejercicio que haces en vivo. Copia el prompt y arranca.</p>
-<div class="recipe"><div class="rec-h"><h3>Boletín / comunicado interno o para fans</h3><span class="rec-tool">ChatGPT o Claude</span></div><div class="rec-steps"><span class="rec-lbl">El algoritmo</span><ol><li>1. Dale contexto primero: pega en el chat quiénes son (artista/empresa), el evento o novedad, y 2-3 ejemplos de boletines que te gusten en tono.</li><li>2. Pide un borrador con estructura definida: asunto, párrafo de gancho, cuerpo (qué pasó, cuándo, dónde, por qué importa), llamada a acción, firma.</li><li>3. Lee el resultado y marca lo que suena artificial o no es tu voz. Ponle al chat: &#x27;reescribe estos párrafos en tono más casual, sin frases corporativas&#x27;.</li><li>4. Pide 3 opciones de línea de asunto para el correo y elige la que más se siente tuya.</li><li>5. Pega el texto final en Mailchimp, Brevo o el servicio de correo que uses. Revisa preview en móvil antes de enviar.</li></ol></div><div class="rec-two"><div class="rec-ex pre"><span>Ejemplo pre-hecho</span><p>Mostrar un boletín ya generado de un concierto ficticio &#x27;Noche Acústica - Ana Torres Trio, 21 junio, Foro Indie CDMX&#x27; con los 5 elementos de la estructura marcados en colores.</p></div><div class="rec-ex live"><span>Ejercicio en vivo</span><p>Cada quien escribe en papel: nombre de su acto/evento, fecha, una frase de por qué la gente debería ir. Con eso alimentan el prompt en ChatGPT y en 5 minutos comparan los resultados en pantalla.</p></div></div><div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Eres asistente de comunicación para [nombre del artista/evento]. Redacta un boletín para fans sobre [novedad]. Tono: cercano, sin jerga corporativa, primera persona del plural. Estructura: línea de asunto pegajosa, párrafo de apertura con gancho emocional, detalles del evento (qué/cuándo/dónde), link de acción [link], cierre cálido. Máximo 200 palabras en el cuerpo.</pre></div></div><div class="recipe"><div class="rec-h"><h3>Boletín de prensa con diseño + links de video y foto</h3><span class="rec-tool">ChatGPT para el texto + Canva (Magic Design) para el layout</span></div><div class="rec-steps"><span class="rec-lbl">El algoritmo</span><ol><li>1. En ChatGPT escribe el comunicado de prensa: quinto W (quién, qué, cuándo, dónde, por qué), cita del artista entre comillas, datos de contacto. Pide formato AP o estilo periodístico.</li><li>2. Abre Canva, busca plantilla &#x27;Press Release&#x27; o &#x27;Media Kit&#x27;. Activa Magic Design: describe el evento y deja que genere opciones de layout.</li><li>3. Pega el texto de ChatGPT en la plantilla. Ajusta colores y tipografía a tu marca.</li><li>4. Inserta los links de video (YouTube) y carpeta de fotos (Google Drive o Dropbox) como botones o texto subrayado dentro del diseño.</li><li>5. Exporta como PDF interactivo desde Canva (File &gt; Download &gt; PDF Standard, activa &#x27;Save links&#x27;). Ese PDF tiene los links clicables.</li><li>6. Comparte el PDF por correo o sube a tu sitio/Drive y manda el link directo a medios.</li></ol></div><div class="rec-two"><div class="rec-ex pre"><span>Ejemplo pre-hecho</span><p>Mostrar un PDF de Canva ya terminado de un lanzamiento de sencillo ficticio, con header con foto, texto a dos columnas, botones de &#x27;Ver video&#x27; y &#x27;Descargar fotos&#x27; en color de marca, y boilerplate al pie.</p></div><div class="rec-ex live"><span>Ejercicio en vivo</span><p>En Canva (versión web, sin instalar nada), abrir la plantilla compartida del curso. Cada quien reemplaza el texto con los datos de su propio artista o evento, cambia el color de acento a su color de marca, y exporta el PDF en 10 minutos.</p></div></div><div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Redacta un comunicado de prensa estilo periodístico para: Artista: [nombre]. Evento/lanzamiento: [descripción]. Fecha y lugar: [datos]. Incluye: titular de impacto, primer párrafo con los 5W, cita del artista entre comillas, párrafo de contexto (quién es el artista, trayectoria breve), párrafo de detalles prácticos, boilerplate de la empresa/management. Al final agrega sección &#x27;Recursos de prensa&#x27;: [link video] [link fotos]. Tono: profesional pero con personalidad.</pre></div></div><div class="recipe"><div class="rec-h"><h3>Escribir y pulir lyrics</h3><span class="rec-tool">ChatGPT (con el GPT &#x27;Lyric Writer&#x27;) o Claude</span></div><div class="rec-steps"><span class="rec-lbl">El algoritmo</span><ol><li>1. Define antes de escribir: género musical, tempo (rápido/lento), estado emocional que quieres que sienta el oyente al terminar, tema central en una oración.</li><li>2. Pide a la IA que genere 3 opciones de gancho (hook) para el coro antes de escribir la canción completa. Elige o mezcla.</li><li>3. Con el hook elegido, pide verso 1 + pre-coro + coro. Indica cuántas sílabas por línea o que siga el patrón de ritmo de una canción referencia (menciona el título).</li><li>4. Lee en voz alta. Marca las líneas que se sienten forzadas o no son tu voz. Ponlas de vuelta al chat: &#x27;reescribe solo estas líneas, evita rimas fáciles, hazlas más concretas y visuales&#x27;.</li><li>5. Pide un verso 2 que contraste emocionalmente con el 1 y un puente que eleve la tensión antes del coro final.</li><li>6. Versión final: pide al chat que te liste todas las rimas y comprueba que no se repitan demasiado.</li></ol></div><div class="rec-two"><div class="rec-ex pre"><span>Ejemplo pre-hecho</span><p>Mostrar un proceso completo: screenshot de 3 hooks generados para una balada pop en español, la selección de uno, y la canción completa estructurada con [Verso 1] [Pre-Coro] [Coro] [Verso 2] [Puente] [Coro final], con anotaciones de qué cambió entre borrador y versión pulida.</p></div><div class="rec-ex live"><span>Ejercicio en vivo</span><p>Cada quien piensa en una emoción que quiere expresar y 2 imágenes concretas relacionadas (un objeto, un lugar, no sentimientos abstractos). Alimentan eso al chat y piden 3 hooks. El grupo vota cuál de los hooks suena más auténtico y por qué.</p></div></div><div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Actúa como co-escritor de canciones. Género: [bolero/pop/ranchera/etc]. Tema: [descripción en una oración]. Estado emocional al final: [resignación / esperanza / euforia / etc]. Referencia de ritmo: canción &#x27;[título]&#x27; de &#x27;[artista]&#x27;. Escribe primero solo 4 opciones de gancho para el coro (máximo 2 líneas cada una). Sin frases cliché como &#x27;tú eres mi sol&#x27; o &#x27;no puedo vivir sin ti&#x27;. Las imágenes deben ser concretas y visuales.</pre></div></div><div class="recipe"><div class="rec-h"><h3>Video de concierto / evento con edición y subtítulos</h3><span class="rec-tool">CapCut (web o móvil, gratis)</span></div><div class="rec-steps"><span class="rec-lbl">El algoritmo</span><ol><li>1. Sube el video a CapCut (capcut.com o app). Trim: corta los primeros y últimos segundos aburridos con el cortador del timeline.</li><li>2. Ve a la pestaña &#x27;Text&#x27; &gt; &#x27;Auto Captions&#x27;. Selecciona el idioma del audio (Español o el que corresponda). Presiona &#x27;Generate&#x27;. El sistema procesa en 10-30 segundos.</li><li>3. Revisa cada caption: corrige nombres propios, tildes, errores de transcripción. Ajusta el timing de entradas/salidas arrastrando en el timeline.</li><li>4. Cambia el estilo de subtítulos: fuente, tamaño, color de fondo, posición (centro o abajo). Para conciertos, el fondo semitransparente negro funciona mejor.</li><li>5. Agrega música de fondo si el audio del video es débil: pestaña &#x27;Audio&#x27; &gt; &#x27;Music&#x27;. CapCut tiene librería libre de derechos.</li><li>6. Exporta en 1080p. Descarga el .mp4 y el .srt si quieres subtítulos separados para YouTube.</li></ol></div><div class="rec-two"><div class="rec-ex pre"><span>Ejemplo pre-hecho</span><p>Mostrar un video de 60 segundos ya editado en CapCut de un concierto ficticio: con corte limpio al inicio, subtítulos en blanco con fondo negro semitransparente, fade out al final, y el .srt exportado abierto en el Bloc de notas.</p></div><div class="rec-ex live"><span>Ejercicio en vivo</span><p>Se comparte un video de prueba de 2 minutos (grabado previamente o clip de stock). Cada participante lo sube a CapCut web, genera los subtítulos automáticos, corrige 2-3 errores que el grupo identifique en pantalla, y exporta. Todo en 15 minutos.</p></div></div><div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>No aplica directamente (CapCut es interfaz visual). Prompt de apoyo para ChatGPT si la transcripción tiene errores: &#x27;Tengo la transcripción de un video de concierto. Corrige errores de transcripción, nombres de canciones y artistas, y agrega puntuación correcta. No cambies el contenido. Transcripción: [pegar texto]&#x27;.</pre></div></div><div class="recipe"><div class="rec-h"><h3>Plan de marketing de un lanzamiento</h3><span class="rec-tool">ChatGPT con contexto detallado</span></div><div class="rec-steps"><span class="rec-lbl">El algoritmo</span><ol><li>1. Antes de abrir el chat, escribe en papel: nombre del lanzamiento, fecha de salida, público objetivo (descripción real, no &#x27;todos&#x27;), presupuesto aproximado, 3 canales donde tienes presencia activa.</li><li>2. Alimenta todo eso al chat en un solo mensaje. Pide un plan en 3 fases: pre-lanzamiento (4 semanas antes), semana de lanzamiento, post-lanzamiento (2 semanas).</li><li>3. Por cada fase pide: acciones concretas con fecha, responsable (tú, management, prensa), canal específico (Instagram, email, TikTok, etc.), y el tipo de contenido (video, story, post, comunicado).</li><li>4. Pide que te genere también: 5 ideas de contenido para redes para la semana de lanzamiento, y un asunto de correo para cada comunicado clave.</li><li>5. Exporta el plan a una tabla de Google Sheets o Notion. Pide al chat que te lo dé en formato de tabla markdown para copiarlo fácilmente.</li><li>6. Revisa el plan con alguien de tu equipo y ajusta lo que no sea realista para tu contexto.</li></ol></div><div class="rec-two"><div class="rec-ex pre"><span>Ejemplo pre-hecho</span><p>Mostrar una tabla de Google Sheets ya llenada con un plan de 6 semanas para el lanzamiento ficticio de un EP de jazz contemporáneo en CDMX, con acciones reales como &#x27;enviar comunicado a Time Out CDMX&#x27;, &#x27;publicar reel behind-the-scenes en Instagram&#x27;, &#x27;playlist pitch en Spotify for Artists&#x27;.</p></div><div class="rec-ex live"><span>Ejercicio en vivo</span><p>En grupos de 2, una persona dicta los datos de su propio lanzamiento real o inventado, la otra los tipea en el prompt. Corren el plan, lo leen juntas y cada una señala una acción que le parece útil y una que cambiaría. Discusión de 5 minutos en grupo.</p></div></div><div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Eres estratega de marketing musical con experiencia en México y LATAM. Crea un plan de lanzamiento de 6 semanas para: Artista: [nombre]. Lanzamiento: [tipo: sencillo / álbum / tour]. Fecha de salida: [fecha]. Público: [descripción específica]. Presupuesto: [rango o &#x27;orgánico sin pago&#x27;]. Canales activos: [listar]. Formato: tabla con columnas Semana / Acción / Canal / Responsable / Contenido específico. Incluye al final 5 ideas de contenido para la semana de estreno y 3 asuntos de correo para prensa.</pre></div></div><div class="recipe"><div class="rec-h"><h3>Resumen de junta con puntos clave y tareas</h3><span class="rec-tool">Claude o ChatGPT con transcripción pegada (o Gemini si usas Google Meet)</span></div><div class="rec-steps"><span class="rec-lbl">El algoritmo</span><ol><li>1. Durante la junta, activa la grabación y transcripción automática: Google Meet (Plan Business), Zoom, o la app Otter.ai en tu teléfono.</li><li>2. Al terminar la junta, descarga o copia la transcripción de texto.</li><li>3. Pega la transcripción completa en Claude o ChatGPT. Claude aguanta hasta ~150,000 palabras sin perder contexto.</li><li>4. Usa el prompt de resumen (ver abajo). El chat te devuelve: resumen ejecutivo de 5 líneas, acuerdos tomados, tareas con nombre del responsable y fecha, y preguntas que quedaron sin respuesta.</li><li>5. Revisa el resultado: corrige cualquier nombre mal atribuido o tarea con responsable equivocado.</li><li>6. Copia el resumen a un correo o mensaje de WhatsApp y mándalo al grupo antes de que pasen 2 horas de la junta.</li></ol></div><div class="rec-two"><div class="rec-ex pre"><span>Ejemplo pre-hecho</span><p>Mostrar una transcripción corta de 10 minutos de una junta ficticia de producción de un festival (con distracciones, tangentes y nombres mencionados informalmente) y el resumen estructurado que genera Claude, con las tareas bien extraídas.</p></div><div class="rec-ex live"><span>Ejercicio en vivo</span><p>Se proporciona una transcripción de junta de 2 páginas (preparada de antemano, temática de organización de evento musical). Cada quien la pega en Claude o ChatGPT, corre el prompt, y compara su resultado con el de la persona de junto. El grupo identifica diferencias y discute qué instrucción del prompt las causó.</p></div></div><div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Tengo la transcripción de una junta de trabajo. Por favor genera: 1) Resumen ejecutivo en máximo 5 oraciones, 2) Lista de acuerdos tomados (bullet points, cada uno en una oración), 3) Lista de tareas pendientes con formato: Tarea | Responsable | Fecha límite (si se mencionó, si no escribe &#x27;por definir&#x27;), 4) Preguntas que quedaron sin responder. Si un responsable no se menciona claramente, anota &#x27;sin asignar&#x27;. No inventes datos que no estén en la transcripción. Transcripción: [pegar aquí]</pre></div></div><div class="recipe"><div class="rec-h"><h3>Itinerario y logística de viaje (tour, gira, viaje de trabajo)</h3><span class="rec-tool">ChatGPT (con búsqueda web activada)</span></div><div class="rec-steps"><span class="rec-lbl">El algoritmo</span><ol><li>1. Define en papel antes de abrir el chat: ciudades y fechas, número de personas, tipo de transporte disponible (avión, camión, auto), presupuesto por persona por noche, necesidades especiales (equipo, instrumentos, accesibilidad).</li><li>2. Pega todo eso al chat. Pide primero solo el orden lógico de ciudades y tiempos de traslado. Valida ese esqueleto antes de pedir detalles.</li><li>3. Pide el itinerario día por día con horarios tentativos: traslados, soundcheck, show, comida, hotel (zona recomendada, no nombre específico porque los precios cambian).</li><li>4. Pide por separado: lista de documentos necesarios, lista de equipo a cargar, y recordatorios de logística (quién confirma el venue, quién tiene los contratos).</li><li>5. Verifica toda la información de horarios de transporte y precios directamente en las páginas oficiales o apps (Volaris, ADO, etc.). ChatGPT puede equivocarse en datos en tiempo real.</li><li>6. Exporta el itinerario a Google Docs o a las notas de tu teléfono. Comparte el link con el equipo.</li></ol></div><div class="rec-two"><div class="rec-ex pre"><span>Ejemplo pre-hecho</span><p>Mostrar un itinerario de 4 días en 3 ciudades (CDMX-Guadalajara-Monterrey) para una artista de música independiente con 2 personas de equipo, exportado como tabla de Google Docs con columnas Día / Hora / Actividad / Notas / Responsable.</p></div><div class="rec-ex live"><span>Ejercicio en vivo</span><p>Usando un viaje real o inventado (se sugiere: 3 días, 2 ciudades, 4 personas, con instrumentos), cada quien corre el prompt y en 5 minutos tiene un borrador de itinerario. La facilitadora señala 2 cosas que siempre hay que verificar a mano (precios de vuelos, disponibilidad de hoteles) y por qué la IA no es suficiente para eso.</p></div></div><div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Crea un itinerario de logística de viaje/gira para: Quién: [artista + N personas de equipo]. Ciudades y fechas: [listar en orden]. Transporte preferido: [avión / camión / auto]. Presupuesto por noche de hotel: [rango en pesos MXN o USD]. Equipo especial a transportar: [si aplica]. Para cada día incluye: hora de salida, traslado, llegada, actividades (soundcheck, prensa, show, descanso), zona de hotel recomendada. Al final agrega: lista de documentos a llevar, lista de contactos clave a tener guardados (representante del venue, promotor, etc.), y 3 cosas que suelen olvidarse en giras de este tipo. IMPORTANTE: los precios de boletos y disponibilidad debo verificarlos yo directamente.</pre></div></div><div class="recipe"><div class="rec-h"><h3>Calendario y agenda con seguimientos</h3><span class="rec-tool">Reclaim.ai (Google Calendar) + ChatGPT para redactar recordatorios</span></div><div class="rec-steps"><span class="rec-lbl">El algoritmo</span><ol><li>1. Abre Google Calendar. Crea un evento por cada compromiso: nombre claro, duración realista, descripción con los datos que necesitas tener a la mano (contacto, link de llamada, notas).</li><li>2. Conecta Reclaim.ai a tu Google Calendar (reclaim.ai, plan gratuito disponible). Define &#x27;habits&#x27;: bloques que quieres proteger cada semana (ej: revisión de correos, preparación de shows, tiempo de composición).</li><li>3. Para seguimientos pendientes, usa ChatGPT: lista todos tus pendientes con fecha límite, pide que te los ordene por urgencia e impacto y que sugiera en qué día/hora meterlos al calendario.</li><li>4. Pide a ChatGPT que redacte los correos o mensajes de seguimiento por adelantado: &#x27;Redacta un correo de seguimiento para [nombre] sobre [tema], suave pero firme, máximo 4 líneas&#x27;.</li><li>5. Agrega esos correos como borradores en Gmail o como notas en el evento del calendario para enviarlos cuando corresponda.</li><li>6. Revisa el calendario cada lunes 15 minutos: mueve lo que no se cumplió, no lo canceles sin reagendar.</li></ol></div><div class="rec-two"><div class="rec-ex pre"><span>Ejemplo pre-hecho</span><p>Mostrar una semana de Google Calendar ya organizada con colores por categoría (shows en rojo, administración en azul, tiempo personal en verde) más 3 correos de seguimiento ya redactados listos para enviar, generados por ChatGPT.</p></div><div class="rec-ex live"><span>Ejercicio en vivo</span><p>Cada quien escribe en papel sus 5 pendientes más urgentes de esta semana. Los pegan en el prompt. ChatGPT los ordena y sugiere horarios. La facilitadora muestra cómo arrastrar esa lista a Google Calendar en menos de 3 minutos.</p></div></div><div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Tengo estos pendientes sin fecha asignada: [listar tareas]. Mis compromisos fijos esta semana son: [listar]. Mis horas disponibles son: [horario]. Por favor: 1) Ordena los pendientes por urgencia e impacto (usa matriz alta/baja), 2) Sugiere en qué día y hora de esta semana meter cada uno, 3) Para los 3 más urgentes, redacta el mensaje o correo de seguimiento que debería mandar hoy. Tono del correo: directo y cordial, sin rodeos.</pre></div></div><div class="recipe"><div class="rec-h"><h3>Generar imagen para campaña (poster, flyer, portada)</h3><span class="rec-tool">Ideogram V3 (texto en imágenes) + ChatGPT con DALL-E para iteración rápida</span></div><div class="rec-steps"><span class="rec-lbl">El algoritmo</span><ol><li>1. Define antes de abrir cualquier herramienta: tamaño del formato (1:1 para Instagram, 9:16 para stories, 4:5 para feed, 16:9 para portada de Facebook), paleta de colores si ya tienes marca, y el texto que debe aparecer en la imagen (título, fecha, lugar).</li><li>2. Ve a ideogram.ai. Selecciona el aspecto correcto en el menú antes de escribir el prompt.</li><li>3. Escribe el prompt en inglés (funciona mejor): describe el estilo visual, el mood, los elementos gráficos, y entre comillas exactas el texto que quieres que aparezca. Ejemplo: concert poster, dark velvet blue background, gold art deco details, text: &#x27;Noche de Boleros&#x27; in elegant serif font.</li><li>4. Genera 4 variaciones. Elige la que más se acerque. Si el texto salió mal, vuelve a generar con el mismo prompt (Ideogram V3 logra 90-95% de precisión en texto).</li><li>5. Descarga la imagen y ábrela en Canva para ajustes finales: agregar logo, cambiar tipografía si hace falta, agregar datos del evento que no entraron bien en la IA.</li><li>6. Exporta en PNG de alta resolución para impresión o JPG para digital.</li></ol></div><div class="rec-two"><div class="rec-ex pre"><span>Ejemplo pre-hecho</span><p>Mostrar lado a lado: el prompt escrito, las 4 variaciones que generó Ideogram, la imagen elegida, y la versión final retocada en Canva con el logo y datos completos del evento.</p></div><div class="rec-ex live"><span>Ejercicio en vivo</span><p>Cada quien piensa en un evento real o inventado. Escribe en papel: nombre del evento, 2 colores, 1 palabra que describe el ambiente (elegante, rockero, tropical, etc). Con eso construyen el prompt en Ideogram y en 5 minutos tienen 4 opciones de imagen. El grupo vota su favorita de cada participante.</p></div></div><div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Prompt para Ideogram (en inglés): &#x27;[estilo] poster, [descripción de ambiente/mood], [colores principales], [elementos visuales clave]. Bold text: &#x27;[NOMBRE DEL EVENTO]&#x27;. Subtitle text: &#x27;[fecha y lugar]&#x27;. Style: [photographic / illustration / design / render]. Aspect ratio: [elegir según formato]&#x27;. Prompt de apoyo en ChatGPT: &#x27;Ayúdame a escribir un prompt para generador de imágenes IA para un poster de [descripción del evento]. Debe incluir: estilo visual, paleta de color, texto que aparece, y mood general. Dame 3 versiones del prompt en inglés&#x27;.</pre></div></div><div class="recipe"><div class="rec-h"><h3>Generar música con Suno</h3><span class="rec-tool">Suno V5.5 (suno.com)</span></div><div class="rec-steps"><span class="rec-lbl">El algoritmo</span><ol><li>1. Crea cuenta en suno.com (tiene plan gratuito con un límite diario, suficiente para el ejercicio). Activa &#x27;Custom Mode&#x27; con el switch arriba del campo de texto.</li><li>2. En el campo de Lyrics pega tus letras. Usa etiquetas de estructura: [Intro] [Verse 1] [Chorus] [Verse 2] [Bridge] [Outro]. Si no tienes letra, deja el campo vacío y Suno la genera.</li><li>3. En el campo Style of Music escribe el género y el mood en inglés o español: &#x27;bolero romántico, voz femenina, guitarra acústica, tempo lento&#x27;. Agrega instrumentos específicos si los quieres.</li><li>4. Escribe un título tentativo en el campo Title. No importa si cambia después.</li><li>5. Presiona Create. Suno genera 2 versiones en paralelo. Escúchalas completas antes de elegir.</li><li>6. Si una versión está bien pero quieres extenderla o cambiar una sección, usa el botón &#x27;Extend&#x27; o &#x27;Remaster&#x27; sobre esa versión específica. No vuelvas a empezar desde cero.</li><li>7. Descarga el MP3 desde el botón de descarga. Para uso comercial necesitas plan Pro o superior.</li></ol></div><div class="rec-two"><div class="rec-ex pre"><span>Ejemplo pre-hecho</span><p>Mostrar en pantalla una canción ya generada en Suno con sus etiquetas de letra visibles, el campo de estilo lleno, y el audio reproduciéndose. Mostrar también las 2 versiones paralelas y cómo se ve el botón Extend. Idealmente una canción en español con tema de música en vivo o eventos.</p></div><div class="rec-ex live"><span>Ejercicio en vivo</span><p>El grupo elige colectivamente: un género (bolero, cumbia, pop, jazz), un estado de ánimo, y una frase corta como primer verso. La facilitadora corre Suno en pantalla con esos datos. En 60 segundos hay una canción. El grupo escucha y propone qué cambiaría en el prompt de estilo para la segunda versión.</p></div></div><div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Prompt de estilo para Suno (campo Style of Music): &#x27;[género principal], [sub-género o influencia], [instrumento destacado], [tipo de voz: femenina / masculina / coral], [tempo: slow / mid-tempo / upbeat], [mood: melancólico / festivo / intenso / etc], [producción: acústica / electrónica / orquestal / etc]&#x27;. Ejemplo real: &#x27;latin pop, bossa nova influence, acoustic guitar and soft percussion, female vocalist, mid-tempo, bittersweet longing, intimate acoustic production&#x27;.</pre></div></div></section>
+<section class="act darker">
+  <div class="wrap">
+    <div class="actlabel rv"><span class="n">·</span><span>Y esto ya se puede hoy</span><span class="ln"></span></div>
+    <h2 class="big rv">Lo que en 2024<br>todavía era <em>ciencia ficción.</em></h2>
+    <div class="wow rv">
+      <div class="w"><b>Le hablas y te contesta</b><span>Conversación por voz, en tiempo real, como una llamada. La interrumpes y te sigue.</span></div>
+      <div class="w"><b>Ve lo que tú ves</b><span>Le apuntas la cámara a un contrato o un flyer y te dice qué dice y qué revisar.</span></div>
+      <div class="w"><b>Hace la tarea sola</b><span>"Búscame 3 proveedores de sonido en CDMX y arma una tabla." Lo hace y te la entrega.</span></div>
+      <div class="w"><b>Genera video con sonido</b><span>Escribes una escena y sale un clip con diálogo y música. Sin cámara.</span></div>
+      <div class="w"><b>Clona tu voz</b><span>10 segundos de tu voz y graba el spot que quieras, en tu voz.</span></div>
+      <div class="w"><b>Convierte tus PDFs en podcast</b><span>Subes tus riders y contratos y te los explica en una conversación de audio.</span></div>
+    </div>
+  </div>
+</section>
 
-<section class="s" id="quickstart"><div class="shead"><span class="snum">06</span><h2>Cómo entrar a cada una</h2></div>
-<p class="lead">Arranque de 1 minuto por plataforma: dónde, si es gratis, y tu primer uso.</p>
-<div class="qs-grid"><div class="qs"><div class="qs-t">ChatGPT</div><div class="qs-row"><b>Dónde</b> chat.openai.com o app móvil</div><div class="qs-row"><b>Plan</b> Gratis (versión limitada) / Plus $20 USD/mes (agente, voz, imagen ilimitada)</div><div class="qs-row"><b>Primer uso</b> Abre la app, toca el micrófono y di: &#x27;Soy productora de eventos en CDMX. Ayúdame a escribir un correo para presentarle mi agencia a un patrocinador nuevo&#x27;. Lee la respuesta, di &#x27;más corto y directo&#x27; si necesitas.</div></div><div class="qs"><div class="qs-t">Claude</div><div class="qs-row"><b>Dónde</b> claude.ai en navegador o app móvil</div><div class="qs-row"><b>Plan</b> Gratis (documentos largos, artifacts) / Pro $20 USD/mes (Cowork, uso extendido)</div><div class="qs-row"><b>Primer uso</b> Entra a claude.ai, sube un PDF de tu contrato o rider técnico, y escribe: &#x27;Resume los puntos más importantes de este documento y señala si hay algo inusual o riesgoso&#x27;. Claude lee PDFs largos mejor que cualquier otra herramienta.</div></div><div class="qs"><div class="qs-t">Gemini Live</div><div class="qs-row"><b>Dónde</b> App Gemini en iPhone o Android (google.com/intl/es/gemini)</div><div class="qs-row"><b>Plan</b> Gratis con cuenta Google / Google AI Pro $19.99 USD/mes para funciones avanzadas</div><div class="qs-row"><b>Primer uso</b> Descarga la app Gemini, toca el botón &#x27;Live&#x27; abajo, luego toca el icono de cámara. Apunta la cámara a un cartel, contrato o espacio del venue y di: &#x27;¿Qué ves aquí y qué me recomiendas?&#x27;.</div></div><div class="qs"><div class="qs-t">NotebookLM</div><div class="qs-row"><b>Dónde</b> notebooklm.google.com en navegador</div><div class="qs-row"><b>Plan</b> Gratis con cuenta Google</div><div class="qs-row"><b>Primer uso</b> Entra, crea un notebook nuevo, sube un PDF o pega un link de artículo. Espera que procese (30 seg), luego toca &#x27;Audio Overview&#x27; en el panel derecho. En 2 minutos tienes un podcast de dos voces explicando tu documento.</div></div><div class="qs"><div class="qs-t">Perplexity</div><div class="qs-row"><b>Dónde</b> perplexity.ai en navegador o app</div><div class="qs-row"><b>Plan</b> Gratis (búsquedas básicas) / Pro $20 USD/mes (Deep Research con mayor límite de investigaciones profundas)</div><div class="qs-row"><b>Primer uso</b> Escribe una pregunta de investigación real: &#x27;¿Cuáles son los riders técnicos más comunes que piden los DJs internacionales para festivales en México en 2026?&#x27;. Te da una respuesta con fuentes citadas, no Wikipedia.</div></div><div class="qs"><div class="qs-t">Meta AI en WhatsApp</div><div class="qs-row"><b>Dónde</b> Dentro de WhatsApp: toca el icono de Meta AI (círculo azul) o escribe @Meta AI en cualquier grupo</div><div class="qs-row"><b>Plan</b> Gratis</div><div class="qs-row"><b>Primer uso</b> Abre WhatsApp, toca el icono azul de Meta AI arriba a la derecha. Escribe: &#x27;Redáctame un mensaje para invitar a un artista a cotizar para un evento privado el próximo mes en CDMX&#x27;. Úsalo igual que un chat normal.</div></div><div class="qs"><div class="qs-t">Canva Magic</div><div class="qs-row"><b>Dónde</b> canva.com en navegador o app Canva</div><div class="qs-row"><b>Plan</b> Gratis (Magic Design básico) / Canva Pro $15 USD/mes (Magic Studio completo, eliminación de fondo, resize masivo)</div><div class="qs-row"><b>Primer uso</b> Entra a canva.com, toca &#x27;Crear un diseño&#x27;, selecciona el formato (post de Instagram por ejemplo). Arriba aparece el botón de IA. Escribe: &#x27;Flyer para festival de jazz con paleta oscura y dorado&#x27;. Elige la opción que más te guste y edita el texto.</div></div><div class="qs"><div class="qs-t">CapCut</div><div class="qs-row"><b>Dónde</b> capcut.com en navegador o app móvil</div><div class="qs-row"><b>Plan</b> Gratis (funciones principales) / Pro $9.99 USD/mes (sin marca de agua, exportación 4K)</div><div class="qs-row"><b>Primer uso</b> Sube un video de 30 segundos de algún evento. Toca &#x27;Subtítulos&#x27; en el menú de la izquierda. CapCut transcribe y agrega subtítulos automáticos en segundos. Ajusta el estilo de letra y exporta.</div></div><div class="qs"><div class="qs-t">Suno V5.5</div><div class="qs-row"><b>Dónde</b> suno.com en navegador</div><div class="qs-row"><b>Plan</b> Gratis (con límite diario) / Pro $10 USD/mes (mayor volumen, uso comercial, acceso a v5.5)</div><div class="qs-row"><b>Primer uso</b> Entra a suno.com, toca &#x27;Create&#x27;. En el campo de prompt escribe: &#x27;Cumbia festiva con trompeta, letra sobre celebrar en grande, energía de fiesta de 15 años en México&#x27;. Toca Generate. En 30 segundos tienes dos versiones de una canción completa.</div></div></div></section>
+<section class="act cream">
+  <div class="wrap">
+    <div class="actlabel rv"><span class="n">·</span><span>El secreto de todo</span><span class="ln"></span></div>
+    <h2 class="big rv">Todo depende de<br><em>cómo le hablas.</em></h2>
+    <p class="note rv">Un buen encargo tiene cinco piezas. Con esto cambia todo lo que te entrega.</p>
+    <div class="formula rv">
+      <div class="fstep"><span class="num">01</span><b>Contexto</b><span>quién y para quién</span></div>
+      <div class="fstep"><span class="num">02</span><b>Intención</b><span>qué quieres lograr</span></div>
+      <div class="fstep"><span class="num">03</span><b>Restricciones</b><span>tono, largo, qué evitar</span></div>
+      <div class="fstep"><span class="num">04</span><b>Formato</b><span>cómo lo quieres</span></div>
+      <div class="fstep"><span class="num">05</span><b>Ejemplo</b><span>algo que ya te guste</span></div>
+    </div>
+  </div>
+</section>
 
-<section class="s" id="workflows"><div class="shead"><span class="snum">07</span><h2>Workflows avanzados</h2><span class="stag">Para ir más lejos</span></div>
-<p class="lead">Lo más potente, paso a paso. Cuando ya le perdiste el miedo y quieres sacarle jugo de verdad.</p>
-<div class="wf"><div class="wf-h"><h3>NotebookLM a fondo: convierte tus documentos en un podcast propio</h3><span class="wf-tool">NotebookLM (notebooklm.google.com)</span></div><p class="wf-goal">Transformar el rider, contrato y propuesta de un evento en material fácil de compartir y estudiar</p><ol><li>Entra a notebooklm.google.com con tu cuenta de Google y toca &#x27;+ Nuevo notebook&#x27;.</li><li>Sube hasta 50 fuentes: arrastra PDFs de tu rider técnico, el contrato del venue y la propuesta comercial. También puedes pegar links de notas de prensa o URLs de artículos relevantes del artista.</li><li>Espera que procese (menos de 1 minuto por documento). Aparece un resumen automático en el panel derecho.</li><li>En el chat inferior pregunta algo específico: &#x27;¿Qué cláusulas del contrato me pueden generar problemas de último minuto?&#x27; o &#x27;¿Cuáles son las necesidades técnicas más críticas según el rider?&#x27;. NotebookLM responde citando el párrafo exacto del documento.</li><li>Toca &#x27;Audio Overview&#x27; en el panel derecho. Antes de generar, escribe en el campo de instrucciones: &#x27;Enfócate en los riesgos operativos y las fechas clave. Habla en tono práctico, no académico&#x27;.</li><li>Toca &#x27;Generate&#x27;. En 2-3 minutos tienes un podcast de ~10 minutos con dos presentadores que discuten tus documentos. Descárgalo y comparte el audio con tu equipo o escúchalo en el camino.</li></ol></div><div class="wf"><div class="wf-h"><h3>Claude con artifacts: crea una propuesta visual interactiva</h3><span class="wf-tool">Claude Pro (claude.ai)</span></div><p class="wf-goal">Generar una propuesta de evento en formato HTML interactivo que puedas compartir como URL o imprimir</p><ol><li>Entra a claude.ai. Abre una conversación nueva en un Project si tienes Pro, o directamente en chat.</li><li>Pega el contexto completo: nombre del evento, cliente, fecha, presupuesto estimado, artistas, venue. Escribe: &#x27;Con esta información, crea una propuesta comercial profesional en formato HTML con sección de presentación, lineup, desglose de costos y CTA de cierre. Que se vea limpia y moderna&#x27;.</li><li>Claude genera automáticamente un Artifact (aparece en el panel derecho): un HTML con la propuesta formateada.</li><li>Lee la propuesta. Escribe ajustes en el chat: &#x27;El tono suena demasiado formal. Hazlo más cercano. Y agrega una sección de por qué nosotros antes del desglose de costos&#x27;.</li><li>Cuando esté lista, toca el botón de copiar o descargar el Artifact. Puedes abrirlo en el navegador, imprimirlo como PDF, o si tienes Mini Host o Cloudflare Pages, subirlo y compartir el link directamente.</li></ol></div><div class="wf"><div class="wf-h"><h3>Canva Magic Design: de cero a flyer listo en 10 minutos</h3><span class="wf-tool">Canva Pro (canva.com)</span></div><p class="wf-goal">Crear un flyer para un evento sin saber de diseño, con identidad de marca consistente</p><ol><li>Entra a canva.com. Toca &#x27;Crear un diseño&#x27; y elige el formato: Post de Instagram (1080x1080) o Story (1080x1920).</li><li>Toca el icono de chispa (IA) o busca &#x27;Magic Design&#x27; en la barra de búsqueda. Escribe tu prompt: &#x27;Flyer para festival de música electrónica underground en CDMX. Paleta oscura con neones, tipografía moderna, espacio para nombre del artista y fecha&#x27;.</li><li>Canva genera 6-8 opciones de diseño. Elige la que más se acerque a tu visión y toca &#x27;Personalizar este diseño&#x27;.</li><li>Reemplaza el texto con los datos reales del evento. Usa &#x27;Brand Kit&#x27; (si tienes Pro) para aplicar tus colores y tipografía de marca con un clic.</li><li>Toca el botón de IA &#x27;Magic Edit&#x27; para cambiar elementos visuales: selecciona una imagen del fondo y escribe &#x27;reemplaza el fondo con una multitud en un concierto nocturno&#x27;. Canva lo regenera.</li><li>Cuando esté listo, toca &#x27;Compartir&#x27; arriba a la derecha, luego &#x27;Descargar&#x27; en PNG o JPG para redes, o PDF para imprenta. Descarga en &#x27;alta calidad&#x27; siempre.</li></ol></div><div class="wf"><div class="wf-h"><h3>ChatGPT Agent: investiga proveedores y arma una tabla comparativa sola</h3><span class="wf-tool">ChatGPT Plus o Pro (chat.openai.com)</span></div><p class="wf-goal">Que el agente busque en internet opciones reales de proveedores (sonido, iluminación, catering) y te entregue una tabla comparativa sin que tú abras un solo link</p><ol><li>Abre ChatGPT. En el campo de texto, antes de escribir toca el icono de herramientas y activa &#x27;Agent&#x27; (o escribe /agent si está disponible en tu plan).</li><li>Describe la tarea completa: &#x27;Busca en internet 5 empresas de renta de equipo de sonido profesional en CDMX que trabajen con eventos de 300-500 personas. Para cada una necesito: nombre, sitio web, rango de precios si lo publican, y si tienen reseñas en Google. Arma todo en una tabla comparativa al final&#x27;.</li><li>El agente empieza a trabajar solo: abre el navegador virtual, hace búsquedas, entra a sitios web y extrae la información. Puedes ver cada paso en tiempo real.</li><li>Si el agente necesita ingresar a algún sitio con login o resolver un CAPTCHA, te avisa y te pide que tomes el control momentáneamente. Resuelves el bloqueo y le devuelves el control.</li><li>Cuando termina (entre 5 y 15 minutos dependiendo de la tarea), te entrega la tabla completa. Puedes pedir: &#x27;Ahora ordénala de menor a mayor precio y resalta la que tenga mejores reseñas&#x27;. El agente edita la tabla al momento.</li><li>Copia la tabla a tu doc o pide: &#x27;Exporta esto como texto en formato para pegar en Google Sheets&#x27;.</li></ol></div><div class="wf"><div class="wf-h"><h3>ElevenLabs: clona tu voz y crea un spot de audio en 20 minutos</h3><span class="wf-tool">ElevenLabs (elevenlabs.io) + cualquier grabadora de audio (Voice Memos en iPhone sirve)</span></div><p class="wf-goal">Grabar una voz publicitaria con tu propia voz o la de una locutora, lista para usar en reel, stories o radio</p><ol><li>Graba 1-2 minutos de tu voz en un cuarto silencioso con el teléfono. Habla con naturalidad, sin música de fondo ni eco. Guarda el archivo en MP3 o WAV.</li><li>Entra a elevenlabs.io. Crea una cuenta gratuita (incluye un límite mensual de caracteres, suficiente para probar). Para uso comercial necesitas el plan Starter en $5 USD/mes.</li><li>En el menú lateral toca &#x27;Voices&#x27; y luego el botón &#x27;+&#x27;. Selecciona &#x27;Instant Voice Clone&#x27;. Sube tu grabación de audio. Dale un nombre a tu voz: &#x27;Mi voz eventos&#x27;.</li><li>Espera 30-60 segundos. ElevenLabs genera tu clon de voz. Ahora ve a &#x27;Speech Synthesis&#x27; en el menú.</li><li>Pega el texto de tu spot: por ejemplo, &#x27;El Festival Sonoro regresa el 12 de julio al Foro Indie. Tres escenarios, treinta artistas, una sola noche. Boletos en festivalsonoro.mx&#x27;. Selecciona tu voz clonada en el menú desplegable. Elige el modelo &#x27;Eleven v3&#x27; para mejor calidad.</li><li>Toca &#x27;Generate&#x27;. Escucha el resultado. Si el ritmo no te convence, agrega comas o puntos en el texto para darle pausas naturales y regenera.</li><li>Descarga el MP3. Lleva ese archivo a CapCut o cualquier editor de video para mezclarlo con música de fondo y las imágenes del evento.</li></ol></div></section>
+<!-- ============ ACTO 2 · TEMA POR TEMA ============ -->
 
-<section class="s" id="seguir"><div class="shead"><span class="snum">08</span><h2>Para seguir aprendiendo</h2></div>
-<p class="lead">Videos buenos de verdad, cuentas que vale la pena seguir, y dónde profundizar gratis.</p>
-<p class="sub">Videos</p><div class="vids"><figure class="vid"><div class="vbox"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/p2PqfRte46k" title="La Fórmula del Prompt Perfecto para ChatGPT (Guía Definitiva)" allowfullscreen></iframe></div><figcaption><b>La Fórmula del Prompt Perfecto para ChatGPT (Guía Definitiva)</b><br><span class="vch">Cyberclick</span> · Explica una fórmula concreta para escribir prompts que devuelven resultados útiles en lugar de respuestas genéricas. Directo al punto y aplicable desde el primer intento.</figcaption></figure><figure class="vid"><div class="vbox"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/D2b-b-gQyzg" title="Tutorial: Cómo usar CHATGPT paso a paso en 2025 - Curso COMPLETO ChatGPT" allowfullscreen></iframe></div><figcaption><b>Tutorial: Cómo usar CHATGPT paso a paso en 2025 - Curso COMPLETO ChatGPT</b><br><span class="vch">Xavier Mitjana</span> · Ideal para arrancar el curso: cubre desde cero las funciones principales de ChatGPT sin asumir conocimiento previo, paso a paso.</figcaption></figure><figure class="vid"><div class="vbox"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/g9fwgx54dEo" title="Cómo usar NotebookLM en español - Tutorial completo de la IA de Google" allowfullscreen></iframe></div><figcaption><b>Cómo usar NotebookLM en español - Tutorial completo de la IA de Google</b><br><span class="vch">Joanini IA</span> · Cubre exactamente el caso de uso del curso: cargar PDFs, contratos o riders y extraer insights conversando con el documento, además de generar el audio overview.</figcaption></figure><figure class="vid"><div class="vbox"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/3kDT54Kz9Dc" title="Videos en minutos con IA en Canva" allowfullscreen></iframe></div><figcaption><b>Videos en minutos con IA en Canva</b><br><span class="vch">Emma Segura</span> · Muestra cómo generar videos para redes con IA dentro de Canva sin saber diseño. Directo al flujo de trabajo que necesitan creativos y productoras de eventos.</figcaption></figure><figure class="vid"><div class="vbox"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/-CYcdxuyaE4" title="Cómo hacer CONTENIDO para REDES SOCIALES con IA - Tutorial CHATGPT + CANVA + Photoshop" allowfullscreen></iframe></div><figcaption><b>Cómo hacer CONTENIDO para REDES SOCIALES con IA - Tutorial CHATGPT + CANVA + Photoshop</b><br><span class="vch">Xavier Mitjana</span> · Caso de uso concreto para el mundo de música y eventos: de concepto a post publicable combinando ChatGPT, Canva e imagen con IA en un solo flujo.</figcaption></figure><figure class="vid"><div class="vbox"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/en3Nb2oN730" title="SUNO AI: Crea MÚSICA ÉPICA GRATIS - Tutorial COMPLETO en Español + EJEMPLOS" allowfullscreen></iframe></div><figcaption><b>SUNO AI: Crea MÚSICA ÉPICA GRATIS - Tutorial COMPLETO en Español + EJEMPLOS</b><br><span class="vch">NextGen IA Hub</span> · Muy relevante para el público de Blu2: muestra en vivo cómo crear música para eventos, jingles y demos con IA, con ejemplos de distintos géneros.</figcaption></figure><figure class="vid"><div class="vbox"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/PHzmxSfHK3g" title="Seedance 2.0 Tutorial: TODO lo que puede hacer - Comparativa con Kling y Veo 3" allowfullscreen></iframe></div><figcaption><b>Seedance 2.0 Tutorial: TODO lo que puede hacer - Comparativa con Kling y Veo 3</b><br><span class="vch">Arca Artificial</span> · Compara Seedance 2.0, Kling 3.0 y Veo 3 con casos reales, incluyendo consistencia de personajes y diálogo. Cubre en un solo video las tres herramientas del bloque de video generativo.</figcaption></figure></div>
-<p class="sub">Cuentas que seguir</p><div class="acc-grid"><div class="acc"><div class="acc-h"><b>Dot CSV (Carlos Santana Vega)</b><span class="acc-p">YouTube</span></div><div class="acc-handle">@DotCSV</div><p>El mayor divulgador de IA en español. Combina rigor técnico con lenguaje accesible. Cubre desde fundamentos hasta herramientas de 2026. Si solo se puede seguir un canal en YouTube, es este.</p></div><div class="acc"><div class="acc-h"><b>Xavier Mitjana</b><span class="acc-p">YouTube</span></div><div class="acc-handle">@XavierMitjana</div><p>Especialista en IA aplicada a creatividad y marketing. Tutoriales de Canva, ChatGPT Canvas, herramientas de imagen y video. Foco en profesionales, no en ingenieros.</p></div><div class="acc"><div class="acc-h"><b>Javi Galué - IA en Español</b><span class="acc-p">YouTube</span></div><div class="acc-handle">@ia-en-español</div><p>El canal de referencia para IA aplicada en Latinoamérica y España. Tutoriales prácticos de NotebookLM, ChatGPT, y productividad. Comunidad activa.</p></div><div class="acc"><div class="acc-h"><b>Javi Manzano</b><span class="acc-p">YouTube</span></div><div class="acc-handle">@javimanzanoo</div><p>Curso gratuito de ChatGPT más recomendado en español. Produce contenido práctico sobre prompts, agentes y automatización sin tecnicismos. También en Instagram y TikTok como @javimanzano.es.</p></div><div class="acc"><div class="acc-h"><b>Javi Manzano</b><span class="acc-p">TikTok / Instagram</span></div><div class="acc-handle">@javimanzano.es</div><p>Mismo creador que en YouTube, pero sus cortos en TikTok e Instagram son ideales para actualizaciones rápidas de herramientas y trucos de ChatGPT consumibles en 60 segundos.</p></div><div class="acc"><div class="acc-h"><b>Matt Wolfe</b><span class="acc-p">YouTube</span></div><div class="acc-handle">@mreflow</div><p>El mejor tracker de herramientas IA en inglés. Cada semana cubre las novedades de Suno, ElevenLabs, Canva, generadores de video, etc. con demos reales. Referencia para saber qué herramienta usar para qué.</p></div><div class="acc"><div class="acc-h"><b>Javier Santos - La Escuela de IA (Javadex)</b><span class="acc-p">YouTube</span></div><div class="acc-handle">@JavadexAI</div><p>Tutoriales de IA aplicada a negocios en español: n8n, Claude API, automatizaciones. Para las asistentes que quieran ir más lejos que las herramientas básicas.</p></div><div class="acc"><div class="acc-h"><b>Xavier Mitjana</b><span class="acc-p">TikTok</span></div><div class="acc-handle">@xavier_mitjana</div><p>Su contenido de TikTok son trucos rápidos de ChatGPT y herramientas IA aplicadas a creatividad, en formato de 60 segundos. Complementa su canal de YouTube con actualizaciones frecuentes.</p></div><div class="acc"><div class="acc-h"><b>Dot CSV (Carlos Santana Vega)</b><span class="acc-p">X (Twitter)</span></div><div class="acc-handle">@DotCSV</div><p>Publica actualizaciones en tiempo real sobre modelos nuevos (GPT-5, Claude, Gemini) antes de que lleguen a video. Ideal para no llegar tarde a las novedades del sector.</p></div></div>
-<p class="sub">Dónde profundizar</p><div class="deep-grid"><a class="deep" href="https://iaenespanol.club" target="_blank" rel="noopener"><b>IA en Español (newsletter Substack)</b><span>La newsletter de IA más grande en español. Lunes, miércoles y viernes: noticias del sector explicadas sin jerga, con herramientas seleccionadas. Gratis.</span></a><a class="deep" href="https://www.therundown.ai" target="_blank" rel="noopener"><b>The Rundown AI (newsletter diaria)</b><span>El resumen diario de IA más leído del mundo en inglés: qué pasó, por qué importa, cómo aplicarlo en 5 minutos. Gratis, sin paywall.</span></a><a class="deep" href="https://futuretools.io" target="_blank" rel="noopener"><b>FutureTools (newsletter + directorio)</b><span>Newsletter miércoles y viernes con las herramientas IA más relevantes de la semana. Incluye directorio navegable por categoría (música, video, imagen, productividad). Gratis.</span></a><a class="deep" href="https://discord.me/iazona" target="_blank" rel="noopener"><b>IAZona Discord (comunidad hispana)</b><span>Comunidad activa en español para profesionales hispanohablantes que usan IA. Canales temáticos, recursos, talleres y eventos en vivo. Ideal para resolver dudas después del curso y mantenerse actualizada.</span></a><a class="deep" href="https://notebooklm.google.com" target="_blank" rel="noopener"><b>NotebookLM (producto directo de Google)</b><span>La herramienta en sí, no un tutorial. Crear una cuenta y subir un rider, contrato o press kit propio para practicar audio overview y Q&amp;A conversacional es el mejor ejercicio de seguimiento del curso.</span></a><a class="deep" href="https://suno.com" target="_blank" rel="noopener"><b>Suno (generador de música con IA)</b><span>Acceso directo a Suno para practicar después de la sesión. Tiene plan gratuito con un límite diario. Suno V5.5 vigente en 2026. Crear un jingle de prueba para un evento real es el ejercicio más concreto del módulo de música.</span></a></div></section>
+<section class="act darker">
+  <div class="wrap" style="text-align:center">
+    <div class="actlabel rv" style="justify-content:center"><span class="ln" style="max-width:60px"></span><span class="n">Acto 2</span><span>Ahora, tema por tema</span><span class="ln" style="max-width:60px"></span></div>
+    <h2 class="kick rv">Cada uno lo<br><b>hacemos en vivo.</b></h2>
+  </div>
+</section>
 
-<section class="s" id="kit" style="border-bottom:none"><div class="shead"><span class="snum">09</span><h2>Tu kit</h2></div>
-<p class="lead">Imprime o guarda. Lo que te llevas para usarla sola desde mañana.</p>
-<div class="cheat">
-<div class="c"><h3>La fórmula</h3><ul><li><b>Contexto</b> quién y para quién</li><li><b>Intención</b> qué lograr</li><li><b>Restricciones</b> tono, largo, qué evitar</li><li><b>Formato</b> cómo lo quieres</li><li><b>Ejemplo</b> algo que te guste</li></ul></div>
-<div class="c"><h3>Huele a slop si...</h3><ul><li>Empieza con "en el mundo actual"</li><li>Todo es "increíble" e "inolvidable"</li><li>No tiene un solo dato concreto</li><li>Suena igual venga de quien venga</li></ul></div>
-<div class="c"><h3>Reglas de oro</h3><ul><li><b>Borrador suyo, versión final tuya.</b></li><li>Verifica fechas, nombres y cifras.</li><li>Dale un ejemplo de tu voz.</li><li>No pegues datos privados.</li><li>Si no te gustó, dile que ajuste, no empieces de cero.</li></ul></div>
-<div class="c"><h3>Tu primer paso</h3><ul><li>Escoge <b>una</b> herramienta, 10 min al día.</li><li>Empieza por una tarea que ya haces.</li><li>Guarda los prompts que funcionan.</li><li>Esta semana: una tarea real con IA.</li></ul></div></div></section>
+<!-- tema: escribir -->
+<section class="act dark tema">
+  <div class="wrap split">
+    <div class="rv">
+      <span class="eyebrow">Tema 01 · Escribir sin que suene a robot</span>
+      <h2 class="say" style="margin-top:12px">Boletines, cartas, invitaciones, comunicados.</h2>
+      <div class="steps3">
+        <div class="s3"><span class="n">1</span>Dale tu contexto y un ejemplo de tu voz</div>
+        <div class="s3"><span class="n">2</span>Pide el borrador con estructura</div>
+        <div class="s3"><span class="n">3</span>Edita, mete tus datos, manda</div>
+      </div>
+      <div class="ex"><div class="l">El ejemplo que vemos</div>Invitación al show de <i>Carla Morrison</i> en el Teatro Metropólitan, en tu tono, lista en dos minutos.</div>
+      <div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Escribe una invitación para el show de [artista] en [lugar] el [fecha]. Tono cálido, de persona a persona, no publicitario. Aquí va un texto mío para que copies mi voz: [pega algo tuyo]. Donde falte un dato, déjalo como [DATO].</pre></div>
+    </div>
+    <div class="rv"><div class="vbox"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/p2PqfRte46k" title="Cómo pedir bien" allowfullscreen></iframe></div><p class="vcap">Cómo estructurar lo que le pides para que acierte.</p></div>
+  </div>
+</section>
 
-</main></div></div>
-<footer><div class="ft">Nos vemos el lunes.</div>IA a tu manera · Curso Blu2 · Lunes 8 de junio, 5:00 pm · Oaxaca 96, Roma Norte</footer>
+<!-- tema: prensa y marketing -->
+<section class="act cream tema">
+  <div class="wrap split">
+    <div class="rv"><div class="shot"><img loading="lazy" src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900&q=80&auto=format&fit=crop" alt="concierto"></div></div>
+    <div class="rv">
+      <span class="eyebrow">Tema 02 · Prensa y marketing</span>
+      <h2 class="say" style="margin-top:12px;color:var(--ink)">Del plan de lanzamiento al boletín de prensa con diseño.</h2>
+      <div class="steps3">
+        <div class="s3"><span class="n">1</span>ChatGPT arma el plan y el texto</div>
+        <div class="s3"><span class="n">2</span>Canva le pone el diseño</div>
+        <div class="s3"><span class="n">3</span>Sale un PDF con links de video y fotos</div>
+      </div>
+      <div class="ex"><div class="l">El ejemplo que vemos</div>Plan de 4 semanas para el nuevo sencillo de <i>Little Jesus</i>, con qué publicar cada semana.</div>
+      <div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Actúa como estratega de marketing musical. Lanzamos [sencillo] de [artista] el [fecha]. Público: [descríbelo]. Dame un plan de 4 semanas en tabla: qué hacer cada semana en redes, prensa y comunidad, y 5 ideas de contenido para la semana del estreno.</pre></div>
+    </div>
+  </div>
+</section>
+
+<!-- tema: video -->
+<section class="act dark tema">
+  <div class="wrap split">
+    <div class="rv">
+      <span class="eyebrow">Tema 03 · Video de tus eventos</span>
+      <h2 class="say" style="margin-top:12px">El clip del concierto, editado y subtitulado solo.</h2>
+      <div class="steps3">
+        <div class="s3"><span class="n">1</span>Subes el video a CapCut</div>
+        <div class="s3"><span class="n">2</span>Subtítulos automáticos en un clic</div>
+        <div class="s3"><span class="n">3</span>Cortas, le pones música, exportas</div>
+      </div>
+      <div class="ex"><div class="l">El ejemplo que vemos</div>Un clip de 30 segundos del show de <i>Technicolor Fabrics</i> en el Foro Indie Rocks!, listo para redes.</div>
+    </div>
+    <div class="rv"><div class="vbox"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/-CYcdxuyaE4" title="Contenido para redes con IA" allowfullscreen></iframe></div><p class="vcap">Texto, diseño y video combinados para un post.</p></div>
+  </div>
+</section>
+
+<!-- tema: musica -->
+<section class="act cream tema">
+  <div class="wrap split">
+    <div class="rv"><div class="vbox"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/en3Nb2oN730" title="Crear música con Suno" allowfullscreen></iframe></div><p class="vcap" style="color:var(--ink2)">De una idea a una canción con Suno.</p></div>
+    <div class="rv">
+      <span class="eyebrow">Tema 04 · Música y letras</span>
+      <h2 class="say" style="margin-top:12px;color:var(--ink)">Ideas de canción, letras y hasta un demo.</h2>
+      <div class="steps3">
+        <div class="s3"><span class="n">1</span>Define género, emoción y dos imágenes concretas</div>
+        <div class="s3"><span class="n">2</span>Pide 3 ganchos para el coro y elige</div>
+        <div class="s3"><span class="n">3</span>Arma versos, pule y genera el demo en Suno</div>
+      </div>
+      <div class="ex"><div class="l">El ejemplo que vemos</div>Un coro estilo <i>Natalia Lafourcade</i>, partiendo de una sola emoción y un lugar.</div>
+      <div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Ayúdame con una canción. Género: [género]. Emoción que quiero que sienta quien la oye: [una emoción]. Dos imágenes concretas para apoyarme: [un objeto, un lugar]. Dame 3 opciones de gancho para el coro, sin rimas fáciles, concretas y visuales.</pre></div>
+    </div>
+  </div>
+</section>
+
+<!-- tema: organizacion -->
+<section class="act dark tema">
+  <div class="wrap split">
+    <div class="rv">
+      <span class="eyebrow">Tema 05 · El día a día ordenado</span>
+      <h2 class="say" style="margin-top:12px">Juntas, agenda, itinerarios, seguimientos.</h2>
+      <div class="steps3">
+        <div class="s3"><span class="n">1</span>Pega tus notas o la transcripción</div>
+        <div class="s3"><span class="n">2</span>Pide resumen con tareas y responsables</div>
+        <div class="s3"><span class="n">3</span>Lo mandas al grupo antes de 2 horas</div>
+      </div>
+      <div class="ex"><div class="l">El ejemplo que vemos</div>Resumen de una junta de producción de un festival, con quién hace qué y para cuándo.</div>
+      <div class="prompt"><div class="pt"><span class="pl">Prompt</span><button class="copy" onclick="cp(this)">Copiar</button></div><pre>Te paso las notas de una junta. Hazme: resumen de 5 líneas, acuerdos, tareas con responsable y fecha, y dudas que quedaron. Si algo está confuso, márcalo en vez de inventar. Notas: [pega aquí].</pre></div>
+    </div>
+    <div class="rv"><div class="vbox"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/g9fwgx54dEo" title="NotebookLM" allowfullscreen></iframe></div><p class="vcap">NotebookLM: sube tus documentos y pregúntale.</p></div>
+  </div>
+</section>
+
+<!-- ============ ACTO 3 · CUANDO FALLA + CIERRE ============ -->
+
+<section class="act darker">
+  <div class="wrap">
+    <div class="actlabel rv"><span class="n">Acto 3</span><span>Cuando se pone necia</span><span class="ln"></span></div>
+    <h2 class="big rv">No falla. Es que<br>le faltó algo <em>tuyo.</em></h2>
+    <div class="fail rv">
+      <div class="f"><b>Te da algo plano y genérico.</b> Dale un ejemplo de tu voz y un dato concreto.</div>
+      <div class="f"><b>Se repite en loop.</b> Para, empieza chat nuevo y dile qué cambió.</div>
+      <div class="f"><b>Inventa un dato o un link.</b> Todo número, nombre y fecha lo verificas tú antes de mandar.</div>
+      <div class="f"><b>Se va por las ramas.</b> Pídele solo una cosa a la vez y en el formato exacto.</div>
+    </div>
+  </div>
+</section>
+
+<section class="act dark">
+  <div class="wrap">
+    <div class="actlabel rv"><span class="n">·</span><span>Para seguir después</span><span class="ln"></span></div>
+    <h2 class="say rv">A quién seguir<br>para no quedarte atrás.</h2>
+    <div class="follow rv">
+      <div class="fchip2"><b>Dot CSV</b><span>YouTube · IA en español, a fondo</span></div>
+      <div class="fchip2"><b>Xavier Mitjana</b><span>YouTube · IA para creativos</span></div>
+      <div class="fchip2"><b>Matt Wolfe</b><span>YouTube · qué herramienta nueva sirve</span></div>
+      <div class="fchip2"><b>The Rundown AI</b><span>Newsletter diaria, 5 min</span></div>
+      <div class="fchip2"><b>FutureTools</b><span>Directorio de herramientas</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="act cream close">
+  <div class="wrap">
+    <h2 class="kick rv">Una herramienta.<br>Una tarea tuya.<br><b>10 minutos al día.</b></h2>
+    <p class="step1 rv">Eso es todo el secreto. El lunes salimos con tu primer caso resuelto y con qué vas a hacer esta semana.</p>
+  </div>
+</section>
+
+<footer>IA a tu manera · Curso Blu2 · Lunes 8 de junio, 5 pm · Oaxaca 96, Roma Norte</footer>
+
 <div class="toast" id="toast">Copiado</div>
 <script>
 function cp(b){const p=b.closest('.prompt').querySelector('pre');navigator.clipboard.writeText(p.innerText).then(()=>{b.textContent='Copiado';b.classList.add('done');const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>{b.textContent='Copiar';b.classList.remove('done');t.classList.remove('show')},1400)})}
-const links=[...document.querySelectorAll('nav.side a')],secs=links.map(a=>document.querySelector(a.getAttribute('href')));
-const obs=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){const id='#'+x.target.id;links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')===id))}}),{rootMargin:'-15% 0px -75% 0px'});
-secs.forEach(s=>s&&obs.observe(s));
-</script></body></html>
+const rv=document.querySelectorAll('.rv');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px'});
+rv.forEach(x=>io.observe(x));
+const prog=document.getElementById('prog');
+addEventListener('scroll',()=>{const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;prog.style.width=p+'%'},{passive:true});
+</script>
+</body>
+</html>
