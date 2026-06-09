@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clase de IA · Blu2 · 8 de junio de 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cobalto:#0047ab;
+    --azul:#0073cf;
+    --tinta:#13243a;
+    --gris:#5a6b7e;
+    --gris-suave:#7c8a9a;
+    --linea:#e2e8f0;
+    --fondo:#ffffff;
+    --fondo-suave:#f6f9fc;
+    --crema:#fbfdff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Source Sans 3',system-ui,sans-serif;
+    color:var(--tinta);
+    background:var(--fondo);
+    line-height:1.65;
+    font-size:18px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.eyebrow{font-family:'Fjalla One',sans-serif;font-weight:400;letter-spacing:.01em;}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(135deg,var(--cobalto) 0%,var(--azul) 100%);
+    color:#fff;
+    padding:96px 24px 88px;
+    text-align:left;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-120px;top:-120px;
+    width:420px;height:420px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+  }
+  .hero-inner{max-width:880px;margin:0 auto;position:relative;z-index:1;}
+  .hero .kicker{
+    font-family:'Fjalla One',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:14px;
+    opacity:.85;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(40px,7vw,72px);
+    line-height:1.02;
+    margin-bottom:24px;
+  }
+  .hero p.lede{
+    font-size:clamp(18px,2.4vw,22px);
+    max-width:640px;
+    opacity:.95;
+    font-weight:400;
+  }
+  .hero .meta{
+    margin-top:36px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 28px;
+    font-size:15px;
+    opacity:.9;
+  }
+  .hero .meta span{display:inline-flex;align-items:center;gap:8px;}
+  .hero .meta .dot{width:7px;height:7px;border-radius:50%;background:#fff;opacity:.7;}
+
+  /* LAYOUT */
+  main{max-width:880px;margin:0 auto;padding:0 24px;}
+  section{padding:72px 0;border-bottom:1px solid var(--linea);}
+  section:last-child{border-bottom:none;}
+  .eyebrow{
+    display:inline-block;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    font-size:13px;
+    color:var(--azul);
+    margin-bottom:14px;
+  }
+  h2{
+    font-size:clamp(28px,4.5vw,40px);
+    line-height:1.08;
+    margin-bottom:28px;
+    color:var(--tinta);
+  }
+  .resumen p{margin-bottom:20px;color:#2b3a4d;font-size:19px;}
+  .resumen p:last-child{margin-bottom:0;}
+
+  /* TAKEAWAYS */
+  .takeaways{list-style:none;display:grid;gap:16px;}
+  .takeaways li{
+    background:var(--fondo-suave);
+    border:1px solid var(--linea);
+    border-left:4px solid var(--azul);
+    border-radius:10px;
+    padding:20px 24px;
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+  }
+  .takeaways .num{
+    font-family:'Fjalla One',sans-serif;
+    color:var(--cobalto);
+    font-size:22px;
+    line-height:1.4;
+    min-width:34px;
+  }
+  .takeaways .tk-text strong{color:var(--cobalto);}
+  .takeaways .tk-text{font-size:17px;color:#2b3a4d;}
+
+  /* TRANSCRIPCION */
+  .bloque{margin-bottom:48px;}
+  .bloque:last-child{margin-bottom:0;}
+  .bloque h3{
+    font-size:22px;
+    color:var(--cobalto);
+    margin-bottom:6px;
+    padding-top:8px;
+  }
+  .bloque .bloque-sub{
+    font-size:14px;
+    color:var(--gris-suave);
+    margin-bottom:20px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+  }
+  .linea{margin-bottom:16px;font-size:17px;color:#243343;}
+  .linea .quien{
+    font-weight:700;
+    color:var(--azul);
+  }
+  .linea.pedro .quien{color:var(--cobalto);}
+  .nota{
+    font-size:14px;
+    color:var(--gris-suave);
+    font-style:italic;
+    border-left:3px solid var(--linea);
+    padding-left:14px;
+    margin:18px 0;
+  }
+
+  /* TOC */
+  .toc{
+    background:var(--crema);
+    border:1px solid var(--linea);
+    border-radius:12px;
+    padding:24px 28px;
+    margin-bottom:48px;
+  }
+  .toc .eyebrow{margin-bottom:12px;}
+  .toc ol{list-style:none;counter-reset:t;display:grid;gap:8px;}
+  .toc li{counter-increment:t;font-size:16px;}
+  .toc li::before{content:counter(t,decimal-leading-zero) "  ";color:var(--azul);font-family:'Fjalla One',sans-serif;}
+  .toc a{color:#2b3a4d;text-decoration:none;border-bottom:1px solid transparent;}
+  .toc a:hover{border-bottom-color:var(--azul);color:var(--cobalto);}
+
+  footer{
+    background:var(--tinta);
+    color:#c7d4e4;
+    text-align:center;
+    padding:44px 24px;
+    font-size:14px;
+  }
+  footer strong{color:#fff;font-family:'Fjalla One',sans-serif;font-weight:400;letter-spacing:.04em;}
+
+  @media(max-width:600px){
+    body{font-size:17px;}
+    section{padding:52px 0;}
+    .hero{padding:72px 20px 64px;}
+    .takeaways li{flex-direction:column;gap:6px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Blu2 · Curso de Inteligencia Artificial</div>
+    <h1>Clase de IA con Pedro Rojas</h1>
+    <p class="lede">Una sesión práctica sobre cómo pensar y usar la inteligencia artificial en el día a día de una agencia de entretenimiento: del prompt a la página, del boletín al flyer.</p>
+    <div class="meta">
+      <span><span class="dot"></span>8 de junio de 2026</span>
+      <span><span class="dot"></span>Duración: 142 minutos</span>
+      <span><span class="dot"></span>Jimena Gárate · Maggy Richaud · Maria Garate</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- RESUMEN -->
+  <section class="resumen" id="resumen">
+    <span class="eyebrow">Resumen</span>
+    <h2>Cómo estuvo la clase</h2>
+    <p>Sesión de trabajo distendida, práctica y a ritmo de demo. Pedro Rojas guió al equipo de Blu2 (Jimena Gárate, Maggy Richaud y Maria Garate) por una clase abierta de inteligencia artificial pensada para gente que ya usa estas herramientas a distintos niveles. Nada de teoría seca: casi todo se vio mostrando la pantalla en vivo, iterando junto con el grupo y dejando que las cosas a veces salieran mal para explicar por qué. El tono fue de taller, con mucho espacio para preguntas y para aterrizar cada idea en casos reales de la agencia.</p>
+    <p>A grandes rasgos se cubrió: qué es la IA y por qué conviene verla como una herramienta (un pincel, no un sustituto), la diferencia entre la empresa, el modelo y la herramienta (Anthropic y Claude, OpenAI y ChatGPT, Google y Gemini), cómo construir un buen prompt con contexto, intención, restricciones, formato y ejemplos, y la importancia del humano en el ciclo para verificar datos. La segunda mitad fue puro caso de uso de Blu2: investigar la trayectoria de un grupo como Flans con Perplexity, redactar correos y boletines de prensa, generar un flyer para un show en el Lunario, armar propuestas para patrocinadores y pensar herramientas a la medida (checklists de producción, mapas, catálogos).</p>
+    <p>El mensaje de fondo: la IA no reemplaza el criterio ni el expertise de la profesión, lo amplifica. Quien sabe nombrar las cosas con el vocabulario de su oficio (identidad de marca, protocolo, alcance) y quien sabe descomponer un problema en pasos saca mejores resultados. La recomendación práctica fue ser agnósticos de marca, usar la herramienta mucho para perderle el miedo, y siempre revisar lo que entrega antes de mandarlo.</p>
+  </section>
+
+  <!-- TAKEAWAYS -->
+  <section id="takeaways">
+    <span class="eyebrow">Takeaways</span>
+    <h2>Lo que conviene recordar</h2>
+    <ul class="takeaways">
+      <li><span class="num">01</span><span class="tk-text"><strong>La IA es una herramienta, no un sustituto.</strong> Como un pincel: se lo das a diez personas y salen diez cuadros distintos. No te reemplaza a ti, reemplaza a quien no la sabe usar.</span></li>
+      <li><span class="num">02</span><span class="tk-text"><strong>Distingue empresa, modelo y herramienta.</strong> Anthropic (empresa) hace Claude (herramienta); OpenAI hace ChatGPT; Google hace Gemini. Las marcas se copian entre sí y van subiendo y bajando de nivel.</span></li>
+      <li><span class="num">03</span><span class="tk-text"><strong>Un buen prompt tiene cinco partes:</strong> contexto (quién eres y para quién es), intención (qué resultado quieres), restricciones (largo, tono), formato (tabla, correo, presentación, página) y ejemplos. Entre más preciso, menos genérico el resultado.</span></li>
+      <li><span class="num">04</span><span class="tk-text"><strong>El humano va en el ciclo.</strong> La IA se equivoca y omite cosas: en el ejercicio de Flans dio bien la trayectoria pero se saltó el disco de 2026. Siempre revisa y verifica antes de usar lo que entrega.</span></li>
+      <li><span class="num">05</span><span class="tk-text"><strong>Usa el vocabulario de tu oficio.</strong> Palabras precisas como identidad de marca, protocolo o alcance le dan precisión a la IA. Tu expertise es lo que vuelve el resultado específico y no de cajón.</span></li>
+      <li><span class="num">06</span><span class="tk-text"><strong>Itera, no reinicies.</strong> Empieza con un prompt sencillo y ve corrigiendo paso a paso, como esculpir, en vez de pedir todo de golpe. Descompón el problema y arma el resultado por partes.</span></li>
+      <li><span class="num">07</span><span class="tk-text"><strong>Cuida el tono para que no suene a IA.</strong> Pide cálido, cercano, sin frases de cajón, neutro o business antes que formal acartonado. La gente nota (y le molesta) recibir cosas que ni revisaste.</span></li>
+      <li><span class="num">08</span><span class="tk-text"><strong>Sé agnóstico de marca y prueba.</strong> Claude escribe y edita más natural; ChatGPT es fuerte en voz; Gemini se integra a Google Workspace y compara contratos. Usa la que te acomode para cada tarea.</span></li>
+      <li><span class="num">09</span><span class="tk-text"><strong>Aprovecha atajos y memoria.</strong> Puedes crear personas o estilos guardados (GPTs, Gems) y pedirle que recuerde quién eres, para no reescribir tu contexto cada vez.</span></li>
+      <li><span class="num">10</span><span class="tk-text"><strong>El abanico es enorme.</strong> Boletines, propuestas, flyers, market research, transcripción de juntas, páginas web, mapas, catálogos y apps a la medida. Manda tus dudas por WhatsApp y se arman cursos y herramientas específicas.</span></li>
+    </ul>
+  </section>
+
+  <!-- TRANSCRIPCION -->
+  <section id="transcripcion">
+    <span class="eyebrow">Transcripción corregida</span>
+    <h2>La clase, bloque por bloque</h2>
+
+    <div class="toc">
+      <span class="eyebrow">Contenido</span>
+      <ol>
+        <li><a href="#b1">Reglas del curso y dónde estamos</a></li>
+        <li><a href="#b2">Qué es la IA: una herramienta, no un sustituto</a></li>
+        <li><a href="#b3">No empieces de cero: iterar y descomponer</a></li>
+        <li><a href="#b4">Empresa, modelo y herramienta</a></li>
+        <li><a href="#b5">Verificar: el humano en el ciclo (caso Flans)</a></li>
+        <li><a href="#b6">Anatomía de un buen prompt</a></li>
+        <li><a href="#b7">Tono, voz y memoria</a></li>
+        <li><a href="#b8">Cuál usar: Claude, ChatGPT, Gemini</a></li>
+        <li><a href="#b9">Casos de Blu2: patrocinadores y market research</a></li>
+        <li><a href="#b10">Correos y boletines en vivo</a></li>
+        <li><a href="#b11">El flyer del show en el Lunario</a></li>
+        <li><a href="#b12">Lo que se puede construir: mapas, catálogos, apps</a></li>
+        <li><a href="#b13">Protocolos de producción y cierre</a></li>
+      </ol>
+    </div>
+
+    <div class="bloque" id="b1">
+      <h3>1 · Reglas del curso y dónde estamos</h3>
+      <div class="bloque-sub">Sesión inicial · 5:27 PM</div>
+      <p class="linea"><span class="quien">Jimena Gárate:</span> Maggy, María.</p>
+      <p class="linea"><span class="quien">Maggy Richaud:</span> Hola, Mary.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Les voy a dejar las reglas del curso. Lo principal es escuchar y, si tienen dudas, preguntar. Lo podemos hacer como ustedes quieran. He dado clases de cosas distintas, pero el chiste es que ustedes lo aprovechen al máximo. Puede ser muy práctico, puedo enseñarles yo, y lo vamos adaptando a como lo vayan sintiendo.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> El curso de hoy es para aprender un poco a saber dónde están y qué quieren sacar. No tengan pena de preguntar: no hay preguntas tontas. Estamos en puntos distintos, hay quienes lo usan más seguido para ciertas cosas, pero la idea es desbloquear cosas que les ayuden en el día a día. Por ejemplo, ahorita estamos tomando la clase proyectando la pantalla, y una cosa que puedes hacer con Google Meet o Zoom en las reuniones es generar una transcripción. Eso importa, porque esa transcripción la puedes usar como insumo para sacar otros resultados.</p>
+      <p class="linea"><span class="quien">Maggy Richaud:</span> Perdón, Pedro, es que nosotras no vemos lo que estás proyectando. Y tampoco podemos tomar notas, no tenemos el permiso.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Perdón, ahorita lo arreglo. Yo estoy tomando notas con otra herramienta, así que les comparto. Es uno de los ejemplos que ya pueden usar: si tienen la paquetería de Google, ya viene integrado, es cuestión de desbloquearlo. Al principio había un tema de privacidad, pero ya todo el mundo lo hace. Si todos en la llamada están de acuerdo en tomar la transcripción, es una herramienta buena.</p>
+    </div>
+
+    <div class="bloque" id="b2">
+      <h3>2 · Qué es la IA: una herramienta, no un sustituto</h3>
+      <div class="bloque-sub">Marco conceptual · 5:35 PM</div>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Una conversación importante es qué les da miedo: muchas de estas son empresas gringas o de China, y la duda es cómo usan tu información. Tristemente hay preguntas que no puedo responder del todo, porque ni se sabe bien cómo están usando los datos. Hay empresas más éticas que otras, pero es difícil de determinar. Además es una tecnología muy nueva y, por su naturaleza, no se entiende del todo: es como una caja negra. Tú le enseñas a un sistema a pensar, le das una entrada y lo que quieres de salida, y en medio hay una caja negra. Se llama así porque ni siquiera quien la hace entiende exactamente cómo funciona; el sistema se va educando solo.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Al final la IA es una herramienta. Como un pincel: si le das un pincel a diez personas, te van a salir diez cuadros distintos. Mucha gente la ve como algo que nos va a sustituir y a quitar la creatividad. Yo la veo más como una herramienta con la que yo voy a hacer algo diferente a lo que harías tú. Y se nota cuando no le pones esfuerzo: hay un término, "AI slop", que es básicamente basura hecha con IA. Se notaba con los trends, como cuando todos se hacían su foto estilo Studio Ghibli, o ahora con las páginas web que cualquiera puede hacer fácil. Como es tan fácil, al principio se ve padre, pero luego notas las que no le echaron ganas. Sigue existiendo el componente humano de discernir lo hecho con bajo esfuerzo. La pregunta de si te va a sustituir la IA: la respuesta más correcta es que probablemente te va a sustituir alguien que sí la sabe usar.</p>
+    </div>
+
+    <div class="bloque" id="b3">
+      <h3>3 · No empieces de cero: iterar y descomponer</h3>
+      <div class="bloque-sub">Forma de trabajo · 5:40 PM</div>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Toda esta página la hice con IA, y es bastante interactiva. Antes necesitabas saber programar para hacer cosas así; ya no. Eso es lo que te habilita. Pero también hay que tener cuidado: si no estás a la vanguardia, te puede acabar sustituyendo en ciertas cosas.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Una de las claves es no empezar de cero. La analogía: antes usabas barro y hacías una pieza desde el principio; ahora es más como ir esculpiendo. Quieres armar una campaña de marketing y no tienes inspiración, le tiras un prompt sencillo y empieza a rebotar contigo como si fuera una persona. Te saca algo largo y lo vas ajustando, quitando, curando. Ahí entra tu criterio y tu capacidad de usar la herramienta.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Otra cosa importante: iterar más y no reiniciar. La idea es que veas todos los procesos con IA, salvo los que ya tengas muy planchados. Y descomponer paso a paso: puedes platicar con la IA y decirle "tengo este problema, vamos a pensarlo paso a paso", para que en lugar de tirarte un rollo gigante te muestre cómo lo va a resolver. Vas viendo si cada paso es adecuado y lo corriges. Es importante también darle el contexto correcto: no es lo mismo trabajar una campaña de marketing que cuestiones contables, o con un artista u otro, cada uno con su identidad de marca. La actividad puede ser la misma, pero el contexto lo es todo.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Sobre las herramientas: la IA son los modelos que se usan. Tú haces un programa con el algoritmo de instrucciones para ciertos procesos, y lo que cambias es el lenguaje, que son los LLMs. En el caso de Anthropic es Claude. Hay distintos modelos con distintas capacidades: uno más poderoso gasta más energía y cuesta más; otros son más rápidos y te convienen para tareas sencillas. Además son multimodales: imágenes, audio, texto son los modos con los que interactúas. Y luego están las herramientas como Canva, que sí son específicas para hacer videos, presentaciones o editar fotos, como lo de Adobe y Photoshop.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Casi todo se paga hasta cierto punto. Hay cosas gratis si no las usas mucho, pero si empiezas a usarlas en serio, cuesta. Las suscripciones iniciales eran de 400 o 500 pesos mensuales, y ya hay planes de 100 y 200 dólares. Anthropic arrancó con Claude en 200 dólares y todos le copiaron. Por eso una recomendación es ser agnósticos: a veces va a ser mejor ChatGPT, a veces Claude, a veces Gemini. Van subiendo y bajando. Úsalo según te acomode y según qué tan a la vanguardia quieras estar.</p>
+    </div>
+
+    <div class="bloque" id="b4">
+      <h3>4 · Empresa, modelo y herramienta</h3>
+      <div class="bloque-sub">Cómo nombrar las cosas · 6:17 PM</div>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Yo uso Anthropic porque son los que más van a la vanguardia de los modelos; los otros les van copiando. Hay que separar tres cosas: la empresa, la herramienta y el modelo. La empresa es Anthropic, la herramienta es Claude. OpenAI es la empresa, ChatGPT la herramienta. Anthropic también le pone su marca a otras cosas, como Claude Code, aunque sea otra interfaz. Por ejemplo, Claude tiene una función para interactuar con tu Excel, tus presentaciones y Power Points; eso te puede servir mucho.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Cuando pagas la suscripción a Claude lo puedes usar en la computadora, en el celular como chat, y en el sitio web; te incluye varias cosas. ChatGPT también está en el celular. Una diferencia: creo que ChatGPT no tiene esa herramienta para modificar Exceles, presentaciones y demás; Claude sí.</p>
+    </div>
+
+    <div class="bloque" id="b5">
+      <h3>5 · Verificar: el humano en el ciclo (caso Flans)</h3>
+      <div class="bloque-sub">Perplexity y citas · 5:50 PM y 6:07 PM</div>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Siempre vale la pena hacer una revisión. Cada vez es más difícil que mienta, está más actualizado y los modelos son más inteligentes, pero al menos léelo y, si sabes del tema, corrígelo. Puedes pedirle que te ponga las citas. Hay una herramienta que se llama Perplexity, muy buena para eso: es tipo Google pero con IA, te da respuestas con citas y de dónde vienen.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Vamos a usar el ejemplo de Flans con Perplexity. Le puedes pedir "ayúdame a mejorar mi pregunta para darme un mejor resultado". Le pedí cruceros saliendo y regresando en una fecha, de siete u ocho días; me mandó uno, pero esa parte es importante: a veces se va a equivocar, cada vez menos, pero sigue pasando. Por eso hay que verificar. Aquí está el resultado con la trayectoria del grupo.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Esto lo puedes alimentar a otra herramienta y pedirle que lo formatee. Aquí tienes el contexto: la línea de tiempo de la trayectoria, las cosas importantes que pasaron, todo verificado. Luego la discografía: con qué disquera, los álbumes en vivo. Le podrías agregar el disco de 2026.</p>
+      <p class="linea"><span class="quien">Maggy Richaud:</span> Perdón, Pedro, justo eso les iba a comentar: mucho de esto se va alimentando de lo que nosotros vamos sumando.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Como había usado la otra herramienta, esa se habla a sí misma con los formatos. Me hace una cosa que se llama HTML, que es básicamente una página web. Es más interactivo y más gráfico. El HTML lo lee un programa que sabe interpretarlo y te da el formato, como cuando vemos un PDF, pero es un archivo más ligero, más de texto.</p>
+      <p class="linea"><span class="quien">Maggy Richaud:</span> La factura es XML.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Este es el ejemplo de cómo usar Perplexity e ir iterando para conseguir un mejor resultado. Revisamos el resultado: salió algo curioso de ayer, pero hay un gran vacío, no salió el disco de 2026 que salió hace una semana. Ahí es donde el humano entra en el ciclo para verificar. Y luego esa información se la podemos alimentar a otra cosa, por ejemplo para ponerla en la página, que te salga la historia oficial de Flans. También salieron premios, nominaciones, ventas y certificaciones.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Esta línea del tiempo la acabo de hacer con otra herramienta mientras hablábamos. Tiene un nivel de confianza por dato: verificado si coinciden dos o más fuentes, parcial si es una sola, y "no encontrado" cuando es como 50 por ciento confiable. Una cosa que hace es ir aprendiendo de lo que le pides: no es coincidencia que esto salga del color de Blu2, con el logo arriba. Le dije que estaba enfocado a tal público, le platiqué qué es Blu2, le pedí que revisara su identidad gráfica e hiciera una presentación con eso. Ahí es donde el humano importa: no es solo la IA, es la tipografía, los recursos, la identidad de marca.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> No le conviene decirle todo de golpe. Mejor trabaja primero el itinerario, y hasta el final haces la presentación. Vas armando parte por parte, le pides "hazme un documento de Word", "hazme una presentación", y luego se lo das a otra herramienta que orquesta y junta todo. Es ese tipo de pensamiento de cómo hacerlo para que salga mejor.</p>
+    </div>
+
+    <div class="bloque" id="b6">
+      <h3>6 · Anatomía de un buen prompt</h3>
+      <div class="bloque-sub">Contexto, intención, restricciones, formato, ejemplos · 6:28 PM</div>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Importa mucho cómo pides las cosas y el contexto que le das. Estas son las secciones importantes: contexto, intención, restricciones, formato y ejemplos. En contexto es para quién: quién eres y para quién es. "Soy Blu2 y esto va para la prensa de espectáculos." La intención es el resultado, no solo el tema: que un editor quiera cubrir la nota, no solo que escriba sobre el show.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> En restricciones: que sea máximo cinco líneas, que sea cálido, sin frases de cajón, que se sienta auténtico. Por eso conviene saber hablar, ser descriptivo y usar palabras precisas, porque eso le da personalidad. El formato puede ser una tabla, tres opciones, una lista de bullets, una presentación, una página web, un correo, un WhatsApp; tú se lo dices. Y los ejemplos sirven mucho cuando ya tienes algo que has hecho muchas veces: le dices "usa este ejemplo pero con esta nueva información" y ya no te rompes la cabeza escribiendo desde cero.</p>
+    </div>
+
+    <div class="bloque" id="b7">
+      <h3>7 · Tono, voz y memoria</h3>
+      <div class="bloque-sub">Que no suene a IA · 6:31 PM</div>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Así como Facebook, Instagram y TikTok tienen un algoritmo que aprende de ti, a las IA también les puedes decir "acuérdate de esto". Le dices "soy ingeniero civil y hago este tipo de proyectos", y eso le detona una instrucción de memorizarlo. Esa memoria la sube a un archivo general y le pone una importancia especial. Con el resto de las conversaciones se va actualizando, pero puedes ser más explícito.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Le puedes poner instrucciones de actitud: "no hay manera de que aceptemos esto, pero díselo de manera sutil y correcta". A mí no me gusta decir de más ni ser muy elaborado, entonces le pongo que sea concreto, asertivo. A eso se refiere el tono: se pide con adjetivos precisos, y los objetivos van en una escala. De formal a casual puede ser neutro, business o formal. Si le pones "formal" a secas, suena acartonado y parece hecho por IA. Y a mucha gente ya no le gusta que le mandes cosas hechas con IA, porque siente que ni lo revisaste. Si tú no lo revisaste, por qué lo va a revisar quien lo recibe. Ese es un cuidado que tienes que tener.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Conviene usar palabras específicas porque le das más precisión. Por ejemplo, en lugar de pedir solo "cálido", puedes decir cercano, afable, de tú a tú, amable, humano, atento, considerado; en lugar de "formal" dices institucional, protocolario, ceremonial, de oficio. Aunque sean casi sinónimos, el resultado cambia. Entre más palabras precisas le des, menos genéricos salen los resultados, que es justo lo que quieres para que no parezca hecho por IA.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> También hay una manera de hacer personalidades, para no estar poniendo todo esto cada vez. Si siempre vas a escribir como Pedro, le haces un atajo: "escribe como Pedro" o "como mi día manager". Vas a tener ciertas voces guardadas. En ChatGPT esos atajos se llaman GPTs y servían para que actuara, por ejemplo, como tu abogado y le decías que hiciera las cosas de cierta manera. Gemini tiene algo equivalente que se llama Gems. Hay muchísima inversión y soluciones; lo importante es no casarte con una sola e ir probando e iterando. Casi seguro no lo estás haciendo de la mejor manera, pero mientras te funcione, bien.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Para alimentar una voz, puedes exportar una conversación de WhatsApp y subirla para que analice el tono y la voz de Flans o de quien sea. WhatsApp te deja exportar chats: entras a la conversación, los tres puntitos, "exportar chat", te vas hasta abajo. Le dices que identifique el tipo de adjetivos, tú confirmas "esto sí, esto no", y entre tú y la IA van creando esa identidad que luego usas para las siguientes publicaciones.</p>
+    </div>
+
+    <div class="bloque" id="b8">
+      <h3>8 · Cuál usar: Claude, ChatGPT, Gemini</h3>
+      <div class="bloque-sub">Ventajas de cada plataforma · 6:55 PM</div>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Esta es la diferencia entre plataformas, con la empresa entre paréntesis y qué hace bien cada una. Claude (Anthropic) es mejor para editar y escribir bien: se siente más natural y humano, siempre fue su característica. Sirve para textos largos y cosas delicadas o confidenciales, porque tiene mejor política de privacidad y cuidado en cómo entrenan los modelos.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> ChatGPT (OpenAI) fueron los que empezaron, hacen de todo y son de los mejores en voz. A veces quieres hablar con la IA en lugar de escribir, y eso funciona muy bien; le hablas en español o en inglés y te entiende.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> La premisa de Anthropic es ser más éticos con la IA, porque vieron el nicho de que todo el mundo se preocupa de que la IA nos supere; ellos quieren algo controlado. Puede ser por creencia o por marketing, pero en su caso creo que es por creencia: el gobierno de Estados Unidos les pidió algo para espiar a sus usuarios, OpenAI lo dejó y Anthropic dijo que no. Fue una noticia grande e hizo que mucha gente se cambiara a Anthropic.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Google tiene Gemini, y a ustedes les conviene porque es lo que tienen en Blu2 con la paquetería de Google. Gemini tiene cosas interesantes: le puedes subir muchos archivos y preguntarle cosas, por ejemplo comparar contratos para ver si cumplen cláusulas uno con otro. Lo está integrando en todas sus herramientas, y también hay una app independiente de Gemini que bajas del App Store. Si ya lo están pagando con Google, les conviene seguirle.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Un caso real: tengo una amiga abogada a la que le ayudé con la investigación de un caso penal relacionado con cosas que salieron en el Diario Oficial de la Federación. Le decía "actúa como un abogado, cómo procederías para hacer esto", y vas diseñando los pasos. Ese tipo de pasos los puedes aplicar a hacer canciones, un contrato, una herramienta, lo que sea.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Ahora hay herramientas que generan música; le puedes decir que suene como una mezcla entre Manuel Mijares y otro, y sacas un disco. Pero el punto sigue siendo que no cualquiera puede hacer esas canciones: ahí está el talento y la habilidad de la persona.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Yo ahorita pago un plan de Claude bastante bueno y casi nunca se me acaba, porque hago muchas cosas. También voy a empezar a usar una herramienta que se llama Kimi, que es mucho más económica, aunque es de los chinos. Al final es cuestión de si confías en los chinos o en los gringos.</p>
+    </div>
+
+    <div class="bloque" id="b9">
+      <h3>9 · Casos de Blu2: patrocinadores y market research</h3>
+      <div class="bloque-sub">Aplicación al negocio · 6:38 PM</div>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Lo puedes aplicar a hacer un contrato, una canción o una herramienta. Por ejemplo, ahorita necesitan armar una presentación para patrocinadores con todo el material que tienen. Le dices "una presentación para patrocinadores con sus datos de redes sociales, que destaque esto", y ahí estás dando la intención y el contexto: de quién eres y para quién es.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Lo bueno de la IA es que te permite hacer ajustes rápido para que se sienta hecho a la medida del cliente. Ya no tienes que hacer la presentación genérica, salvo una de respaldo por si la compartes sin saber quién la recibe. Si ya sabes para quién es, le dices "investiga el perfil, sé que a esta persona no le gusta que le hablen de tal manera".</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Lo que están haciendo ustedes ahorita es paso por paso, pensando en qué áreas, y a cada área le pides cosas distintas. Una cosa que puedes hacer es investigar: "este es el perfil de Flans, a qué marcas le quedaría bien". Te hace un market research; le dices "actúa como tal, haz un estudio de marketing enfocado en México, en tales zonas", o pensando en la gira, "quién está en esas ciudades y a quién le podría interesar". Eso es parte del contexto.</p>
+    </div>
+
+    <div class="bloque" id="b10">
+      <h3>10 · Correos y boletines en vivo</h3>
+      <div class="bloque-sub">Demo de escritura · 7:05 PM</div>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Vamos con los correos. Aquí tengo una respuesta a una invitación de Abraham porque mañana vamos a hablar de un proyecto. Abajo tienes un lapicito, y yo uso un programa que transcribe lo que voy hablando. Le digo: "ayúdame a contestarle a Abraham que no puedo ir, hazlo de manera respetuosa y dame una buena excusa para fallar al compromiso".</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Lo transcribe en un momentito, lo pegan aquí, le doy enviar y genera: "Hola Abraham, muchas gracias por la invitación a la reunión. Lamentablemente no puedo asistir debido a un compromiso personal imprevisto que requiere mi atención inmediata; te ofrezco una disculpa por el inconveniente." Y de ahí lo editas.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Le puedo decir "di que es porque tengo un viaje y hazlo un poco más cálido". Hay dos maneras de hacerlo: con slash (la diagonal) o con el lapicito de acá. El lapicito te pregunta qué quieres escribir y luego "describe tu cambio". Le dices el cambio, te hace el borrador, te pregunta qué más quieres ajustar; le respondes o lo empiezas a borrar tú mismo y le vuelves a dar enviar hasta que quedes contento. Es un proceso iterativo. Es importante saber que puedes acceder a la misma herramienta de distintas maneras.</p>
+    </div>
+
+    <div class="bloque" id="b11">
+      <h3>11 · El flyer del show en el Lunario</h3>
+      <div class="bloque-sub">Boletín y diseño · 7:13 PM</div>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Lo de boletines, cartas y comunicaciones es lo mismo: le das el contexto y un ejemplo de tu voz, le pides un borrador con estructura, editas y metes tus datos. Para una invitación le dices "primero trabaja el contenido escrito, luego el gráfico, y luego empátalos". Aquí ya tengo el frente de lo que sería un comunicado de un show de Blu2. Hice un botón para abrir esta herramienta dentro del mismo chat, que empieza a preguntarte: de qué evento se trata (un concierto, un lanzamiento), para quién es el comunicado, si tienes un comunicado de referencia.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Le pongo los datos: el artista es Flans, el lugar es el Lunario del Auditorio Nacional, el 26 de agosto, y la voz entusiasta. Ya está haciéndolo. Una cosa chistosa de la IA es que a veces responde mejor a malos tonos, le pides las cosas casi regañando. Hay truquitos, como decirle "actúa como si fueras más listo". Si quieren algo más largo, le piden una cuartilla; si más corto, una oración para un tweet.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Ahora generemos el flyer, que tenga la identidad de la banda. Cuando le dices que investigue, empieza a usar otras herramientas como internet. Saca estética ochentera, neón. Lo puedes parar a media tarea y corregirlo. También puedes cambiar el modelo y el nivel de esfuerzo: estaba en extra y le puedes poner Max para que piense más. Eso importa sobre todo cuando no pagas, porque te dan un uso limitado que se mide en tokens, y con un plan básico se acaban rápido. Para tareas fáciles usas un modelo que no piense tanto, y así es más rápido. Y mientras está pensando, te vas a hacer otra cosa y regresas.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> El flyer es un buen ejemplo: salió rápido, lo puedes iterar rápido. Salió mal a la primera, pero salió. Si se lo pides a un diseñador, se tarda un día; aquí te tardas minutos. No quieres tardarte un día.</p>
+    </div>
+
+    <div class="bloque" id="b12">
+      <h3>12 · Lo que se puede construir: mapas, catálogos, apps</h3>
+      <div class="bloque-sub">El abanico de posibilidades · 7:26 PM</div>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Mientras termina, les enseño cosas que he hecho con IA. Este es un mapa de museos de la Ciudad de México: le puse filtros de tipo de museo, precio, si ya lo visitaste, si tiene exposición vigente, horarios. Te aparecen los que están abiertos a cierta hora. Es una herramienta que yo hice, no existe.</p>
+      <p class="linea"><span class="quien">Maria Garate:</span> Yo quiero ese mapa.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Podrías hacer algo así: puede investigar por ti o tú alimentarlo. Este otro mapa lo hice para una empresa de restauración de ecosistemas que trabaja con ranchos. Me pidieron el mapa de un rancho con su infraestructura: te acercas y ves los caminos, las cercas, dónde están las casas, los bebederos, los diámetros de las tuberías. Usé herramientas geoespaciales, de información satelital georreferenciada. Ese es el siguiente paso: cuando la IA empieza a poder usar ese universo de herramientas. Era de un rancho en Coahuila, del tamaño de la Ciudad de México, donde hacíamos un proyecto de bonos de carbono: usas al ganado para regenerar el pastizal y generas créditos de carbono, así tienes ingresos por el ganado más los bonos.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Otros casos: estoy traduciendo un libro de mandarín a inglés, cuidando que las imágenes se traduzcan bien y se respete la editorial. También hice una propuesta para Blu2 con calendario, cronograma, alcance y anexos; la nueva versión la hice en menos de diez minutos diciéndole que investigara la empresa por su web y adaptara mis servicios y precio. Es un template para algo que ustedes suelen hacer y que no les quite tanto tiempo.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Esta página de tienda la diseñó Nena, ella me pasó el diseño y yo solo lo armé. Ves los productos, los precios, puedes filtrar solo las bolsas. Le puedes poner la tienda para que cobre y venda directo, ya no usas plataformas como Wix. Esta otra página tiene una animación de un barquito que se mueve mientras bajas; le subí un PNG y le dije qué quería. Hice también una app de inventario para mi alacena: le tomo fotos a las cosas, hago el inventario, y lo que se acaba se va a la lista del súper, que puedes filtrar por dónde lo compras (Costco, mercado, Oxxo).</p>
+      <p class="linea"><span class="quien">Maria Garate:</span> Necesitamos esa app también.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Se podría. A una amiga le hice una app para una venta de garaje: su Excel ya estaba bien alimentado con talla, marca y precio, y le agregué que pudiera tomar foto y marcar como vendido. Lo mismo se puede hacer con ropa, combinar prendas. Y este es mi CV: puedes entrar en inglés, español o chino según quién lo lea.</p>
+      <p class="linea"><span class="quien">Maria Garate:</span> Y esa página, ¿la puedes subir ya así hecha o se la mandas a un programador?</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Se puede subir directo. Te enseño cómo hacerlo.</p>
+    </div>
+
+    <div class="bloque" id="b13">
+      <h3>13 · Protocolos de producción y cierre</h3>
+      <div class="bloque-sub">Herramientas a la medida · 7:46 PM</div>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> El resto son ejemplos; les puedo mandar esta presentación. Mándenme preguntas por WhatsApp de "cómo harías tal", y vamos armando cursos específicos o desarrollando una plataforma que les funcione. La IA ya abarca muchas cosas: partes creativas, protocolarias, contratos. Son herramientas que te hacen más eficiente, te ahorran tiempo y te permiten más impacto: hablar con más clientes, mejorar el contenido y sacarlo más rápido.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Lo de los protocolos sí se puede ordenar en una página o app donde venga todo el diseño: cuánto debe medir el escenario, las gráficas, todo lo que requieren. Hasta lo puedes comprobar con fotos como evidencia, y registrar quién hizo el check. Puede tener el checklist de producción y el de ustedes. El detalle es que los promotores en México no siempre se meten con este tipo de cosas: hay quien solo quiere un correo, hay quien necesita que se lo mandes impreso. Por eso lo que ayuda la IA es traducirlo a tus distintos tipos de clientes y proveedores: la app es el ideal, pero también la adaptas a quien no la aceptaría.</p>
+      <p class="linea"><span class="quien">Maria Garate:</span> Bye.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Gracias, pero úsalo: es muy importante que lo uses. Empieza con los correos. Va a haber frustración al aprender, a veces sale y a veces no, pero es cuestión de perspectiva. Por ejemplo, te puede ayudar a entender por qué un proveedor te está cobrando el triple que hace seis meses por el mismo resultado.</p>
+      <p class="linea pedro"><span class="quien">Pedro Rojas:</span> Para cosas gráficas, los iPads sirven mucho: agarras la imagen, la abres y le dibujas encima, "cambia esto de color, haz esto aquí". O empiezas un diseño con palitos, te hace una primera versión, la ajustas, te hace una segunda, y así. Y guarda todo en tu Drive para tener de dónde referenciar: esa higiene de información es clave, aunque el reto es darle mantenimiento y ser consistente.</p>
+      <p class="nota">Nota de transcripción: el cierre de la sesión incluyó comentarios sueltos sobre casos puntuales de la operación de Blu2 que quedaron fuera de este resumen por ser conversación cruzada y poco audible.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <strong>Blu2 · Curso de Inteligencia Artificial</strong><br>
+  Clase impartida por Pedro Rojas · 8 de junio de 2026<br>
+  Transcripción corregida y editada para lectura.
+</footer>
+
+</body>
+</html>
